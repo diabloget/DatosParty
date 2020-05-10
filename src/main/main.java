@@ -15,7 +15,8 @@ public class main extends Application {
         window.setResizable(false);
         //Stage.getIcons().add(new Image("file:Icons/Icon.png"));
         window.setTitle("DatosParty");
-        window.setScene(players.getPlayerScene());
+        window.setScene(board.getBoardScene());
+        //window.setScene(players.getPlayerScene());
         window.show();
     }
 }
