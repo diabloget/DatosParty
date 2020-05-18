@@ -66,7 +66,7 @@ public class players{
             playeradder.setOnKeyPressed(event -> {
                 if(event.getCode().equals(KeyCode.ENTER)) {
                     if(limiter<4){
-                        players.add(playeradder.getText());
+                        PlayerList.setPlayers(playeradder.getText());
                         playerlisttext.getChildren().add(texter(playeradder.getText()+ "\n"));
                     }if(limiter>=4){
                         alert.showAndWait();
