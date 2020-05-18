@@ -5,7 +5,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import javafx.scene.text.TextAlignment;
 
 import java.util.Random;
 
@@ -30,7 +29,7 @@ public class dices {
 
     public static Label dice1On(){
         dice1.setStyle("-fx-background-color: #3C3F41");
-        dice1.setText("0");
+        dice1.setText("");
         dice1.setFont(Font.font(50));
         dice1.setAlignment(Pos.CENTER);
         dice1.setTextFill(Color.valueOf("#C9C9C9"));
@@ -41,7 +40,7 @@ public class dices {
 
     public static Label dice2On(){
         dice2.setStyle("-fx-background-color: #3C3F41");
-        dice2.setText("0");
+        dice2.setText("");
         dice2.setFont(Font.font(50));
         dice2.setAlignment(Pos.CENTER);
         dice2.setTextFill(Color.valueOf("#C9C9C9"));
@@ -55,6 +54,13 @@ public class dices {
         b=getRandom(1, 6);
         dice1.setText(Integer.toString(a));
         dice2.setText(Integer.toString(b));
+
+        steps.stepCalculator(board.player1, a+b, DirectionButtons.direction);
+    }
+
+    private static void diceClear(){
+        dice1.setText("");
+        dice2.setText("");
     }
 
 
