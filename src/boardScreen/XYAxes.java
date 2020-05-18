@@ -31,5 +31,22 @@ public class XYAxes {
         doubleCircularXY.add(new Point(x, y));
     }
 
+    public static ArrayList<Point> getXY(String path){
+        if(path == "mainPath"){
+            return mainXY;
+        }if(path == "singlePath"){
+            return singleXY;
+
+        }if(path == "doublePath1"){
+            return doubleXY1;
+
+        }if(path == "doublePath2"){
+            return doubleXY2;
+
+        }if(path == "doubleCircularPath"){
+            return doubleCircularXY;
+        }
+        return mainXY;
+    }
 
 }

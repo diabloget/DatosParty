@@ -12,19 +12,19 @@ public class boxes {
 
     public static Circle detour(String color, int x, int y) {
         //init XYAxes
-        if (Jesucristo <= 50) {
+        if (Jesucristo <= 49) {
             XYAxes.initMainXY(x, y);
         }
-        if (Jesucristo <= 53) {
+        if (Jesucristo <= 52 & Jesucristo > 49) {
             XYAxes.initSingleXY(x, y);
         }
-        if (Jesucristo <= 62) {
+        if (Jesucristo <= 61 & Jesucristo > 52) {
             XYAxes.initDoubleXY1(x, y);
         }
-        if (Jesucristo <= 73) {
+        if (Jesucristo <= 72 & Jesucristo > 61) {
             XYAxes.initDoubleXY2(x, y);
         }
-        if (Jesucristo <= 87) {
+        if (Jesucristo <= 86 & Jesucristo > 72) {
             XYAxes.initDoubleCircularXY(x, y);
         }
         Jesucristo++;

@@ -16,7 +16,6 @@ public class Player {
     public static void movePlayer(Point xy){
         //playerIcon.setOpacity(1);
         playerIcon.relocate(xy.x + 1.5, xy.y);
-        System.out.println("Me estoy moviendo, esto solo deberia salir una vez por dado");
     }
 
     //

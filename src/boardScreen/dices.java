@@ -23,7 +23,7 @@ public class dices {
         throwButton.setOnMouseReleased(event -> throwButton.setStyle("-fx-background-color: #3C3F41"));
         throwButton.setTextFill(Color.valueOf("#C9C9C9"));
         throwButton.setOnAction(event -> diceSet());
-        throwButton.relocate(163,550);
+        throwButton.relocate(163,500);
         return throwButton;
     }
 
@@ -33,7 +33,7 @@ public class dices {
         dice1.setFont(Font.font(50));
         dice1.setAlignment(Pos.CENTER);
         dice1.setTextFill(Color.valueOf("#C9C9C9"));
-        dice1.relocate(132,580);
+        dice1.relocate(132,530);
         dice1.setPrefSize(65,65);
         return dice1;
     }
@@ -44,23 +44,40 @@ public class dices {
         dice2.setFont(Font.font(50));
         dice2.setAlignment(Pos.CENTER);
         dice2.setTextFill(Color.valueOf("#C9C9C9"));
-        dice2.relocate(203,580);
+        dice2.relocate(203,530);
         dice2.setPrefSize(65,65);
         return dice2;
     }
 
     private static void diceSet(){
-        a=getRandom(1, 6);
-        b=getRandom(1, 6);
-        dice1.setText(Integer.toString(a));
-        dice2.setText(Integer.toString(b));
+        if(a+b != 0){
+            System.out.println("Ira we no mames");
+        }else{
+            a=getRandom(1, 4);
+            b=getRandom(1, 4);
+            dice1.setText(Integer.toString(a));
+            dice2.setText(Integer.toString(b));
+        }
+    }
 
-        steps.stepCalculator(board.player1, a+b, DirectionButtons.direction);
+    public static void diceMinus(){
+        if (a == 0 & b != 0){
+            b--;
+            dice2.setText(Integer.toString(b));
+        }
+        if(a != 0){
+            a--;
+            dice1.setText(Integer.toString(a));
+        }
+    }
+
+    public static int diceValue(){
+        return a+b;
     }
 
     private static void diceClear(){
-        dice1.setText("");
-        dice2.setText("");
+        dice1.setText("0");
+        dice2.setText("0");
     }
 
 

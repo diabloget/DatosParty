@@ -1,5 +1,6 @@
 package boardScreen;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
 
 import java.awt.*;
@@ -41,7 +42,6 @@ public class board{
             boardpane.getChildren().add(boxes.detour("#65bffa", 15, 830));
             boardpane.getChildren().add(boxes.detour("#65bffa", 15, 750));
             boardpane.getChildren().add(boxes.detour("#65bffa", 15, 670));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 15, 590));
             boardpane.getChildren().add(boxes.detour("#65bffa", 15, 590));
             boardpane.getChildren().add(boxes.detour("#65bffa", 15, 510));
             boardpane.getChildren().add(boxes.detour("#65bffa", 15, 430));
@@ -112,23 +112,23 @@ public class board{
 
             //Isla
                 //top
-            boardpane.getChildren().add(boxes.detour("#65bffa", 722, 430));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 800, 430));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 878, 430));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 956, 430));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 722, 430));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 800, 430));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 878, 430));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 956, 430));
                 //right
-            boardpane.getChildren().add(boxes.detour("#65bffa", 1034, 430));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 1034, 510));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 1034, 590));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 1034, 430));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 1034, 510));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 1034, 590));
                 //bot
-            boardpane.getChildren().add(boxes.detour("#65bffa", 1034, 670));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 956, 670));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 878, 670));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 800, 670));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 1034, 670));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 956, 670));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 878, 670));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 800, 670));
                 //left
-            boardpane.getChildren().add(boxes.detour("#65bffa", 722, 670));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 722, 590));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 722, 510));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 722, 670));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 722, 590));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 722, 510));
 
 
             //
@@ -148,7 +148,11 @@ public class board{
             boardpane.getChildren().add(player1.getPlayerIcon());
             player1.movePlayer(new Point(500,500));
 
-            //contador();
+            //
+
+            boardpane.setOnKeyPressed(event -> {
+                steps.stepCalculator(player1, event);
+            });
 
 
         }else{

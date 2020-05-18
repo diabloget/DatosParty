@@ -45,6 +45,8 @@ public class Icons {
         if(selectedIcon == 9){
             left.setRotate(-90);
             return left;
+        }if(selectedIcon == 10){
+            return new ImageView(new Image("file:icons/square.png", 8, 8, true, false));
         }
         else{
             return star;

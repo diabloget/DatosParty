@@ -3,7 +3,7 @@ package playersScreen;
 import java.util.ArrayList;
 
 public class PlayerList {
-    private static int playertocreate = 1;
+    private static int playertocreate = 2;
     private static ArrayList<String> players = new ArrayList<>();
 
 

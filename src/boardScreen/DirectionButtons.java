@@ -27,7 +27,7 @@ public class DirectionButtons {
             direction = 1;
         });
         top.setGraphic(Icons.getIcon(6));
-        top.relocate(182.5,665);
+        top.relocate(182.5,645);
         return top;
     }
 
@@ -38,7 +38,7 @@ public class DirectionButtons {
             right.setStyle("-fx-background-color: #10E6A0");
             direction = 2;
         });
-        right.relocate(238,720);
+        right.relocate(238,700);
         right.setRotate(90);
         right.setGraphic(Icons.getIcon(7));
         return right;
@@ -51,7 +51,7 @@ public class DirectionButtons {
             bot.setStyle("-fx-background-color: #10E6A0");
             direction = 3;
         });
-        bot.relocate(182.5,775);
+        bot.relocate(182.5,755);
         bot.setGraphic(Icons.getIcon(8));
         return bot;
     }
@@ -63,7 +63,7 @@ public class DirectionButtons {
             left.setStyle("-fx-background-color: #10E6A0");
             direction = 4;
         });
-        left.relocate(128,720);
+        left.relocate(128,700);
         left.setRotate(90);
         left.setGraphic(Icons.getIcon(9));
         return left;
