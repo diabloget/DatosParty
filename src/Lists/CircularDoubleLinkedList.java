@@ -1,7 +1,7 @@
 package Lists;
 
 public class CircularDoubleLinkedList<T extends Comparable<T>> {
-    private NodeDouble<T> last = null;
+    public NodeDouble<T> last = null;
 
     public void addLast(T data){
         if(last == null){
@@ -34,14 +34,17 @@ public class CircularDoubleLinkedList<T extends Comparable<T>> {
         NodeDouble<T> pointerHead = last;
         NodeDouble<T> pointerTail = last;
         while (pointerTail.getNext()!= last) {
-            if ( pointerHead.getValue ().equals (value) ) {
+            if ( pointerHead.getValue ().compareTo (value)==0) {
+                System.out.println ("true");
                 if ( pointerHead==last ) {
                     pointerHead.getPrevious ().setNext (last.getNext ());
                     pointerHead.getNext ().setPrevious (last.getPrevious ());
                     last = pointerHead.getPrevious ();
+                    return;
                 } else {
                     pointerTail.setNext (pointerHead.getNext ());
                     pointerHead.getNext ().setPrevious (pointerTail);
+                    return;
                 }
             } else {
                 pointerTail = pointerHead;
@@ -64,5 +67,25 @@ public class CircularDoubleLinkedList<T extends Comparable<T>> {
         }
         return -1;
     }
+
+    @Override
+    public String toString() {
+        if(this.last==null){
+            return "Empty";
+        }else{
+            StringBuilder returning = new StringBuilder ();
+            NodeDouble<T> pointer = last;
+            NodeDouble<T> tail = last;
+            while(tail.getNext ()!=last){
+                returning.append (pointer.toString ());
+                returning.append (" ");
+                tail = pointer;
+                pointer = pointer.getNext ();
+            }
+            return returning.toString ();
+        }
+
+    }
+
 }
 

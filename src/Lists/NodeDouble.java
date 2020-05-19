@@ -41,5 +41,8 @@ public class NodeDouble<T extends Comparable<T>> {
         return this.previous;
     }
 
-
+    @Override
+    public String toString() {
+        return value.toString ();
+    }
 }

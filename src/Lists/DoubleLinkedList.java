@@ -1,8 +1,8 @@
 package Lists;
 
 public class DoubleLinkedList<T extends Comparable<T>> {
-    private NodeDouble<T> first = null;
-    private NodeDouble<T> last = null;
+    public NodeDouble<T> first = null;
+    public NodeDouble<T> last = null;
 
     public void addFirst(T data){
         if(first==null){
@@ -35,10 +35,11 @@ public class DoubleLinkedList<T extends Comparable<T>> {
         NodeDouble<T> pointerTail = first;
 
         while(pointerHead!=null){
-            if(pointerHead.getValue().equals(data)){
+            if(pointerHead.getValue().compareTo (data)==0){
                 if(pointerHead==first){
                     first.getNext().setPrevious(null);
                     first = pointerHead.getNext();
+                    return;
                 }else{
                     if(pointerHead==last){
                         pointerTail.setNext(null);
@@ -68,7 +69,20 @@ public class DoubleLinkedList<T extends Comparable<T>> {
         return -1;
     }
 
-
-
+    @Override
+    public String toString() {
+        if(this.first==null){
+            return "Empty";
+        }else{
+            StringBuilder returning = new StringBuilder ();
+            NodeDouble<T> pointer = first;
+            while(pointer!=null){
+                returning.append (pointer.toString ());
+                returning.append (" ");
+                pointer = pointer.getNext ();
+            }
+            return returning.toString ();
+        }
+    }
 }
 

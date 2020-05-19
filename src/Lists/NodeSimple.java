@@ -3,7 +3,6 @@ package Lists;
 public class NodeSimple<T extends Comparable<T>> {
     private T value;
     private NodeSimple<T> next;
-    private NodeSimple<T> previous;
 
     public NodeSimple(T value) {
         this.value = value;
@@ -25,5 +24,10 @@ public class NodeSimple<T extends Comparable<T>> {
 
     public NodeSimple<T> getNext(){
         return this.next;
+    }
+
+    @Override
+    public String toString() {
+        return value.toString ();
     }
 }

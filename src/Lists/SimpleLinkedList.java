@@ -1,13 +1,13 @@
 package Lists;
 
 public class SimpleLinkedList<T extends Comparable<T>> {
-    NodeSimple<T> first = null;
-    NodeSimple<T> last = null;
+    public NodeSimple<T> first = null;
+    public NodeSimple<T> last = null;
 
     public void addLast(T data){
         if(first == null){
             first = new NodeSimple<T> (data);
-            first = last;
+            last = first;
         }else{
             NodeSimple<T> addingElement = new NodeSimple<> (data);
             last.setNext (addingElement);
@@ -18,7 +18,7 @@ public class SimpleLinkedList<T extends Comparable<T>> {
     public void addFirst(T data){
         if(first == null){
             first = new NodeSimple<T> (data);
-            first = last;
+            last = first;
         }else{
             NodeSimple<T> addingElement = new NodeSimple<> (data);
             addingElement.setNext (first);
@@ -30,9 +30,10 @@ public class SimpleLinkedList<T extends Comparable<T>> {
         NodeSimple<T> pointerHead = first;
         NodeSimple<T> pointerTail = first;
         while (pointerHead!=null){
-            if(pointerHead.getValue ().equals (data)){
+            if(pointerHead.getValue().compareTo (data)==0){
                 if(pointerHead==first){
                     first = pointerHead.getNext ();
+                    return;
                 }else{
                     if(pointerHead==last){
                         last = pointerTail;
@@ -56,5 +57,21 @@ public class SimpleLinkedList<T extends Comparable<T>> {
             temp = temp.getNext();
         }
         return -1;
+    }
+
+    @Override
+    public String toString() {
+        if(this.first==null){
+            return "Empty";
+        }else{
+            StringBuilder returning = new StringBuilder ();
+            NodeSimple<T> pointer = first;
+            while(pointer!=null){
+                returning.append (pointer.toString ());
+                returning.append (" ");
+                pointer = pointer.getNext ();
+            }
+            return returning.toString ();
+        }
     }
 }
