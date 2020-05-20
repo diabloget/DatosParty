@@ -69,6 +69,10 @@ public class dices {
             a--;
             dice1.setText(Integer.toString(a));
         }
+        if(a+b == 0){
+            //Justo antes del comando de abajo se podría llamar un método en Round (no existe aún) que agarre el jugador y si está en casilla de evento lo ejecuta ( no evento jVj)
+            Round.RoundUpdate();
+        }
     }
 
     public static int diceValue(){

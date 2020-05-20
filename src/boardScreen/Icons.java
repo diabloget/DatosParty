@@ -4,6 +4,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class Icons {
+    private static int iconToGet = 0;
+
     public static ImageView star = new ImageView(new Image("file:icons/star.png", 80, 80, true, false));
 
     public static ImageView player1 = new ImageView(new Image("file:icons/player1.png", 50, 50, true, false));
@@ -52,4 +54,21 @@ public class Icons {
             return star;
         }
     }
+
+    public static ImageView getPlayerIcon(){
+        System.out.println(iconToGet);
+        if(iconToGet == 0){
+            iconToGet++;
+            return player1;
+        }if(iconToGet == 1){
+            iconToGet++;
+            return player2;
+        }if(iconToGet == 2){
+            iconToGet++;
+            return player3;
+        }else {
+            return player4;
+        }
+    }
+
 }
