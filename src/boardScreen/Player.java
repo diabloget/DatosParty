@@ -7,7 +7,7 @@ import playersScreen.PlayerList;
 import java.awt.*;
 
 public class Player {
-    public ImageView playerIcon = Icons.getPlayerIcon();
+    private ImageView playerIcon = Icons.getPlayerIcon();
     private int position = -1;
     private String path = "mainPath";
     private int coins;

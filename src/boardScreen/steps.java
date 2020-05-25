@@ -3,17 +3,24 @@ package boardScreen;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
-import java.awt.*;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
 public class steps {
-    private static int aux;
+    private static int lastPosition;
+    private static String lastPath;
     private static boolean justone;
+    private static int restriction = 0;
 
+    /**
+     * Funciön que recibe un jugador y un evento para así definir la nueva posición del jugador.
+     * (Básicamente calcula el movimiento y su posibilidad)
+     * @param player
+     * @param e
+     */
     public static void stepCalculator(Player player, KeyEvent e){
+        lastPosition = player.getPosition();
+        lastPath = player.getPath();
         justone = true;
         if(dices.diceValue() != 0){
+            //Movimiento en mainPath
             if(player.getPath() == "mainPath"){
                 if(e.getCode() == KeyCode.LEFT & player.getPosition() == 49   & justone){
                     player.setPosition(0);
@@ -38,9 +45,16 @@ public class steps {
                     player.setPosition(player.getPosition()+1);
                     reducer(player, "mainPath");
                 }
+                if(e.getCode() == KeyCode.UP & player.getPosition() == 10   & justone & restriction != 1){
+                    restriction = 1;
 
-                if(e.getCode() == KeyCode.UP & player.getPosition() == 10   & justone){
                     player.setPosition(8);
+                    reducer(player, "doublePath1");
+                }
+                if(e.getCode() == KeyCode.DOWN & player.getPosition() == 28  & justone & restriction != 2){
+                    restriction = 2;
+
+                    player.setPosition(0);
                     reducer(player, "doublePath1");
                 }
                 if(e.getCode() == KeyCode.RIGHT & player.getPosition() == 19   & justone){
@@ -48,7 +62,9 @@ public class steps {
                     reducer(player, "singlePath");
                 }
 
-                if(e.getCode() == KeyCode.LEFT & player.getPosition() == 42   & justone){
+                if(e.getCode() == KeyCode.LEFT & player.getPosition() == 42   & justone & restriction != 2){
+                    restriction = 2;
+
                     player.setPosition(10);
                     reducer(player, "doublePath2");
                 }
@@ -70,29 +86,37 @@ public class steps {
 
             //Movimiento en doblePath1
             if(player.getPath() == "doublePath1"){
-                if(e.getCode() == KeyCode.UP & player.getPosition() > 0 & player.getPosition() <=8   & justone){
+                if(e.getCode() == KeyCode.UP & player.getPosition() > 0 & player.getPosition() <=8   & justone & restriction != 2){
+                    restriction = 1;
+
                     player.setPosition(player.getPosition()-1);
                     reducer(player, "doublePath1");
                 }
-                if(e.getCode() == KeyCode.UP & player.getPosition() == 0   & justone){
+                if(e.getCode() == KeyCode.UP & player.getPosition() == 0   & justone & restriction != 2){
+                    restriction = 2;
                     player.setPosition(28);
                     reducer(player, "mainPath");
 
                 }
 
-                if(e.getCode() == KeyCode.RIGHT & player.getPosition() == 3   & justone){
+                if(e.getCode() == KeyCode.RIGHT & player.getPosition() == 3   & justone & restriction != 4){
+                    restriction = 4;
+
                     player.setPosition(0);
                     reducer(player, "doublePath2");
 
                 }
 
-                if(e.getCode() == KeyCode.DOWN & player.getPosition() >=0 & player.getPosition() <8   & justone){
+                if(e.getCode() == KeyCode.DOWN & player.getPosition() >=0 & player.getPosition() <8   & justone & restriction != 1){
+                    restriction = 2;
                     player.setPosition(player.getPosition()+1);
                     reducer(player, "doublePath1");
 
                 }
 
-                if(e.getCode() == KeyCode.DOWN & player.getPosition() == 8   & justone){
+                if(e.getCode() == KeyCode.DOWN & player.getPosition() == 8   & justone & restriction != 1){
+                    restriction = 1;
+
                     player.setPosition(10);
                     reducer(player, "mainPath");
 
@@ -103,46 +127,62 @@ public class steps {
             //Movimiento en doblePath2
             if(player.getPath() == "doublePath2"){
 
-                if(e.getCode() == KeyCode.LEFT & player.getPosition() >3 & player.getPosition() <=10   & justone){
+                if(e.getCode() == KeyCode.LEFT & player.getPosition() >3 & player.getPosition() <=10   & justone & restriction != 1){
+                    restriction = 2;
+
                     player.setPosition(player.getPosition()-1);
                     reducer(player, "doublePath2");
                 }
 
-                if(e.getCode() == KeyCode.LEFT & player.getPosition() > 0 & player.getPosition() <=2   & justone){
+                if(e.getCode() == KeyCode.LEFT & player.getPosition() > 0 & player.getPosition() <=2   & justone & restriction != 1){
+                    restriction = 2;
+
                     player.setPosition(player.getPosition()-1);
                     reducer(player, "doublePath2");
                 }
 
-                if(e.getCode() == KeyCode.LEFT & player.getPosition() == 0   & justone){
+                if(e.getCode() == KeyCode.LEFT & player.getPosition() == 0   & justone & restriction != 4){
+                    restriction = 4;
+
                     player.setPosition(3);
                     reducer(player, "doublePath1");
 
                 }
 
-                if(e.getCode() == KeyCode.RIGHT & player.getPosition() >=0 & player.getPosition() <2   & justone){
+                if(e.getCode() == KeyCode.RIGHT & player.getPosition() >=0 & player.getPosition() <2   & justone & restriction != 2){
+                    restriction = 1;
+
                     player.setPosition(player.getPosition()+1);
                     reducer(player, "doublePath2");
 
                 }
 
-                if(e.getCode() == KeyCode.RIGHT & player.getPosition() >=3 & player.getPosition() <=9   & justone){
+                if(e.getCode() == KeyCode.RIGHT & player.getPosition() >=3 & player.getPosition() <=9   & justone & restriction != 2){
+                    restriction = 1;
+
                     player.setPosition(player.getPosition()+1);
                     reducer(player, "doublePath2");
 
                 }
 
-                if(e.getCode() == KeyCode.RIGHT & player.getPosition() == 10   & justone){
+                if(e.getCode() == KeyCode.RIGHT & player.getPosition() == 10   & justone & restriction != 2){
+                    restriction = 2;
+
                     player.setPosition(42);
                     reducer(player, "mainPath");
                 }
 
-                if(e.getCode() == KeyCode.UP & player.getPosition() == 2   & justone){
+                if(e.getCode() == KeyCode.UP & player.getPosition() == 2   & justone & restriction != 2){
+                    restriction = 1;
+
                     player.setPosition(player.getPosition()+1);
                     reducer(player, "doublePath2");
 
                 }
 
-                if(e.getCode() == KeyCode.DOWN & player.getPosition() == 3   & justone){
+                if(e.getCode() == KeyCode.DOWN & player.getPosition() == 3   & justone & restriction != 1){
+                    restriction = 2;
+
                     player.setPosition(player.getPosition()-1);
                     reducer(player, "doublePath2");
 
@@ -215,11 +255,17 @@ public class steps {
     }
 
     private static void reducer(Player player, String path){
+
         dices.diceMinus();
         player.setPath(path);
-        System.out.println(path);
         player.movePlayer(XYAxes.getXY(path).get(player.getPosition()));
-        System.out.println(XYAxes.doubleCircularXY.size());
         justone = false;
+
+        playerEvents.versus(lastPath, lastPosition);
+        if(dices.diceValue() == 0){
+            restriction = 0;
+
+            playerEvents.checkEvents();
+        }
     }
 }
