@@ -1,6 +1,7 @@
 package BlackJack;
 
 public class Player {
+    private boolean isOut = false;
     private String cardHandle;
     private String name;
     private int count;
@@ -18,21 +19,21 @@ public class Player {
         getCard();
         int newCard = evaluate(cardHandle);
         count = count + newCard;
-        if(count>21){
-            getOut ();
-        }
-    }
-
-    public void stop(){
+        System.out.println (count);
 
     }
+
 
     public void getOut(){
-
+        isOut = true;
     }
 
     public int getCount(){
-        return this.count;
+        if(isOut){
+            return 0;
+        }else {
+            return this.count;
+        }
     }
 
     public void  getCard(){

@@ -15,8 +15,7 @@ public class Cards {
     }
 
     public void createStack(){
-        StackCards newStack = new StackCards ();
-        this.stack = newStack;
+        this.stack =  new StackCards ();
     }
 
 

@@ -27,7 +27,7 @@ public class Simon  {
     public String[] colorAnswers = new String[5];
     public String[] playerAnswers = new String[5];
     public GridPane gamePane = new GridPane();
-    public Scene simonScene =  new Scene(gamePane,400,400, Color.BLACK);
+    public Scene simonScene =  new Scene(gamePane,400,400);
     private KeepingScore score = new KeepingScore(numberOfPlayers);
 
     public void prepareForPlayer(){
