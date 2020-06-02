@@ -1,7 +1,6 @@
 package playersScreen;
 
 import boardScreen.board;
-import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -13,7 +12,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
-import javafx.stage.Stage;
 import main.main;
 import java.util.ArrayList;
 
@@ -66,7 +64,7 @@ public class players{
             playeradder.setOnKeyPressed(event -> {
                 if(event.getCode().equals(KeyCode.ENTER)) {
                     if(limiter<4){
-                        PlayerList.setPlayers(playeradder.getText());
+                        PlayerList.setPlayernames(playeradder.getText());
                         playerlisttext.getChildren().add(texter(playeradder.getText()+ "\n"));
                     }if(limiter>=4){
                         alert.showAndWait();
@@ -83,6 +81,7 @@ public class players{
             switcher.setStyle("-fx-background-color: #c7fa7e");
             switcher.setOnAction(event -> {
                 if(limiter>1){
+                    PlayerList.setPlayers();
                     main.window.setScene(board.getBoardScene());
                 }else{
                     alert2.showAndWait();

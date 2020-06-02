@@ -1,7 +1,10 @@
 package boardScreen;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
+import playersScreen.PlayerList;
 
 import java.awt.*;
 
@@ -10,16 +13,21 @@ public class board{
     private static Pane boardpane = new Pane();
     private static Scene boardscene = new Scene(boardpane,1250,900);
 
-
-    ///Player
     public static Player player1 = new Player();
+    public static Player player2 = new Player();
+    public static Player player3 = new Player();
+    public static Player player4 = new Player();
+
+    public static ImageView player1Icon = new ImageView(new Image("file:icons/player1.png", 50, 50, true, false));
+    public static ImageView player2Icon = new ImageView(new Image("file:icons/player2.png", 50, 50, true, false));
+    public static ImageView player3Icon = new ImageView(new Image("file:icons/player3.png", 50, 50, true, false));
+    public static ImageView player4Icon = new ImageView(new Image("file:icons/player4.png", 50, 50, true, false));
 
     private static void initializator(boolean temp){
         if(temp==false){
             boardpane.setStyle("-fx-background-color: #2B2B2B");
             singleton=true;
             axes.initPaths();
-
             /////// MAPA
 
             //bot
@@ -145,13 +153,33 @@ public class board{
 
 
             //
-            boardpane.getChildren().add(player1.getPlayerIcon());
-            player1.movePlayer(new Point(500,500));
+            for(Player player:PlayerList.players){
+                boardpane.getChildren().add(player.getPlayerIcon());
+            }
 
-            //
+
+
 
             boardpane.setOnKeyPressed(event -> {
-                steps.stepCalculator(player1, event);
+                Round.moveCurrent(event);
+
+                if(event.getCode() == KeyCode.UP){
+                    DirectionButtons.greenButtonsUp();
+                }
+                if(event.getCode() == KeyCode.RIGHT){
+                    DirectionButtons.greenButtonsRight();
+                }
+                if(event.getCode() == KeyCode.LEFT){
+                    DirectionButtons.greenButtonsLeft();
+                }
+                if(event.getCode() == KeyCode.DOWN){
+                    DirectionButtons.greenButtonsDown();
+                }
+
+            });
+
+            boardpane.setOnKeyReleased(event -> {
+                DirectionButtons.defaultColor();
             });
 
 
