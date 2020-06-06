@@ -258,6 +258,7 @@ public class steps {
 
         dices.diceMinus();
         player.setPath(path);
+        //Cambiar a lista enlazada lo de abajo
         player.movePlayer(XYAxes.getXY(path).get(player.getPosition()));
         justone = false;
 

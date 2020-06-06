@@ -16,6 +16,7 @@ public class Player {
     public void movePlayer(Point xy){
         //System.out.println("Posición en " + this.path + "es " + position);
         playerIcon.setOpacity(1);
+
         playerIcon.relocate(xy.x + 1.5, xy.y);
     }
 
@@ -46,7 +47,7 @@ public class Player {
 
     //Métodos relacionados a las monedas del jugador.
     public void setCoins(int coinsadded){
-        coins += coinsadded;
+        this.coins += coinsadded;
     }
 
     public int getCoins(){
@@ -54,7 +55,7 @@ public class Player {
     }
 
     public void minusCoins(int minus){
-        coins = coins - minus;
+        this.coins = this.coins - minus;
     }
 
     //Métodos relacionados a la posición del jugador.

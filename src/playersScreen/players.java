@@ -83,6 +83,9 @@ public class players{
                 if(limiter>1){
                     PlayerList.setPlayers();
                     main.window.setScene(board.getBoardScene());
+                    /*
+                    Revisar esto
+                     */
                 }else{
                     alert2.showAndWait();
                 }
