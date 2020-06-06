@@ -31,90 +31,94 @@ public class board{
             /////// MAPA
 
             //bot
-            boardpane.getChildren().add(boxes.detour("#f2f270", 1112, 830));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 1034, 830));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 956, 830));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 878, 830));
+            boardpane.getChildren().add(boxes.detour("#65bffa", 1112, 830));
+            boardpane.getChildren().add(boxes.detour("#c12f2f", 1034, 830));
+            boardpane.getChildren().add(boxes.detour("#34ca84", 956, 830));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 878, 830));
             boardpane.getChildren().add(boxes.detour("#65bffa", 800, 830));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 722, 830));
+            boardpane.getChildren().add(boxes.detour("#c12f2f", 722, 830));
             boardpane.getChildren().add(boxes.detour("#65bffa", 644, 830));
             boardpane.getChildren().add(boxes.detour("#65bffa", 566, 830));
             boardpane.getChildren().add(boxes.detour("#65bffa", 488, 830));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 410, 830));
+            boardpane.getChildren().add(boxes.detour("#34ca84", 410, 830));
             boardpane.getChildren().add(boxes.detour("#65bffa", 332, 830));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 254, 830));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 176, 830));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 254, 830));
+            boardpane.getChildren().add(boxes.detour("#34ca84", 176, 830));
             boardpane.getChildren().add(boxes.detour("#65bffa", 98, 830));
 
             //left
-            boardpane.getChildren().add(boxes.detour("#65bffa", 15, 830));
+            boardpane.getChildren().add(boxes.detour("#c12f2f", 15, 830));
             boardpane.getChildren().add(boxes.detour("#65bffa", 15, 750));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 15, 670));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 15, 670));
             boardpane.getChildren().add(boxes.detour("#65bffa", 15, 590));
             boardpane.getChildren().add(boxes.detour("#65bffa", 15, 510));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 15, 430));
+            boardpane.getChildren().add(boxes.detour("#34ca84", 15, 430));
             boardpane.getChildren().add(boxes.detour("#65bffa", 15, 350));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 15, 270));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 15, 270));
             boardpane.getChildren().add(boxes.detour("#65bffa", 15, 190));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 15, 110));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 15, 30));
+            boardpane.getChildren().add(boxes.detour("#34ca84", 15, 110));
+            boardpane.getChildren().add(boxes.detour("#c12f2f", 15, 30));
 
             //top
-            boardpane.getChildren().add(boxes.detour("#65bffa", 98, 30));
+            boardpane.getChildren().add(boxes.detour("#34ca84", 98, 30));
             boardpane.getChildren().add(boxes.detour("#65bffa", 176, 30));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 254, 30));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 254, 30));
             boardpane.getChildren().add(boxes.detour("#65bffa", 332, 30));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 410, 30));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 488, 30));
+            boardpane.getChildren().add(boxes.detour("#34ca84", 410, 30));
+            boardpane.getChildren().add(boxes.detour("#c12f2f", 488, 30));
             boardpane.getChildren().add(boxes.detour("#65bffa", 566, 30));
             boardpane.getChildren().add(boxes.detour("#65bffa", 644, 30));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 722, 30));
+            boardpane.getChildren().add(boxes.detour("#34ca84", 722, 30));
             boardpane.getChildren().add(boxes.detour("#65bffa", 800, 30));
             boardpane.getChildren().add(boxes.detour("#65bffa", 878, 30));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 956, 30));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 956, 30));
             boardpane.getChildren().add(boxes.detour("#65bffa", 1034, 30));
             boardpane.getChildren().add(boxes.detour("#65bffa", 1112, 30));
 
             //right
-            boardpane.getChildren().add(boxes.detour("#65bffa", 1195, 30));
+            boardpane.getChildren().add(boxes.detour("#c12f2f", 1195, 30));
             boardpane.getChildren().add(boxes.detour("#65bffa", 1195, 110));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 1195, 190));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 1195, 190));
             boardpane.getChildren().add(boxes.detour("#65bffa", 1195, 270));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 1195, 350));
+            boardpane.getChildren().add(boxes.detour("#34ca84", 1195, 350));
             boardpane.getChildren().add(boxes.detour("#65bffa", 1195, 430));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 1195, 510));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 1195, 590));
+            boardpane.getChildren().add(boxes.detour("#c12f2f", 1195, 510));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 1195, 590));
             boardpane.getChildren().add(boxes.detour("#65bffa", 1195, 670));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 1195, 750));
+            boardpane.getChildren().add(boxes.detour("#34ca84", 1195, 750));
             boardpane.getChildren().add(boxes.detour("#65bffa", 1195, 830));
 
             //left/mid
             boardpane.getChildren().add(boxes.detour("#65bffa", 98, 430));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 176, 430));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 254, 430));
+            boardpane.getChildren().add(boxes.detour("#c12f2f", 176, 430));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 254, 430));
 
             //top/bot in mid
-            boardpane.getChildren().add(boxes.detour("#65bffa", 332, 110));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 332, 190));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 332, 270));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 332, 350));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 332, 430));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 332, 510));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 332, 590));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 332, 670));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 332, 750));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 332, 110));
+            boardpane.getChildren().add(boxes.detour("#c12f2f", 332, 190));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 332, 270));
+            boardpane.getChildren().add(boxes.detour("#34ca84", 332, 350));
+            boardpane.getChildren().add(boxes.detour("#c12f2f", 332, 430));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 332, 510));
+            boardpane.getChildren().add(boxes.detour("#34ca84", 332, 590));
+            boardpane.getChildren().add(boxes.detour("#c12f2f", 332, 670));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 332, 750));
+            //rojo #c12f2f
+            //Azul #65bffa
+            //verde #34ca84
+            //Amar #ffbd00
 
             //mid/right
-            boardpane.getChildren().add(boxes.detour("#65bffa", 410, 350));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 488, 350));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 566, 350));
+            boardpane.getChildren().add(boxes.detour("#c12f2f", 410, 350));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 488, 350));
+            boardpane.getChildren().add(boxes.detour("#34ca84", 566, 350));
             boardpane.getChildren().add(boxes.detour("#65bffa", 566, 270));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 644, 270));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 722, 270));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 800, 270));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 878, 270));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 956, 270));
-            boardpane.getChildren().add(boxes.detour("#65bffa", 1034, 270));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 644, 270));
+            boardpane.getChildren().add(boxes.detour("#34ca84", 722, 270));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 800, 270));
+            boardpane.getChildren().add(boxes.detour("#34ca84", 878, 270));
+            boardpane.getChildren().add(boxes.detour("#c12f2f", 956, 270));
+            boardpane.getChildren().add(boxes.detour("#ffbd00", 1034, 270));
             boardpane.getChildren().add(boxes.detour("#65bffa", 1112, 270));
 
 

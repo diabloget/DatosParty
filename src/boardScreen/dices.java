@@ -14,7 +14,11 @@ public class dices {
     private static Label dice1 = new Label();
     private static Label dice2 = new Label();
     private static Button throwButton = new Button();
+    private static boolean fix = false;
 
+    public static void fixFirstRound(){
+        fix = true;
+    }
 
     public static Button buttonOn(){
         throwButton.setText("Tirar Dados");
@@ -58,7 +62,9 @@ public class dices {
             dice1.setText(Integer.toString(a));
             dice2.setText(Integer.toString(b));
 
-            Round.RoundUpdate();
+            if(fix){
+                Round.RoundUpdate();
+            }fixFirstRound();
         }
     }
 

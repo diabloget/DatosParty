@@ -18,7 +18,7 @@ public class playerEvents {
         for(Player player: PlayerList.players){
             if(Round.getCurrent().getPosition() == player.getPosition() & Round.getCurrent() != player){
 
-                System.out.println("LOS JUGADORES TIENEN QUE DARSE A PICHAZOS!!");
+                //System.out.println("LOS JUGADORES TIENEN QUE DARSE A PICHAZOS!!");
                 break;
             }
         }
@@ -29,8 +29,9 @@ public class playerEvents {
      * Función que revisa si el jugador debe ganar monedas debido a una casilla.
      * **/
     public static void winCoins(){
-        if(Round.getCurrent().getPosition() == 3  &  dices.diceValue() == 0){ //Buscar en una lista de posiciones en lugar de "== 3"
-            Round.getCurrent().setCoins(Round.getCurrent().getCoins() + 2);
+        if(EventPositions.doEvent(Round.getCurrent().getPath(), "green", Round.getCurrent().getPosition())  &  dices.diceValue() == 0){ //Buscar en una lista de posiciones en lugar de "== 3"
+            Round.getCurrent().setCoins(Round.getCurrent().getCoins() + 4);
+            System.out.println("Un jugador acaba de ganar y ahora tiene: " + Round.getCurrent().getCoins());
         }
     }
 
@@ -38,13 +39,19 @@ public class playerEvents {
      * Función que revisa si el jugador debe perder monedas debido a una casilla.
      * **/
     public static void loseCoins(){
-        if(Round.getCurrent().getPosition() == 5  &  dices.diceValue() == 0){ //Buscar en una lista de posiciones en lugar de "== 5"
-            if(Round.getCurrent().getCoins() > 2){
-                Round.getCurrent().setCoins(Round.getCurrent().getCoins() - 2);
+        if(EventPositions.doEvent(Round.getCurrent().getPath(), "red", Round.getCurrent().getPosition())  &  dices.diceValue() == 0){ //Buscar en una lista de posiciones en lugar de "== 5"
+            if(Round.getCurrent().getCoins() >= 2){
+                Round.getCurrent().minusCoins(2);
             }else{
                 Round.getCurrent().setCoins(0);
             }
+            System.out.println("Un jugador acaba de perder y ahora tiene: " + Round.getCurrent().getCoins());
         }
+    }
+
+    public static void YellowEvent(){
+        //despiche
+        if(EventPositions.doEvent(Round.getCurrent().getPath(), "yellow", Round.getCurrent().getPosition())  &  dices.diceValue() == 0);
     }
 
     /**

@@ -24,5 +24,4 @@ public class Round {
     public static void moveCurrent(KeyEvent e){
         steps.stepCalculator(PlayerList.getPlayers(currentPlayer), e);
     }
-
 }
