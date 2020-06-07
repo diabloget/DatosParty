@@ -1,6 +1,12 @@
 package boardScreen;
 
+import BlackJack.BlackJack;
+import Simon.Simon;
 import playersScreen.PlayerList;
+import Connect4.*;
+import playersScreen.PlayerList;
+
+import java.util.Random;
 
 public class playerEvents {
     private static int lastPosition;
@@ -16,9 +22,20 @@ public class playerEvents {
         lastPath = lastPather;
 
         for(Player player: PlayerList.players){
+            int randomInt = new Random ().nextInt (7);
             if(Round.getCurrent().getPosition() == player.getPosition() & Round.getCurrent() != player){
-
-                //System.out.println("LOS JUGADORES TIENEN QUE DARSE A PICHAZOS!!");
+                if(randomInt == 6) {
+                    Connect4 game = new Connect4 (PlayerList.getNamesArray ());
+                    game.starting ();
+                }
+                if (randomInt == 5){
+                    Simon game = new Simon (PlayerList.getNamesArray ());
+                    game.starting ();
+                }
+                if(randomInt == 4){
+                    BlackJack game = new BlackJack (PlayerList.getNamesArray ());
+                    game.starting ();
+                }
                 break;
             }
         }

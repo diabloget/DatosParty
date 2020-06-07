@@ -7,11 +7,18 @@ public class PlayerList {
     private static int playertocreate = 1;
     private static ArrayList<String> playernames = new ArrayList<>();
     public static ArrayList<Player> players = new ArrayList<>();
-
     public static Player player1 = new Player();
     public static Player player2 = new Player();
     public static Player player3 = new Player();
     public static Player player4 = new Player();
+
+    public static String[] getNamesArray(){
+        String[] result = new String[playernames.size ()];
+        for(int index = 0; index < playernames.size ();index++){
+            result[index] = playernames.get (index);
+        }
+        return result;
+    }
 
     //Métodos que corresponden a la lista con el nombre de los jugadores.
     public static ArrayList getPlayernames(){

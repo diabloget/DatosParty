@@ -20,8 +20,15 @@ public class Dealer {
             players[a] = new Player (deck);
         }
     }
-    public int[] getResults(){
-        return this.results;
+    public int getWinner(){
+        int index = 0;
+        int holdValue = results[0];
+        for(int score : results){
+            if(score > holdValue){
+                index++;
+            }
+        }
+        return index;
     }
     public boolean isTie(){
         int winner=-1;
@@ -63,7 +70,7 @@ public class Dealer {
     }
 
     public void getOut(){
-        results[whoIsPlaying] = getCount ();
+        results[whoIsPlaying] = 0;
         players[whoIsPlaying].getOut ();
         cardNumber = 0;
         whoIsPlaying++;

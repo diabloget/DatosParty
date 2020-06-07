@@ -6,14 +6,14 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+import main.main;
 
 public class Connect4 {
-    public Connect4(int numberPlayers, Stage primaryStage, String[] names){
-        System.out.println(Integer.toString(numberPlayers));
-        this.primaryStage=primaryStage;
-        this.numberPlayers=numberPlayers;
+    public Connect4(String[] names){
+        Scene oldScene = main.mainScene;
+        this.numberPlayers=names.length;
         this.names=names;
-        Controller cont = new Controller(positions,numberPlayers, primaryStage, names );
+        Controller cont = new Controller(positions, numberPlayers, names, oldScene);
         this.cont=cont;
     }
     int player1 = 0;
@@ -25,7 +25,6 @@ public class Connect4 {
     public Scene connect4 = new Scene(gamePane, 775, 515);
     public String[][] gameMatrix = new String[ 6 ][ 7 ];
     public int numberPlayers;
-    public Stage primaryStage;
     public void setGameMatrix(String[][] gameMatrix) {
         this.gameMatrix = gameMatrix;
         for ( int y = 0; y < 6; y++ ) {
@@ -36,7 +35,7 @@ public class Connect4 {
     }
 
 
-    public void settingSceneC4(Stage primaryStage) {
+    public void settingSceneC4() {
         createCircles();
         cont.refreshColor( gameMatrix);
         addButtons();
@@ -108,10 +107,9 @@ public class Connect4 {
 
     public void starting() {
         setGameMatrix(gameMatrix);
-        settingSceneC4(primaryStage);
-        primaryStage.setScene(connect4);
+        settingSceneC4();
+        main.window.setScene(connect4);
         cont.addingButtons(gameMatrix, gamePane);
-        primaryStage.show();
     }
 
 

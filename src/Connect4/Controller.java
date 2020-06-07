@@ -1,26 +1,27 @@
 package Connect4;
 
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
+import main.main;
 
 public class Controller {
-    Controller(Circle[][] positions, int numberPlayers, Stage primaryStage, String[] names){
+    Controller(Circle[][] positions, int numberPlayers, String[] names, Scene oldTempScene){
         DecideWinner winner = new DecideWinner(numberPlayers);
+        this.oldScene = oldTempScene;
         this.positions=positions;
         this.numberPlayers =numberPlayers;
-        this.primaryStage=primaryStage;
         this.winner=winner;
         this.names=names;
     }
+    private Scene oldScene;
     Text whoIsPlaying= new Text();
     String[] names;
     DecideWinner winner;
-    private Stage primaryStage;
     public int numberPlayers;
     private Circle[][] positions;
     private String color = "red";
@@ -73,7 +74,7 @@ public class Controller {
                 restartToDefault(gameMatrix);
             }else {
                 if ( winner.isWinner(0, rows[ 0 ] + 1, gameMatrix, color) == "true" ) {
-                    primaryStage.close();
+                    main.window.setScene (oldScene);
                 }
             }
         });
@@ -85,7 +86,7 @@ public class Controller {
                 restartToDefault(gameMatrix);
             }else {
                 if ( winner.isWinner(1, rows[ 1 ] + 1, gameMatrix, color) == "true" ) {
-                    primaryStage.close();
+                    main.window.setScene (oldScene);
                 }
             }
         });
@@ -97,7 +98,7 @@ public class Controller {
                 restartToDefault(gameMatrix);
             }else {
                 if ( winner.isWinner(2, rows[ 2 ] + 1, gameMatrix, color) == "true" ) {
-                    primaryStage.close();
+                    main.window.setScene (oldScene);
                 }
             }
         });
@@ -109,7 +110,7 @@ public class Controller {
                 restartToDefault(gameMatrix);
             }else {
                 if ( winner.isWinner(3, rows[ 3 ] + 1, gameMatrix, color) == "true" ) {
-                    primaryStage.close();
+                    main.window.setScene (oldScene);
                 }
             }
         });
@@ -121,7 +122,7 @@ public class Controller {
                 restartToDefault(gameMatrix);
             }else {
                 if ( winner.isWinner(4, rows[ 4 ] + 1, gameMatrix, color) == "true" ) {
-                    primaryStage.close();
+                    main.window.setScene (oldScene);
                 }
             }
         });
@@ -133,7 +134,7 @@ public class Controller {
                 restartToDefault(gameMatrix);
             }else {
                 if ( winner.isWinner(5, rows[ 5 ] + 1, gameMatrix, color) == "true" ) {
-                    primaryStage.close();
+                    main.window.setScene (oldScene);
                 }
             }
         });
@@ -145,7 +146,8 @@ public class Controller {
                 restartToDefault(gameMatrix);
             }else {
                 if ( winner.isWinner(6, rows[ 6 ] + 1, gameMatrix, color) == "true" ) {
-                    primaryStage.close();
+
+                    main.window.setScene (oldScene);
                 }
             }
 

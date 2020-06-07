@@ -12,15 +12,18 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import main.main;
+import playersScreen.PlayerList;
 
 import java.util.Arrays;
 
-public class PlayBlackJack extends Application {
-
-    public static void main(String[] args) {
-        launch (args);
+public class BlackJack {
+    public BlackJack(String[] names){
+        this.game = new Dealer (names);
+        this.oldTempScene = main.mainScene;
     }
-
+    private Scene oldTempScene;
+    private Dealer game;
     private GridPane gamePane = new GridPane ();
     private Scene gameScene = new Scene (gamePane,550,400, Color.GREEN);
     Text playing = new Text ();
@@ -43,8 +46,7 @@ public class PlayBlackJack extends Application {
     Text[] playerCards = {card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12, card13};
 
 
-    String[] x = {"Jose","Miguel","Juam"};
-    Dealer game = new Dealer (x);
+
 
     private void update(boolean isNew){
         if(isNew){
@@ -60,14 +62,14 @@ public class PlayBlackJack extends Application {
                 String[] newNames = new String[game.howManytie];
                 int index = 0;
                 for(String name: newNames){
-                    name = game.ties[index];
+                    newNames[index] = game.ties[index];
                     index++;
                 }
                 game = new Dealer (newNames);
-                starting ();
+                newPlayer ();
             }else {
-                System.out.println (Arrays.toString (game.getResults ()));
-                ///primaryStage.close();
+                PlayerList.getPlayers (game.getWinner ()).setCoins (10);
+                main.window.setScene (oldTempScene);
             }
         }else {
             playing.setText ("Is playing: \n" + game.getWhoIsPlaying ());
@@ -79,7 +81,7 @@ public class PlayBlackJack extends Application {
         }
     }
 
-    private void starting(){
+    private void settingUp(){
         gamePane.setBackground (new Background (new BackgroundFill (Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
         gamePane.setVgap (15);
         gamePane.setHgap (15);
@@ -107,11 +109,9 @@ public class PlayBlackJack extends Application {
         newPlayer ();
     }
 
-    @Override
-    public void start(Stage primaryStage) {
-        starting ();
-        primaryStage.setScene (gameScene);
-        primaryStage.show ();
+    public void starting() {
+        settingUp ();
+        main.window.setScene (gameScene);
     }
 
     private void hitting(){

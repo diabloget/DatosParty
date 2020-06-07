@@ -14,8 +14,7 @@ public class Test extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        Connect4 foo = new Connect4(4, primaryStage, names);
-        foo.starting();
+
 
 
 

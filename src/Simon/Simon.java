@@ -11,13 +11,18 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.animation.*;
 import javafx.util.Duration;
+import main.main;
 
 import java.util.Arrays;
 
 public class Simon  {
     public Simon(String[]names){
         this.names=names;
+        oldScene = main.mainScene;
+        this.score = new KeepingScore(numberOfPlayers, oldScene);
     }
+    private KeepingScore score;
+    private Scene oldScene;
     int gameNumber=0;
     String[] names;
     private int move=0;
@@ -28,7 +33,7 @@ public class Simon  {
     public String[] playerAnswers = new String[5];
     public GridPane gamePane = new GridPane();
     public Scene simonScene =  new Scene(gamePane,400,400);
-    private KeepingScore score = new KeepingScore(numberOfPlayers);
+
 
     public void prepareForPlayer(){
         CreateTransition transitions = new CreateTransition();
@@ -102,13 +107,12 @@ public class Simon  {
     }
 
 
-    public void starting(Stage primaryStage) {
+    public void starting() {
         gamePane.setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
         gamePane.setHgap(20);
         gamePane.setVgap(20);
         prepareForPlayer();
-        primaryStage.setScene(simonScene);
-        primaryStage.show();
+        main.window.setScene(simonScene);
 
     }
 }

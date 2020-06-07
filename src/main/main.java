@@ -10,6 +10,7 @@ import scoreScreen.score;
 
 public class main extends Application {
     public static Stage window;
+    public static Scene mainScene;
 
     public void start(Stage bStage) {
         window = bStage;
@@ -18,7 +19,8 @@ public class main extends Application {
         window.setTitle("DatosParty");
         //window.setScene(score.getScoreScene());
         //window.setScene(board.getBoardScene());
-        window.setScene(players.getPlayerScene());
+        mainScene=players.getPlayerScene();
+        window.setScene(mainScene);
         window.show();
     }
 }
