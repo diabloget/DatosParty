@@ -28,6 +28,7 @@ public class players{
     public static ArrayList<String> players = new ArrayList<>();
     private static Alert alert = new Alert(Alert.AlertType.WARNING);
     private static Alert alert2 = new Alert(Alert.AlertType.WARNING);
+    private static int playerIndex = 0;
 
     private static Text texter(String child){
         Text temptext = new Text(child);
@@ -65,6 +66,8 @@ public class players{
                 if(event.getCode().equals(KeyCode.ENTER)) {
                     if(limiter<4){
                         PlayerList.setPlayernames(playeradder.getText());
+                        PlayerList.getPlayers (playerIndex).setName (playeradder.getText ());
+                        playerIndex++;
                         playerlisttext.getChildren().add(texter(playeradder.getText()+ "\n"));
                     }if(limiter>=4){
                         alert.showAndWait();

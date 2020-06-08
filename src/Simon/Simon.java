@@ -1,4 +1,5 @@
 package Simon;
+import boardScreen.Player;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -16,8 +17,11 @@ import main.main;
 import java.util.Arrays;
 
 public class Simon  {
-    public Simon(String[]names){
-        this.names=names;
+    public Simon(Player[]names){
+        this.names = new String[names.length];
+        for(int index = 0; index < names.length; index++ ){
+            this.names[index] = names[index].getName ();
+        }
         oldScene = main.mainScene;
         this.score = new KeepingScore(numberOfPlayers, oldScene);
     }

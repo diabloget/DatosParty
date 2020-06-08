@@ -1,5 +1,6 @@
 package Connect4;
 
+import boardScreen.Player;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
@@ -9,11 +10,14 @@ import javafx.stage.Stage;
 import main.main;
 
 public class Connect4 {
-    public Connect4(String[] names){
+    public Connect4(Player[] names){
         Scene oldScene = main.mainScene;
+        this.names = new String[names.length];
         this.numberPlayers=names.length;
-        this.names=names;
-        Controller cont = new Controller(positions, numberPlayers, names, oldScene);
+        for(int index = 0; index < names.length; index++){
+            this.names[index] = names[index].getName ();
+        }
+        Controller cont = new Controller(positions, numberPlayers, this.names, oldScene);
         this.cont=cont;
     }
     int player1 = 0;

@@ -1,5 +1,6 @@
 package Connect4;
 
+import boardScreen.playerEvents;
 import playersScreen.PlayerList;
 
 import java.awt.*;
@@ -84,6 +85,7 @@ public class DecideWinner {
                         if ( gameNumber==numberPlayers - 1 ) {
                                 actInScores (color);
                                 PlayerList.getPlayers (getWinner ()).setCoins (10);
+                                playerEvents.setWinner (PlayerList.getPlayers (getWinner ()));
                                 return "true";
                         } else {
                                 actInScores (color);

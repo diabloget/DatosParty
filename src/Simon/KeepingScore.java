@@ -1,5 +1,6 @@
 package Simon;
 
+import boardScreen.playerEvents;
 import javafx.scene.Scene;
 import playersScreen.PlayerList;
 import main.*;
@@ -37,6 +38,7 @@ public class KeepingScore {
                 whichPlayer++;
                 if(whichPlayer >= numberOfPlayers){
                     PlayerList.getPlayers (getWinner ()).setCoins (10);
+                    playerEvents.setWinner (PlayerList.getPlayers (getWinner ()));
                     main.window.setScene(oldTempScene);
                 }
                 return false;

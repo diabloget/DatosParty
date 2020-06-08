@@ -1,5 +1,7 @@
 package BlackJack;
 
+import boardScreen.Player;
+import boardScreen.playerEvents;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -18,8 +20,12 @@ import playersScreen.PlayerList;
 import java.util.Arrays;
 
 public class BlackJack {
-    public BlackJack(String[] names){
-        this.game = new Dealer (names);
+    public BlackJack(Player[] names){
+        String[] name = new String[names.length];
+        for(int index = 0; index < names.length; index++){
+            name[index] = names[index].getName();
+        }
+        this.game = new Dealer (name);
         this.oldTempScene = main.mainScene;
     }
     private Scene oldTempScene;
@@ -69,6 +75,7 @@ public class BlackJack {
                 newPlayer ();
             }else {
                 PlayerList.getPlayers (game.getWinner ()).setCoins (10);
+                playerEvents.setWinner (PlayerList.getPlayers (game.getWinner ()));
                 main.window.setScene (oldTempScene);
             }
         }else {
