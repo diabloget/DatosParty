@@ -10,6 +10,7 @@ public class Round {
     //Usar el indice de turno para extraer el jugador al que le corresponde el turno actual
     public static void RoundUpdate(){
         if(currentPlayer == PlayerList.players.size()-2){
+            // Iniciar juego.
             roundNumber ++;
             currentPlayer = 0;
         }else {

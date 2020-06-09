@@ -25,20 +25,23 @@ public class playerEvents {
     }
 
     public static void startMinigame(Player[] names){
-        int randomInt = new Random ().nextInt (7);
+        int randomInt = new Random ().nextInt (6);
 
-            if(randomInt == 6) {
-                Connect4 game = new Connect4 (names);
-                game.starting ();
-            }
-            if (randomInt == 5){
-                Simon game = new Simon (names);
-                game.starting ();
-            }
-            if(randomInt == 4){
-                BlackJack game = new BlackJack (names);
-                game.starting ();
-            }
+        if(randomInt == 0) {
+            //Jueguito
+        }
+        if(randomInt == 3) {
+            Connect4 game = new Connect4 (names);
+            game.starting ();
+        }
+        if (randomInt == 5){
+            Simon game = new Simon (names);
+            game.starting ();
+        }
+        if(randomInt == 4){
+            BlackJack game = new BlackJack (names);
+            game.starting ();
+        }
     }
 
     public static void versus(String lastPather, int lastPositioner){
@@ -50,6 +53,7 @@ public class playerEvents {
 
                 Player[] namesInGame = {Round.getCurrent(), player};
                 startMinigame (namesInGame);
+                System.out.println("Hola");
                 if(!Round.getCurrent ().equals (winner)){
                     Punishment (Round.getCurrent ());
                 }else{
@@ -58,8 +62,8 @@ public class playerEvents {
                 }
             }
             break;
-            }
         }
+    }
 
 
 

@@ -6,7 +6,10 @@ import java.util.ArrayList;
 public class PlayerList {
     private static int playertocreate = 1;
     private static ArrayList<String> playernames = new ArrayList<>();
+
     public static ArrayList<Player> players = new ArrayList<>();
+
+
     public static Player player1 = new Player();
     public static Player player2 = new Player();
     public static Player player3 = new Player();
