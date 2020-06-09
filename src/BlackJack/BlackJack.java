@@ -1,6 +1,7 @@
 package BlackJack;
 
 import boardScreen.Player;
+import boardScreen.board;
 import boardScreen.playerEvents;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -26,7 +27,7 @@ public class BlackJack {
             name[index] = names[index].getName();
         }
         this.game = new Dealer (name);
-        this.oldTempScene = main.mainScene;
+        this.oldTempScene = board.getBoardScene();
     }
     private Scene oldTempScene;
     private Dealer game;

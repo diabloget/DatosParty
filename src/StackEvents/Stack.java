@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Stack {
     private Stack(){
-        stackArray = newStack ();
+        newStack();
     }
     public static Stack getStack(){
         if(instance == null){
@@ -16,17 +16,17 @@ public class Stack {
         }
     }
 
+    //atributos
     private static Stack instance = null;
     int maxSize;
     private String[] stackArray = {"duel","duel","duel","duel","duel","duel","duel","duel","duel","duel","stealCoins","stealCoins","stealCoins","stealCoins","stealCoins","stealCoins","stealCoins","stealCoins","stealCoins","stealCoins","gveAwayCoins","gveAwayCoins","gveAwayCoins","gveAwayCoins","gveAwayCoins","looseStar","2Stars","2Stars","2Stars","5Stars","stealStar","stealStar","stealStar","teletransport","teletransport","teletransport","teletransport","teletransport","teletransport","teletransport","teletransport","teletransport","teletransport","switchPlaces","switchPlaces","switchPlaces","switchPlaces","switchPlaces"};
-    private int top;
+    private int top = stackArray.length-1;
 
 
-    private String[] newStack(){
+    private void newStack(){
         List<String> shuffle =Arrays.asList (stackArray);
         Collections.shuffle (shuffle);
         shuffle.toArray (stackArray);
-        return newStack ();
     }
 
     public void push (String data) throws Exception {
@@ -40,7 +40,7 @@ public class Stack {
     public String pop(){
         String temp = stackArray[top--];
         if(temp == null){
-            stackArray = newStack ();
+            newStack();
             return stackArray[top--];
         }else{
             return  temp;

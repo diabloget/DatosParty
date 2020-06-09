@@ -21,6 +21,7 @@ public class playerEvents {
     public static void checkEvents(){
         winCoins();
         loseCoins();
+        yellowEvent();
     }
 
     public static void startMinigame(Player[] names){
@@ -66,7 +67,7 @@ public class playerEvents {
     public static void winCoins(){
         if(EventPositions.doEvent(Round.getCurrent().getPath(), "green", Round.getCurrent().getPosition())  &  dices.diceValue() == 0){ //Buscar en una lista de posiciones en lugar de "== 3"
             Round.getCurrent().setCoins(4);
-            System.out.println("Un jugador acaba de ganar y ahora tiene: " + Round.getCurrent().getCoins());
+            //System.out.println("El jugador "+ Round.getCurrent().getName() + " acaba de ganar y ahora tiene: " + Round.getCurrent().getCoins());
         }
     }
 
@@ -80,11 +81,11 @@ public class playerEvents {
             }else{
                 Round.getCurrent().setCoins(0);
             }
-            System.out.println("Un jugador acaba de perder y ahora tiene: " + Round.getCurrent().getCoins());
+            //System.out.println("El jugador "+ Round.getCurrent().getName() + " acaba de ganar y ahora tiene: " + Round.getCurrent().getCoins());
         }
     }
 
-    public static void YellowEvent(){
+    public static void yellowEvent(){
         //despiche
         if(EventPositions.doEvent(Round.getCurrent().getPath(), "yellow", Round.getCurrent().getPosition())  &  dices.diceValue() == 0){
             StackAnalizer.analize ();

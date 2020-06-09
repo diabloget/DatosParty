@@ -33,6 +33,7 @@ public class StackAnalizer {
             playerEvents.startMinigame (forPlaying);
         }
 
+        //Falta
         if(newEvent == "stealCoins"){
 
         }
@@ -61,6 +62,7 @@ public class StackAnalizer {
             Round.getCurrent ().setStars (5);
         }
 
+        //Falta
         if(newEvent == "stealStar"){
 
         }

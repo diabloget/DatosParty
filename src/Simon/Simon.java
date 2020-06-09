@@ -1,5 +1,6 @@
 package Simon;
 import boardScreen.Player;
+import boardScreen.board;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -22,7 +23,7 @@ public class Simon  {
         for(int index = 0; index < names.length; index++ ){
             this.names[index] = names[index].getName ();
         }
-        oldScene = main.mainScene;
+        oldScene = board.getBoardScene();
         this.score = new KeepingScore(numberOfPlayers, oldScene);
     }
     private KeepingScore score;

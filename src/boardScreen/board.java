@@ -13,16 +13,6 @@ public class board{
     private static Pane boardpane = new Pane();
     private static Scene boardscene = new Scene(boardpane,1250,900);
 
-    public static Player player1 = new Player();
-    public static Player player2 = new Player();
-    public static Player player3 = new Player();
-    public static Player player4 = new Player();
-
-    public static ImageView player1Icon = new ImageView(new Image("file:icons/player1.png", 50, 50, true, false));
-    public static ImageView player2Icon = new ImageView(new Image("file:icons/player2.png", 50, 50, true, false));
-    public static ImageView player3Icon = new ImageView(new Image("file:icons/player3.png", 50, 50, true, false));
-    public static ImageView player4Icon = new ImageView(new Image("file:icons/player4.png", 50, 50, true, false));
-
     private static void initializator(boolean temp){
         if(temp==false){
             boardpane.setStyle("-fx-background-color: #2B2B2B");

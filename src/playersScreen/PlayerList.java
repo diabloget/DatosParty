@@ -42,6 +42,13 @@ public class PlayerList {
             players.remove(temp);
             temp--;
         }
+        temp = 0;
+
+        while(temp < playernames.size()){
+            players.get(temp).setName(playernames.get(temp));
+            temp++;
+        }
+
     }
 
     public static Player getPlayers(int playertoget){
