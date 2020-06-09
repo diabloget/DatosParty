@@ -7,11 +7,20 @@ import playersScreen.PlayerList;
 import java.awt.*;
 
 public class Player {
+    private String name;
     private ImageView playerIcon = Icons.getPlayerIcon();
     private int position = -1;
     private String path = "mainPath";
     private int coins;
     private int stars;
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public String getName(){
+        return this.name;
+    }
 
     public void movePlayer(Point xy){
         //System.out.println("Posición en " + this.path + "es " + position);
