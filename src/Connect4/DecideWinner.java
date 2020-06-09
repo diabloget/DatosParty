@@ -1,5 +1,7 @@
 package Connect4;
 
+import boardScreen.Player;
+import boardScreen.Round;
 import boardScreen.playerEvents;
 import playersScreen.PlayerList;
 
@@ -8,10 +10,13 @@ import java.util.Arrays;
 
 public class DecideWinner {
 
-        public DecideWinner(int numberPlayers) {
+        public DecideWinner(int numberPlayers, boolean versus, Player[] call) {
+                this.call = call;
+                this.versus = versus;
                 this.numberPlayers=numberPlayers;
         }
-
+        private Player[] call;
+        private boolean versus;
         private int gameNumber=1;
         public int numberPlayers;
         public int[] scores=new int[]{0, 0, 0, 0};
@@ -85,7 +90,7 @@ public class DecideWinner {
                         if ( gameNumber==numberPlayers - 1 ) {
                                 actInScores (color);
                                 PlayerList.getPlayers (getWinner ()).setCoins (10);
-                                playerEvents.setWinner (PlayerList.getPlayers (getWinner ()));
+                                if(versus){versusMethodPositions ();}
                                 return "true";
                         } else {
                                 actInScores (color);
@@ -93,6 +98,19 @@ public class DecideWinner {
                         }
                 } else {
                         return "false";
+                }
+        }
+
+        private void versusMethodPositions(){
+                for( Player search : call){
+                        if(!search.equals (PlayerList.getPlayers (getWinner ()))){
+                                if(! Round.getCurrent ().equals (search) ) {
+                                        search.setPath (playerEvents.lastPath);
+                                        search.setPosition (playerEvents.lastPosition);
+                                }else {
+                                        playerEvents.Punishment (search);
+                                }
+                        }
                 }
         }
 

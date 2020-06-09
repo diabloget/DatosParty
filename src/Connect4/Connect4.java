@@ -11,16 +11,18 @@ import javafx.stage.Stage;
 import main.main;
 
 public class Connect4 {
-    public Connect4(Player[] names){
+    public Connect4(Player[] names, boolean versus){
+        this.versus = versus;
         Scene oldScene = board.getBoardScene();
         this.names = new String[names.length];
         this.numberPlayers=names.length;
         for(int index = 0; index < names.length; index++){
             this.names[index] = names[index].getName ();
         }
-        Controller cont = new Controller(positions, numberPlayers, this.names, oldScene);
+        Controller cont = new Controller(positions, numberPlayers, this.names, oldScene, versus, names);
         this.cont=cont;
     }
+    private boolean versus;
     int player1 = 0;
     int player2 = 2;
     String[] names;

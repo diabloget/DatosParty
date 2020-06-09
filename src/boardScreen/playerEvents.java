@@ -10,8 +10,8 @@ import playersScreen.PlayerList;
 import java.util.Random;
 
 public class playerEvents {
-    private static int lastPosition;
-    private static String lastPath;
+    public static int lastPosition;
+    public static String lastPath;
     private static Player winner;
 
     public static void setWinner(Player won){
@@ -24,25 +24,23 @@ public class playerEvents {
         yellowEvent();
     }
 
-    public static void startMinigame(Player[] names){
-        int randomInt = new Random ().nextInt (6);
+    public static void startMinigame(Player[] names, boolean versus){
+        int randomInt = new Random ().nextInt (7);
 
-        if(randomInt == 0) {
-            //Jueguito
-        }
-        if(randomInt == 3) {
-            Connect4 game = new Connect4 (names);
-            game.starting ();
-        }
-        if (randomInt == 5){
-            Simon game = new Simon (names);
-            game.starting ();
-        }
-        if(randomInt == 4){
-            BlackJack game = new BlackJack (names);
-            game.starting ();
-        }
+            if(randomInt == 3) {
+                Connect4 game = new Connect4 (names, versus);
+                game.starting ();
+            }
+            if (randomInt == 5){
+                Simon game = new Simon (names, versus);
+                game.starting ();
+            }
+            if(randomInt == 4){
+                BlackJack game = new BlackJack (names, versus);
+                game.starting ();
+            }
     }
+
 
     public static void versus(String lastPather, int lastPositioner){
         lastPosition = lastPositioner;
@@ -52,8 +50,7 @@ public class playerEvents {
                 System.out.println("Pichazos en el pretil");
 
                 Player[] namesInGame = {Round.getCurrent(), player};
-                startMinigame (namesInGame);
-                System.out.println("Hola");
+                startMinigame (namesInGame, true);
                 if(!Round.getCurrent ().equals (winner)){
                     Punishment (Round.getCurrent ());
                 }else{
@@ -62,8 +59,8 @@ public class playerEvents {
                 }
             }
             break;
+            }
         }
-    }
 
 
 
