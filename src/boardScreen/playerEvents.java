@@ -47,6 +47,12 @@ public class playerEvents {
             if(Round.getCurrent().getPosition() == player.getPosition() & Round.getCurrent() != player){
                 Player[] namesInGame = {Round.getCurrent(), player};
                 startMinigame (namesInGame);
+                if(!Round.getCurrent ().equals (winner)){
+                    Punishment (Round.getCurrent ());
+                }else{
+                    player.setPath (lastPather);
+                    player.setPosition (lastPositioner);
+                }
             }
             break;
             }
@@ -91,7 +97,7 @@ public class playerEvents {
      * @param player
      */
 
-    public void Punishment(Player player){
+    public static void Punishment(Player player){
         if(player == Round.getCurrent()){
             player.setPath("doubleCircularPath");
             player.setPosition(0);
