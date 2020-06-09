@@ -18,14 +18,16 @@ import main.main;
 import java.util.Arrays;
 
 public class Simon  {
-    public Simon(Player[]names){
+    public Simon(Player[]names, boolean versus){
+        this.versus = versus;
         this.names = new String[names.length];
         for(int index = 0; index < names.length; index++ ){
             this.names[index] = names[index].getName ();
         }
         oldScene = board.getBoardScene();
-        this.score = new KeepingScore(numberOfPlayers, oldScene);
+        this.score = new KeepingScore(numberOfPlayers, oldScene, versus, names);
     }
+    private boolean versus;
     private KeepingScore score;
     private Scene oldScene;
     int gameNumber=0;

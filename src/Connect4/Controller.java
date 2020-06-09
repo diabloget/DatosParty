@@ -1,5 +1,6 @@
 package Connect4;
 
+import boardScreen.Player;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Background;
@@ -10,8 +11,8 @@ import javafx.scene.text.Text;
 import main.main;
 
 public class Controller {
-    Controller(Circle[][] positions, int numberPlayers, String[] names, Scene oldTempScene){
-        DecideWinner winner = new DecideWinner(numberPlayers);
+    Controller(Circle[][] positions, int numberPlayers, String[] names, Scene oldTempScene, boolean versus, Player[] call){
+        DecideWinner winner = new DecideWinner(numberPlayers, versus, call);
         this.oldScene = oldTempScene;
         this.positions=positions;
         this.numberPlayers =numberPlayers;

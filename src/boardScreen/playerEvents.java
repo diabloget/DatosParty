@@ -10,8 +10,8 @@ import playersScreen.PlayerList;
 import java.util.Random;
 
 public class playerEvents {
-    private static int lastPosition;
-    private static String lastPath;
+    public static int lastPosition;
+    public static String lastPath;
     private static Player winner;
 
     public static void setWinner(Player won){
@@ -24,22 +24,23 @@ public class playerEvents {
         yellowEvent();
     }
 
-    public static void startMinigame(Player[] names){
+    public static void startMinigame(Player[] names, boolean versus){
         int randomInt = new Random ().nextInt (7);
 
-            if(randomInt == 6) {
-                Connect4 game = new Connect4 (names);
+            if(randomInt == 3) {
+                Connect4 game = new Connect4 (names, versus);
                 game.starting ();
             }
             if (randomInt == 5){
-                Simon game = new Simon (names);
+                Simon game = new Simon (names, versus);
                 game.starting ();
             }
             if(randomInt == 4){
-                BlackJack game = new BlackJack (names);
+                BlackJack game = new BlackJack (names, versus);
                 game.starting ();
             }
     }
+
 
     public static void versus(String lastPather, int lastPositioner){
         lastPosition = lastPositioner;
@@ -49,7 +50,7 @@ public class playerEvents {
                 System.out.println("Pichazos en el pretil");
 
                 Player[] namesInGame = {Round.getCurrent(), player};
-                startMinigame (namesInGame);
+                startMinigame (namesInGame, true);
                 if(!Round.getCurrent ().equals (winner)){
                     Punishment (Round.getCurrent ());
                 }else{

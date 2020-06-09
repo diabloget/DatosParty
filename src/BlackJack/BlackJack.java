@@ -1,6 +1,7 @@
 package BlackJack;
 
 import boardScreen.Player;
+import boardScreen.Round;
 import boardScreen.board;
 import boardScreen.playerEvents;
 import javafx.application.Application;
@@ -21,7 +22,9 @@ import playersScreen.PlayerList;
 import java.util.Arrays;
 
 public class BlackJack {
-    public BlackJack(Player[] names){
+    public BlackJack(Player[] names, boolean versus){
+        this.versus = versus;
+        this.call = names;
         String[] name = new String[names.length];
         for(int index = 0; index < names.length; index++){
             name[index] = names[index].getName();
@@ -29,6 +32,8 @@ public class BlackJack {
         this.game = new Dealer (name);
         this.oldTempScene = board.getBoardScene();
     }
+    private Player[] call;
+    private boolean versus;
     private Scene oldTempScene;
     private Dealer game;
     private GridPane gamePane = new GridPane ();
@@ -76,7 +81,7 @@ public class BlackJack {
                 newPlayer ();
             }else {
                 PlayerList.getPlayers (game.getWinner ()).setCoins (10);
-                playerEvents.setWinner (PlayerList.getPlayers (game.getWinner ()));
+                if(versus){versusMethodPositions();}
                 main.window.setScene (oldTempScene);
             }
         }else {
@@ -138,6 +143,19 @@ public class BlackJack {
     private void stopping(){
         game.stop ();
         update (true);
+    }
+
+    private void versusMethodPositions(){
+        for(Player search : call){
+            if(!search.equals (PlayerList.getPlayers (game.getWinner ()))){
+                if(! Round.getCurrent ().equals (search) ) {
+                    search.setPath (playerEvents.lastPath);
+                    search.setPosition (playerEvents.lastPosition);
+                }else {
+                    playerEvents.Punishment (search);
+                }
+            }
+        }
     }
 
 }
