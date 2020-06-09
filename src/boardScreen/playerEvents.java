@@ -46,6 +46,8 @@ public class playerEvents {
         lastPath = lastPather;
         for(Player player: PlayerList.players){
             if(Round.getCurrent().getPosition() == player.getPosition() & Round.getCurrent() != player){
+                System.out.println("Pichazos en el pretil");
+
                 Player[] namesInGame = {Round.getCurrent(), player};
                 startMinigame (namesInGame);
                 if(!Round.getCurrent ().equals (winner)){
