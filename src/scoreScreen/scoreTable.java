@@ -23,6 +23,11 @@ public class scoreTable {
     private static ArrayList<Label> coins = new ArrayList<>();
     private static ArrayList<Label> stars = new ArrayList<>();
 
+
+    public static ArrayList<HBox> gethBoxes() {
+        return hBoxes;
+    }
+
     private static void initHBoxList(){
         hBoxes.add(playerData1);
         hBoxes.add(playerData2);

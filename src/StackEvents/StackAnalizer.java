@@ -1,10 +1,14 @@
 package StackEvents;
 import boardScreen.*;
+import main.main;
 import playersScreen.PlayerList;
+import scoreScreen.StealScene;
 
 import java.util.Random;
 
 public class StackAnalizer {
+    private static StealScene starsSteal = new StealScene("stars");
+    private static StealScene coinsSteal = new StealScene("coins");
     private static Stack events = Stack.getStack ();
 
     private static int[] generatorDuel(){
@@ -35,7 +39,7 @@ public class StackAnalizer {
 
         //Falta
         if(newEvent == "stealCoins"){
-
+            main.window.setScene (coinsSteal.getScene ());
         }
 
         if(newEvent == "gveAwayCoins"){
@@ -64,7 +68,7 @@ public class StackAnalizer {
 
         //Falta
         if(newEvent == "stealStar"){
-
+            main.window.setScene (starsSteal.getScene ());
         }
 
         if(newEvent == "teletransport"){
