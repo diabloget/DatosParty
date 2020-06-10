@@ -30,7 +30,7 @@ public class StackAnalizer {
         if(newEvent == "duel"){
             int[] randInts = generatorDuel ();
             Player[] forPlaying = {PlayerList.getPlayers (randInts[0]),PlayerList.getPlayers (randInts[1]) };
-            playerEvents.startMinigame (forPlaying);
+            playerEvents.startMinigame (forPlaying, false);
         }
 
         //Falta

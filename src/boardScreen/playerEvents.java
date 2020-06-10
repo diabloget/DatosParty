@@ -46,18 +46,13 @@ public class playerEvents {
         lastPosition = lastPositioner;
         lastPath = lastPather;
         for(Player player: PlayerList.players){
-            if(Round.getCurrent().getPosition() == player.getPosition() & Round.getCurrent() != player){
+            if(Round.getCurrent().getPosition() == player.getPosition() & Round.getCurrent().getPath() == player.getPath() & Round.getCurrent() != player){
                 System.out.println("Pichazos en el pretil");
 
                 Player[] namesInGame = {Round.getCurrent(), player};
                 startMinigame (namesInGame, true);
-                if(!Round.getCurrent ().equals (winner)){
-                    Punishment (Round.getCurrent ());
-                }else{
-                    player.setPath (lastPather);
-                    player.setPosition (lastPositioner);
-                }
             }
+
             break;
             }
         }
@@ -91,6 +86,7 @@ public class playerEvents {
     public static void yellowEvent(){
         //despiche
         if(EventPositions.doEvent(Round.getCurrent().getPath(), "yellow", Round.getCurrent().getPosition())  &  dices.diceValue() == 0){
+            System.out.println("Evento Amarillo prro");
             StackAnalizer.analize ();
         }
     }

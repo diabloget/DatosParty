@@ -48,7 +48,17 @@ public class Icons {
             left.setRotate(-90);
             return left;
         }if(selectedIcon == 10){
-            return new ImageView(new Image("file:icons/square.png", 8, 8, true, false));
+            return new ImageView(new Image("file:icons/player1.png", 20, 20, true, false));
+        }if(selectedIcon == 11){
+            return new ImageView(new Image("file:icons/player2.png", 20, 20, true, false));
+        }if(selectedIcon == 12){
+            return new ImageView(new Image("file:icons/player3.png", 20, 20, true, false));
+        }if(selectedIcon == 13){
+            return new ImageView(new Image("file:icons/player4.png", 20, 20, true, false));
+        }if(selectedIcon == 14){
+            return new ImageView(new Image("file:icons/star.png", 22, 22, true, false));
+        }if(selectedIcon == 15){
+            return new ImageView(new Image("file:icons/gold.png", 18, 18, true, false));
         }
         else{
             return star;

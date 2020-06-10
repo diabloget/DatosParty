@@ -3,8 +3,10 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import playersScreen.PlayerList;
+import scoreScreen.scoreTable;
 
 import java.awt.*;
 
@@ -151,7 +153,10 @@ public class board{
                 boardpane.getChildren().add(player.getPlayerIcon());
             }
 
-
+            scoreTable.InitDataTable(90,110);
+            for(HBox hboxito:scoreTable.hBoxes){
+                boardpane.getChildren().add(hboxito);
+            }
 
 
             boardpane.setOnKeyPressed(event -> {

@@ -26,7 +26,7 @@ public class boxes {
         if (pos <= 86 & pos > 72) {
             XYAxes.initDoubleCircularXY(x, y);
         }
-        pos++;
+        ++pos;
         //
 
         Circle circle = new Circle();

@@ -3,6 +3,7 @@ package boardScreen;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import playersScreen.PlayerList;
+import scoreScreen.scoreTable;
 
 import java.awt.*;
 
@@ -48,6 +49,8 @@ public class Player {
     //Métodos relacionados a las estrellas del jugador.
     public void setStars(int starsadded){
         stars += starsadded;
+
+        scoreTable.updatePlayerData();
     }
 
     public int getStars(){
@@ -57,6 +60,8 @@ public class Player {
     //Métodos relacionados a las monedas del jugador.
     public void setCoins(int coinsadded){
         this.coins += coinsadded;
+
+        scoreTable.updatePlayerData();
     }
 
     public int getCoins(){
@@ -65,6 +70,7 @@ public class Player {
 
     public void minusCoins(int minus){
         this.coins = this.coins - minus;
+        scoreTable.updatePlayerData();
     }
 
     //Métodos relacionados a la posición del jugador.
