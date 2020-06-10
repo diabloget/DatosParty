@@ -2,12 +2,9 @@ package Connect4;
 
 import boardScreen.Player;
 import boardScreen.board;
-import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import javafx.stage.Stage;
 import main.main;
 
 public class Connect4 {

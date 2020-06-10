@@ -1,7 +1,6 @@
 package Simon;
 import boardScreen.Player;
 import boardScreen.board;
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.layout.Background;
@@ -9,10 +8,6 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.stage.Stage;
-import javafx.animation.*;
-import javafx.util.Duration;
 import main.main;
 
 import java.util.Arrays;

@@ -2,7 +2,6 @@ package BlackJack;
 
 import boardScreen.*;
 import boardScreen.Player;
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -13,11 +12,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 import main.main;
 import playersScreen.PlayerList;
-
-import java.util.Arrays;
 
 public class BlackJack {
     public BlackJack(Player[] names, boolean versus){

@@ -6,8 +6,6 @@ import boardScreen.XYAxes;
 import boardScreen.playerEvents;
 import playersScreen.PlayerList;
 
-import java.awt.*;
-import java.util.Arrays;
 
 public class DecideWinner {
 

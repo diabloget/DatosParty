@@ -13,7 +13,6 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import main.main;
-import java.util.ArrayList;
 
 public class players{
     private static int limiter = 0;
