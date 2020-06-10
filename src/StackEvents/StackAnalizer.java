@@ -30,7 +30,7 @@ public class StackAnalizer {
         if(newEvent == "duel"){
             int[] randInts = generatorDuel ();
             Player[] forPlaying = {PlayerList.getPlayers (randInts[0]),PlayerList.getPlayers (randInts[1]) };
-            playerEvents.startMinigame (forPlaying);
+            playerEvents.startMinigame (forPlaying, false);
         }
 
         //Falta
@@ -72,9 +72,11 @@ public class StackAnalizer {
             if(randInt==0){
                 Round.getCurrent ().setPath ("doubleCircularPath");
                 Round.getCurrent ().setPosition (0);
+                Round.getCurrent ().movePlayer(XYAxes.getXY(Round.getCurrent ().getPath()).get(Round.getCurrent ().getPosition()));
             }else{
                 Round.getCurrent ().setPath ("mainPath");
                 Round.getCurrent ().setPosition (new Random ().nextInt (50));
+                Round.getCurrent ().movePlayer(XYAxes.getXY(Round.getCurrent ().getPath()).get(Round.getCurrent ().getPosition()));
             }
         }
 
@@ -84,8 +86,10 @@ public class StackAnalizer {
             int tempPosition = Round.getCurrent ().getPosition ();
             Round.getCurrent ().setPosition (PlayerList.getPlayers (randInt).getPosition ());
             Round.getCurrent ().setPath (PlayerList.getPlayers (randInt).getPath ());
+            Round.getCurrent ().movePlayer(XYAxes.getXY(Round.getCurrent ().getPath()).get(Round.getCurrent ().getPosition()));
             PlayerList.getPlayers (randInt).setPath (tempPath);
             PlayerList.getPlayers (randInt).setPosition (tempPosition);
+            PlayerList.getPlayers (randInt).movePlayer(XYAxes.getXY(PlayerList.getPlayers (randInt).getPath()).get(PlayerList.getPlayers (randInt).getPosition()));
         }
     }
 }

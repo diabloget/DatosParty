@@ -1,9 +1,7 @@
 package BlackJack;
 
+import boardScreen.*;
 import boardScreen.Player;
-import boardScreen.Round;
-import boardScreen.board;
-import boardScreen.playerEvents;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -151,6 +149,7 @@ public class BlackJack {
                 if(! Round.getCurrent ().equals (search) ) {
                     search.setPath (playerEvents.lastPath);
                     search.setPosition (playerEvents.lastPosition);
+                    search.movePlayer(XYAxes.getXY(search.getPath()).get(search.getPosition()));
                 }else {
                     playerEvents.Punishment (search);
                 }

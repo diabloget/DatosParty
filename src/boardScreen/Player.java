@@ -47,7 +47,11 @@ public class Player {
 
     //Métodos relacionados a las estrellas del jugador.
     public void setStars(int starsadded){
-        stars += starsadded;
+        if(stars + starsadded>=0){
+            stars += starsadded;
+        }else{
+            stars = 0;
+        }
     }
 
     public int getStars(){

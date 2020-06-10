@@ -2,6 +2,7 @@ package Connect4;
 
 import boardScreen.Player;
 import boardScreen.Round;
+import boardScreen.XYAxes;
 import boardScreen.playerEvents;
 import playersScreen.PlayerList;
 
@@ -107,6 +108,7 @@ public class DecideWinner {
                                 if(! Round.getCurrent ().equals (search) ) {
                                         search.setPath (playerEvents.lastPath);
                                         search.setPosition (playerEvents.lastPosition);
+                                        search.movePlayer(XYAxes.getXY(search.getPath()).get(search.getPosition()));
                                 }else {
                                         playerEvents.Punishment (search);
                                 }
