@@ -7,8 +7,6 @@ import scoreScreen.StealScene;
 import java.util.Random;
 
 public class StackAnalizer {
-    private static StealScene starsSteal = new StealScene("stars");
-    private static StealScene coinsSteal = new StealScene("coins");
     private static Stack events = Stack.getStack ();
 
     private static int[] generatorDuel(){
@@ -30,7 +28,7 @@ public class StackAnalizer {
     }
 
     public static void analize(){
-        String newEvent = events.pop ();
+        String newEvent = "stealCoins";
         if(newEvent == "duel"){
             int[] randInts = generatorDuel ();
             Player[] forPlaying = {PlayerList.getPlayers (randInts[0]),PlayerList.getPlayers (randInts[1]) };
@@ -39,7 +37,8 @@ public class StackAnalizer {
 
         //Falta
         if(newEvent == "stealCoins"){
-            main.window.setScene (coinsSteal.getScene ());
+            StealScene coinsSteal = new StealScene("coins");
+            coinsSteal.getScene ();
         }
 
         if(newEvent == "gveAwayCoins"){
@@ -68,7 +67,8 @@ public class StackAnalizer {
 
         //Falta
         if(newEvent == "stealStar"){
-            main.window.setScene (starsSteal.getScene ());
+            StealScene starsSteal = new StealScene("stars");
+            starsSteal.getScene ();
         }
 
         if(newEvent == "teletransport"){
