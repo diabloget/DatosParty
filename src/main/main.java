@@ -22,5 +22,6 @@ public class main extends Application {
         mainScene=players.getPlayerScene();
         window.setScene(mainScene);
         window.show();
+        //window.setResizable(true);
     }
 }

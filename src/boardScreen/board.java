@@ -181,7 +181,6 @@ public class board{
                 DirectionButtons.defaultColor();
             });
 
-
         }else{
             System.out.println("Singletón confirmado");
         }

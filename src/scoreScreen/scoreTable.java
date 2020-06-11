@@ -76,7 +76,7 @@ public class scoreTable {
 
         }
 
-        for(int index = 0; index < PlayerList.players.size();index++){
+        for(int index = 0; index < PlayerList.players.size()-1;index++){
             hBoxes.get(index).setStyle("-fx-background-color: #3C3F41");
             coins.get(index).setStyle("-fx-background-color: #3C3F41");
             stars.get(index).setStyle("-fx-background-color: #3C3F41");
@@ -84,10 +84,14 @@ public class scoreTable {
     }
 
     public static void setAvailableColor(){
-        for(int index = 0; index < PlayerList.players.size();index++){
+        for(int index = 0; index < PlayerList.players.size()-1;index++){
             hBoxes.get(index).setStyle("-fx-background-color: #3C3F41");
             coins.get(index).setStyle("-fx-background-color: #3C3F41");
             stars.get(index).setStyle("-fx-background-color: #3C3F41");
+        }if(PlayerList.players.size() == 4){
+            hBoxes.get(3).setStyle("-fx-background-color: #3C3F41");
+            coins.get(3).setStyle("-fx-background-color: #3C3F41");
+            stars.get(3).setStyle("-fx-background-color: #3C3F41");
         }
     }
 
