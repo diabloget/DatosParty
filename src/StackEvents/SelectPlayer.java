@@ -16,12 +16,12 @@ public class SelectPlayer {
             if (!Round.getCurrent().equals(PlayerList.getPlayers(index))) {
                 if(type == "stars"){
                     if (PlayerList.getPlayers(index).getStars()>0){
-                        choices.add(Integer.toString(index));
+                        choices.add(Integer.toString(index+1));
                     }
                 }
                 if(type == "coins"){
                     if (PlayerList.getPlayers(index).getCoins()>0){
-                        choices.add(Integer.toString(index));
+                        choices.add(Integer.toString(index+1));
                     }
                 }
 

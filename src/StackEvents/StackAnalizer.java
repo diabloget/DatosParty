@@ -46,7 +46,6 @@ public class StackAnalizer {
         if(newEvent == "stealCoins"){
             String type = "coins";
             ChoiceDialog d = SelectPlayer.alertInit(type);
-
             Optional<String> result = d.showAndWait();
             if (result.isPresent() && result.get() == "1"){
                 if(type.equals("stars")){
