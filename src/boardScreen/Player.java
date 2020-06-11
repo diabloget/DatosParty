@@ -63,7 +63,11 @@ public class Player {
 
     //Métodos relacionados a las monedas del jugador.
     public void setCoins(int coinsadded){
-        this.coins += coinsadded;
+        if(getCoins ()+ coinsadded > 0) {
+            this.coins+=coinsadded;
+        }else{
+            coins = 0;
+        }
 
         scoreTable.updatePlayerData();
     }
