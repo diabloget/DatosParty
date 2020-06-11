@@ -1,16 +1,9 @@
 package StackEvents;
 import boardScreen.*;
-import javafx.application.Platform;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.ChoiceDialog;
 import main.main;
 import playersScreen.PlayerList;
 import scoreScreen.StealScene;
 
-import java.util.ArrayList;
-import java.util.Optional;
 import java.util.Random;
 
 public class StackAnalizer {
@@ -44,48 +37,8 @@ public class StackAnalizer {
 
         //Falta
         if(newEvent == "stealCoins"){
-            String type = "coins";
-            ChoiceDialog d = SelectPlayer.alertInit(type);
-            Optional<String> result = d.showAndWait();
-            if (result.isPresent() && result.get() == "1"){
-                if(type.equals("stars")){
-                    Round.getCurrent().setStars(1);
-                    PlayerList.getPlayers(0).setStars(-1);
-
-                }else{
-                    Round.getCurrent().setCoins(2);
-                    PlayerList.getPlayers(0).minusCoins(2);
-
-                }
-            }if (result.isPresent() && result.get() == "2") {
-                if(type.equals("stars")){
-                    Round.getCurrent().setStars(1);
-                    PlayerList.getPlayers(1).setStars(-1);
-
-                }else{
-                    Round.getCurrent().setCoins(2);
-                    PlayerList.getPlayers(1).minusCoins(2);
-                }
-            }if (result.isPresent() && result.get() == "3") {
-                if(type.equals("stars")){
-                    Round.getCurrent().setStars(1);
-                    PlayerList.getPlayers(2).setStars(-1);
-                }else{
-                    Round.getCurrent().setCoins(2);
-                    PlayerList.getPlayers(2).minusCoins(2);
-                }
-            }if(result.isPresent() && result.get() == "4") {
-                if(type.equals("stars")){
-                    Round.getCurrent().setStars(1);
-                    PlayerList.getPlayers(3).setStars(-1);
-                }else{
-                    Round.getCurrent().setCoins(2);
-                    PlayerList.getPlayers(3).minusCoins(2);
-                }
-            } else {
-                //
-            }
-
+            StealScene coinsSteal = new StealScene("coins");
+            coinsSteal.getScene ();
         }
 
         if(newEvent == "gveAwayCoins"){
@@ -114,7 +67,8 @@ public class StackAnalizer {
 
         //Falta
         if(newEvent == "stealStar"){
-
+            StealScene starsSteal = new StealScene("stars");
+            starsSteal.getScene ();
         }
 
         if(newEvent == "teletransport"){
