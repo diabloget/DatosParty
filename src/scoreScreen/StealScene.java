@@ -56,16 +56,12 @@ public class StealScene {
             }
             index++;
         }
-        Button cancel = new Button ("Cancel");
-        paneForSteal.add (cancel,0, index);
-        cancel.setOnAction (actionEvent -> {
-            main.window.setScene (board.getBoardScene ());
-        });
 
-        for(int indexAux = 0; index < PlayerList.getNamesArray ().length; index++){
+
+        for(int indexAux = 0; indexAux < PlayerList.getNamesArray ().length; indexAux++){
             int finalIndex=indexAux;
             buttons[indexAux].setOnAction (actionEvent -> {
-                if( text.getText ().equals ("coins")) {
+                if( textTittle.equals ("coins")) {
                     Round.getCurrent ().setCoins (2);
                     PlayerList.getPlayers (finalIndex).setCoins (-2);
                     main.window.setScene (board.getBoardScene ());
@@ -77,5 +73,10 @@ public class StealScene {
                 }
             });
         }
+        Button cancel = new Button ("Cancel");
+        paneForSteal.add (cancel,0, index);
+        cancel.setOnAction (actionEvent -> {
+            main.window.setScene (board.getBoardScene ());
+        });
     }
 }
