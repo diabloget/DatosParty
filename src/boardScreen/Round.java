@@ -10,7 +10,11 @@ public class Round {
     //Usar el indice de turno para extraer el jugador al que le corresponde el turno actual
     public static void RoundUpdate(){
         if(currentPlayer == PlayerList.getNamesArray().length-1){
-            // Iniciar juego.
+            Player[] names = new Player[PlayerList.getNamesArray ().length];
+            for(int index = 0; index < PlayerList.getNamesArray ().length ; index++){
+                names[index] = PlayerList.getPlayers (index);
+            }
+            playerEvents.startMinigame (names, false);
             roundNumber ++;
             currentPlayer = 0;
         }else {
