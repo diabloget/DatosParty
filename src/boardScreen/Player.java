@@ -73,7 +73,12 @@ public class Player {
     }
 
     public void minusCoins(int minus){
-        this.coins = this.coins - minus;
+        if(this.coins < minus){
+            this.coins = 0;
+        }else {
+
+            this.coins = this.coins - minus;
+        }
 
         scoreTable.updatePlayerData();
     }

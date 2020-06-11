@@ -1,14 +1,19 @@
 package StackEvents;
 import boardScreen.*;
+import javafx.application.Platform;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.ChoiceDialog;
 import main.main;
 import playersScreen.PlayerList;
 import scoreScreen.StealScene;
 
+import java.util.ArrayList;
+import java.util.Optional;
 import java.util.Random;
 
 public class StackAnalizer {
-    private static StealScene starsSteal = new StealScene("stars");
-    private static StealScene coinsSteal = new StealScene("coins");
     private static Stack events = Stack.getStack ();
 
     private static int[] generatorDuel(){
@@ -30,7 +35,7 @@ public class StackAnalizer {
     }
 
     public static void analize(){
-        String newEvent = events.pop ();
+        String newEvent = "stealCoins";
         if(newEvent == "duel"){
             int[] randInts = generatorDuel ();
             Player[] forPlaying = {PlayerList.getPlayers (randInts[0]),PlayerList.getPlayers (randInts[1]) };
@@ -39,7 +44,49 @@ public class StackAnalizer {
 
         //Falta
         if(newEvent == "stealCoins"){
-            main.window.setScene (coinsSteal.getScene ());
+            String type = "coins";
+            ChoiceDialog d = SelectPlayer.alertInit(type);
+
+            Optional<String> result = d.showAndWait();
+            if (result.isPresent() && result.get() == "1"){
+                if(type.equals("stars")){
+                    Round.getCurrent().setStars(1);
+                    PlayerList.getPlayers(0).setStars(-1);
+
+                }else{
+                    Round.getCurrent().setCoins(2);
+                    PlayerList.getPlayers(0).minusCoins(2);
+
+                }
+            }if (result.isPresent() && result.get() == "2") {
+                if(type.equals("stars")){
+                    Round.getCurrent().setStars(1);
+                    PlayerList.getPlayers(1).setStars(-1);
+
+                }else{
+                    Round.getCurrent().setCoins(2);
+                    PlayerList.getPlayers(1).minusCoins(2);
+                }
+            }if (result.isPresent() && result.get() == "3") {
+                if(type.equals("stars")){
+                    Round.getCurrent().setStars(1);
+                    PlayerList.getPlayers(2).setStars(-1);
+                }else{
+                    Round.getCurrent().setCoins(2);
+                    PlayerList.getPlayers(2).minusCoins(2);
+                }
+            }if(result.isPresent() && result.get() == "4") {
+                if(type.equals("stars")){
+                    Round.getCurrent().setStars(1);
+                    PlayerList.getPlayers(3).setStars(-1);
+                }else{
+                    Round.getCurrent().setCoins(2);
+                    PlayerList.getPlayers(3).minusCoins(2);
+                }
+            } else {
+                //
+            }
+
         }
 
         if(newEvent == "gveAwayCoins"){
@@ -68,7 +115,7 @@ public class StackAnalizer {
 
         //Falta
         if(newEvent == "stealStar"){
-            main.window.setScene (starsSteal.getScene ());
+
         }
 
         if(newEvent == "teletransport"){

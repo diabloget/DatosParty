@@ -77,7 +77,7 @@ public class playerEvents {
             if(Round.getCurrent().getCoins() >= 2){
                 Round.getCurrent().minusCoins(2);
             }else{
-                Round.getCurrent().setCoins(0);
+                Round.getCurrent().setCoins(- Round.getCurrent().getCoins());
             }
             //System.out.println("El jugador "+ Round.getCurrent().getName() + " acaba de ganar y ahora tiene: " + Round.getCurrent().getCoins());
         }

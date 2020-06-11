@@ -15,7 +15,7 @@ import javax.swing.plaf.basic.BasicButtonUI;
 
 public class StealScene {
     public StealScene(String tittle){
-        this.tittle.setText (tittle);
+         this.tittle.setText (tittle);
         paneForSteal.add (this.tittle,0,0);
         paneForSteal.setVgap (15);
         int index = 1;

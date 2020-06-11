@@ -76,7 +76,7 @@ public class scoreTable {
 
         }
 
-        for(int index = 0; index < PlayerList.players.size()-1;index++){
+        for(int index = 0; index < PlayerList.getNamesArray().length;index++){
             hBoxes.get(index).setStyle("-fx-background-color: #3C3F41");
             coins.get(index).setStyle("-fx-background-color: #3C3F41");
             stars.get(index).setStyle("-fx-background-color: #3C3F41");
