@@ -19,7 +19,7 @@ public class board{
         if(temp==false){
             boardpane.setStyle("-fx-background-color: #2B2B2B");
             singleton=true;
-            axes.initPaths();
+            //axes.initPaths();
             /////// MAPA
 
             //bot

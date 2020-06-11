@@ -85,9 +85,14 @@ public class playerEvents {
 
     public static void yellowEvent(){
         //despiche
-        if(EventPositions.doEvent(Round.getCurrent().getPath(), "yellow", Round.getCurrent().getPosition())  &  dices.diceValue() == 0){
+        if(Round.getCurrent().getPath().equals("doubleCircularPath") &  dices.diceValue() == 0){
             System.out.println("Evento Amarillo prro");
             StackAnalizer.analize ();
+        }else{
+            if(EventPositions.doEvent(Round.getCurrent().getPath(), "yellow", Round.getCurrent().getPosition())  &  dices.diceValue() == 0){
+                System.out.println("Evento Amarillo prro");
+                StackAnalizer.analize ();
+            }
         }
     }
 

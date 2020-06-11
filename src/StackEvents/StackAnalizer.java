@@ -20,7 +20,10 @@ public class StackAnalizer {
     }
 
     private static int generatorGiveAway(){
-        int forReturn = new Random().nextInt (Round.getCurrent ().getStars ());
+        int forReturn = new Random().nextInt (Round.getCurrent ().getCoins ()+1);
+        if(Round.getCurrent().getCoins() % PlayerList.getNamesArray().length == 0){
+            return 0;
+        }
         if(forReturn % PlayerList.getNamesArray ().length != 0){
             forReturn = generatorGiveAway ();
         }
@@ -28,7 +31,7 @@ public class StackAnalizer {
     }
 
     public static void analize(){
-        String newEvent = "stealCoins";
+        String newEvent = events.pop();
         if(newEvent == "duel"){
             int[] randInts = generatorDuel ();
             Player[] forPlaying = {PlayerList.getPlayers (randInts[0]),PlayerList.getPlayers (randInts[1]) };
