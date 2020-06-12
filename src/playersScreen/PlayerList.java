@@ -28,12 +28,21 @@ public class PlayerList {
         return playernames;
     }
 
+    /**
+     * Añade un nombre de un jugador a la lista de nombres.
+     * @param player
+     */
     public static void setPlayernames(String player){
         playernames.add(player);
     }
 
 
     //Métodos que corresponden a la lista CON los jugadores.
+
+    /**
+     * Método que crea los objetos jugador y los añade a una lista,
+     * luego elimina los sobrantes.
+     */
     public static void setPlayers(){
         players.add(player1);
         players.add(player2);
@@ -54,6 +63,11 @@ public class PlayerList {
 
     }
 
+    /**
+     * Devuelve un jugador según índice.
+     * @param playertoget
+     * @return Player
+     */
     public static Player getPlayers(int playertoget){
         return players.get(playertoget);
     }

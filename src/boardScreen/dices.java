@@ -20,6 +20,10 @@ public class dices {
         fix = true;
     }
 
+    /**
+     * Personaliza y devuelve el botón que setea los dados.
+     * @return Button
+     */
     public static Button buttonOn(){
         throwButton.setText("Tirar Dados");
         throwButton.setStyle("-fx-background-color: #3C3F41");
@@ -31,6 +35,10 @@ public class dices {
         return throwButton;
     }
 
+    /**
+     * Personaliza y devuelve el label de uno de los dados.
+     * @return Label
+     */
     public static Label dice1On(){
         dice1.setStyle("-fx-background-color: #3C3F41");
         dice1.setText("");
@@ -42,6 +50,10 @@ public class dices {
         return dice1;
     }
 
+    /**
+     * Personaliza y devuelve el label de uno de los dados.
+     * @return Label
+     */
     public static Label dice2On(){
         dice2.setStyle("-fx-background-color: #3C3F41");
         dice2.setText("");
@@ -53,9 +65,12 @@ public class dices {
         return dice2;
     }
 
+    /**
+     * Reinicia con randoms el valor de ambos dados.
+     */
     private static void diceSet(){
         if(a+b != 0){
-            System.out.println("Ira we no mames");
+            //System.out.println("Ira we no mames");
         }else{
             a=getRandom(1, 4);
             b=getRandom(1, 4);
@@ -68,6 +83,10 @@ public class dices {
         }
     }
 
+    /**
+     * Reduce el numero dentro del dado cada vez
+     * que se da un paso.
+     */
     public static void diceMinus(){
         if (a == 0 & b != 0){
             b--;
@@ -83,6 +102,11 @@ public class dices {
         }*/
     }
 
+    /**
+     * Método que retorna el valor interno de los dados
+     * (valor restante)
+     * @return int
+     */
     public static int diceValue(){
         return a+b;
     }
@@ -93,6 +117,12 @@ public class dices {
     }
 
 
+    /**
+     * Método para calcular randoms entre un rango.
+     * @param min
+     * @param max
+     * @return Int
+     */
     public static int getRandom(int min, int max) {
 
         if (min >= max) {

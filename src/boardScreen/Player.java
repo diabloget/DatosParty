@@ -23,6 +23,11 @@ public class Player {
         return this.name;
     }
 
+    /**
+     * Método que mueve gráficamente al jugador, tiene un añadido
+     * al eje x para asegurarse que el ícono encaje correctamente.
+     * @param xy
+     */
     public void movePlayer(Point xy){
         //System.out.println("Posición en " + this.path + "es " + position);
         playerIcon.setOpacity(1);

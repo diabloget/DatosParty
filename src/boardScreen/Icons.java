@@ -18,6 +18,11 @@ public class Icons {
     public static ImageView bot = new ImageView(new Image("file:icons/bot.png", 18, 18, true, false));
     public static ImageView left = new ImageView(new Image("file:icons/left.png", 18, 18, true, false));
 
+    /**
+     * Método que devuelve un ícono según el entero ingresado.
+     * @param selectedIcon
+     * @return
+     */
     public static ImageView getIcon(int selectedIcon){
         if(selectedIcon == 1){
             return player1;
@@ -65,6 +70,10 @@ public class Icons {
         }
     }
 
+    /**
+     * Método para conseguir el ícono de cada jugador.
+     * @return
+     */
     public static ImageView getPlayerIcon(){
         System.out.println(iconToGet);
         if(iconToGet == 0){

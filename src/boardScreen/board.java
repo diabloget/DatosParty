@@ -15,6 +15,10 @@ public class board{
     private static Pane boardpane = new Pane();
     private static Scene boardscene = new Scene(boardpane,1250,900);
 
+    /**
+     * Añade todos los elementos a la scene del tablero.
+     * @param temp
+     */
     private static void initializator(boolean temp){
         if(temp==false){
             boardpane.setStyle("-fx-background-color: #2B2B2B");

@@ -27,6 +27,11 @@ public class players{
     private static Alert alert = new Alert(Alert.AlertType.WARNING);
     private static Alert alert2 = new Alert(Alert.AlertType.WARNING);
 
+    /**
+     * Personaliza un Text con la string hija.
+     * @param child
+     * @return Text
+     */
     private static Text texter(String child){
         Text temptext = new Text(child);
         temptext.setFill(Color.web("#fa6565"));
@@ -34,6 +39,11 @@ public class players{
         return temptext;
     }
 
+    /**
+     * Añade todos los elementos gráficos a la pantalla
+     * de jugadores.
+     * @param temp
+     */
     private static void initializator(boolean temp){
         if(temp==false){
             alert.setTitle("Cámate po favo");

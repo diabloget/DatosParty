@@ -42,6 +42,12 @@ public class playerEvents {
     }
 
 
+    /**
+     * Método que analiza si dos jugadores distintos comparten
+     * una misma posición en el tablero para ejecutar un versus.
+     * @param lastPather
+     * @param lastPositioner
+     */
     public static void versus(String lastPather, int lastPositioner){
         lastPosition = lastPositioner;
         lastPath = lastPather;

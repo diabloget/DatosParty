@@ -6,6 +6,17 @@ import javafx.scene.shape.Circle;
 public class boxes {
     private static int pos = 0;
 
+    /**
+     * Crea y personaliza cada uno de los círculos que
+     * corresponden al mapa del tablero.
+     * También añade las posiciones a las listas de posiciones y
+     * las posiciones se envían para ser añadidas si son eventos
+     * a sus respectivas listas en la clase EventPositions.
+     * @param color
+     * @param x
+     * @param y
+     * @return Circle
+     */
     public static Circle detour(String color, int x, int y) {
         //Event Position Setter
         EventPositions.setEventPosition(color, pos);
