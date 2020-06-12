@@ -36,6 +36,10 @@ public class Controller {
     private Button column7Btn = new Button();
 
 
+    /**
+     * @param gameMatrix
+     * Refrezca la imagen en la IGU
+     */
     public void refreshColor(String[][] gameMatrix){
         for(int y=0; y<6; y++){
             for(int x=0; x<7; x++){
@@ -53,10 +57,23 @@ public class Controller {
         }
 
     }
+
+
+    /**
+     * @param player1
+     * @param player2
+     * proyecta los nombres del encuentro
+     */
     public void assignMatch(int player1, int player2){
         whoIsPlaying.setText("Matching: " +names[player1] + " vs " +names[player2] );
     }
 
+
+    /**
+     * @param gameMatrix
+     * @param gamePane
+     * Agrega botones para su¿imular caida de fichas
+     */
     public void addingButtons(String[][] gameMatrix, GridPane gamePane){
         gamePane.add(whoIsPlaying,8,0);
         assignMatch(0,1);
@@ -155,12 +172,27 @@ public class Controller {
         });
     }
 
+
+    /**
+     * @param gamePane
+     * @param columnBtn
+     * @param column
+     * Funcion auxiliar para poder agregar botones iterativmente
+     */
     private void addButtonsAux(GridPane gamePane, Button columnBtn ,int column) {
         columnBtn.setPrefSize(81,585);
         columnBtn.setBackground(Background.EMPTY);
         gamePane.add(columnBtn,column,0,1,7);
     }
 
+
+    /**
+     * @param column
+     * @param gameMatrix
+     * Cambia el contador de fila en cada columna
+     * Se asegura de que no sobre pase
+     * Utiliza en la nterfaz y para analizar resultados
+     */
     public void changeRow(int column, String[][] gameMatrix){
         if(rows[column]>=0) {
             gameMatrix[ rows[ column ] ][ column ] = color;
@@ -171,6 +203,10 @@ public class Controller {
         }
     }
 
+
+    /**
+     * Coloca en la matriz el color correspondiente al turno
+     */
     private void changeColor(){
         if(color.equals("red")){
             color="blue";
@@ -179,6 +215,11 @@ public class Controller {
         }
     }
 
+
+    /**
+     * @param gameMatrix
+     * Reinicia la partida para crear campeonato
+     */
     private void restartToDefault(String[][] gameMatrix){
         rows = new int[]{5,5,5,5,5,5,5};
         for(int y=0; y<6; y++){

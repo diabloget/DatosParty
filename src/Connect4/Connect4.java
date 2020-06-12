@@ -19,9 +19,8 @@ public class Connect4 {
         Controller cont = new Controller(positions, numberPlayers, this.names, oldScene, versus, names);
         this.cont=cont;
     }
+
     private boolean versus;
-    int player1 = 0;
-    int player2 = 2;
     String[] names;
     Controller cont;
     private GridPane gamePane = new GridPane();
@@ -29,6 +28,12 @@ public class Connect4 {
     public Scene connect4 = new Scene(gamePane, 775, 515);
     public String[][] gameMatrix = new String[ 6 ][ 7 ];
     public int numberPlayers;
+
+
+    /**
+     * @param gameMatrix
+     * Genera una matriz para poder analizar ganadores
+     */
     public void setGameMatrix(String[][] gameMatrix) {
         this.gameMatrix = gameMatrix;
         for ( int y = 0; y < 6; y++ ) {
@@ -39,12 +44,19 @@ public class Connect4 {
     }
 
 
+    /**
+     * Agrega a la escena los botones y elementos graficos
+     */
     public void settingSceneC4() {
         createCircles();
         cont.refreshColor( gameMatrix);
         addButtons();
     }
 
+
+    /**
+     * Funcion auxiliar para agregar botones
+     */
     private void addButtons() {
         for ( int y = 0; y < 6; y++ ) {
             for ( int x = 0; x < 7; x++ ) {
@@ -55,6 +67,9 @@ public class Connect4 {
     }
 
 
+    /**
+     * Funcion auxiliar para agregar circulos
+     */
     private void createCircles() {
         Circle circle00 = new Circle(40.5);
         Circle circle01 = new Circle(40.5);
@@ -109,6 +124,9 @@ public class Connect4 {
     }
 
 
+    /**
+     * Su llamada inicia el juego de Connect4
+     */
     public void starting() {
         setGameMatrix(gameMatrix);
         settingSceneC4();

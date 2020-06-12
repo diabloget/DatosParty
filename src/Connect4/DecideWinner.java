@@ -14,6 +14,7 @@ public class DecideWinner {
                 this.versus = versus;
                 this.numberPlayers=numberPlayers;
         }
+
         private Player[] call;
         private boolean versus;
         private int gameNumber=1;
@@ -23,6 +24,12 @@ public class DecideWinner {
         int advancesRound2;
         public int[] playingIs=new int[ 2 ];
 
+
+        /**
+         * @param color
+         * Genera el campeonato
+         * Asigna valores a la matriz de puntuaciones
+         */
         private void actInScores(String color) {
                 if ( numberPlayers==2 ) {
                         if ( color.equals ("red") ) {
@@ -84,6 +91,15 @@ public class DecideWinner {
                 }
         }
 
+
+        /**
+         * @param column
+         * @param row
+         * @param gameMatrix
+         * @param color
+         * @return String analizable para saber si gano, perdio o viene proximo partido
+         * Encargada de manera paralela a llamar los castigos
+         */
         public String isWinner(int column, int row, String[][] gameMatrix, String color) {
                 if ( winnerHorizontal (row, column, gameMatrix) || winnerVertical (column, row, gameMatrix) || winnerDiagonal (column, row, gameMatrix) ) {
                         if ( gameNumber==numberPlayers - 1 ) {
@@ -100,6 +116,10 @@ public class DecideWinner {
                 }
         }
 
+
+        /**
+         * Llama los metodos correspondientes para aplicar castigos en versus
+         */
         private void versusMethodPositions(){
                 for( Player search : call){
                         if(!search.equals (PlayerList.getPlayers (getWinner ()))){

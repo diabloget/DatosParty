@@ -1,6 +1,16 @@
 package BlackJack;
 
 public class Dealer {
+    public Dealer(String[]names){
+        this.names = names;
+        this.numberOfPlayers = names.length;
+        players = new Player[names.length];
+        results = new int[names.length];
+        for(int a = 0; a< numberOfPlayers; a++){
+            players[a] = new Player (deck);
+        }
+    }
+
     public int howManytie;
     public String[] ties = new String[4];
     int numberOfPlayers;
@@ -11,15 +21,15 @@ public class Dealer {
     private String[] names;
     private Player[] players;
     private Cards deck = new Cards ();
-    public Dealer(String[]names){
-        this.names = names;
-        this.numberOfPlayers = names.length;
-        players = new Player[names.length];
-        results = new int[names.length];
-        for(int a = 0; a< numberOfPlayers; a++){
-            players[a] = new Player (deck);
-        }
+
+    public int getCount(){
+        return players[whoIsPlaying].getCount ();
     }
+
+
+    /**
+     * @return el indice del jugador ganador de la partida
+     */
     public int getWinner(){
         int index = 0;
         int holdValue = results[0];
@@ -30,6 +40,11 @@ public class Dealer {
         }
         return index;
     }
+
+
+    /**
+     * @return Verdadero en caso de haber algun empate
+     */
     public boolean isTie(){
         int winner=-1;
         boolean tie = false;
@@ -53,22 +68,37 @@ public class Dealer {
         }
         return tie;
     }
-    public int getCount(){
-        return players[whoIsPlaying].getCount ();
-    }
+
+
+    /**
+     * @return Verdadero en caso de que se deba terminar el juego
+     */
     public boolean isOver(){
         return whoIsPlaying > names.length-1;
     }
+
+
+    /**
+     * @return nombre de quien este jugando actualmente
+     */
     public String getWhoIsPlaying(){
         return names[whoIsPlaying];
     }
 
+    /**
+     * Maneja internamente el boton de stop
+     * Condciona al objeto Player de parar
+     */
     public void stop(){
         results[whoIsPlaying] = getCount ();
         whoIsPlaying++;
         cardNumber = 0;
     }
 
+    /**
+     * Maneja internamente el boton de get out
+     * Condciona al objeto Player de salir
+     */
     public void getOut(){
         results[whoIsPlaying] = 0;
         players[whoIsPlaying].getOut ();
@@ -76,6 +106,10 @@ public class Dealer {
         whoIsPlaying++;
     }
 
+    /**
+     * Maneja internamente el boton de hit
+     * Condciona al objeto Player de obtener cartas
+     */
     public void hit(){
         players[whoIsPlaying].hit ();
         newCard = players[whoIsPlaying].getCardHandle ();

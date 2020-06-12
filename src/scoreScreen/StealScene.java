@@ -14,7 +14,6 @@ import playersScreen.PlayerList;
 public class StealScene {
     public StealScene(String type){
         textTittle = type;
-
     }
 
     private GridPane paneForSteal = new GridPane ();
@@ -30,6 +29,9 @@ public class StealScene {
     }
 
 
+    /**
+     * Agrega los botones para seleccionar robo
+     */
     private void setButtons(){
         text.setText (textTittle);
         paneForSteal.add (text,0,0);

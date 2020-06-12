@@ -9,12 +9,6 @@ import playersScreen.PlayerList;
 import main.*;
 
 public class KeepingScore {
-    private Player[] call;
-    private boolean versus;
-    private Scene oldTempScene;
-    int numberOfPlayers;
-    int[] scores;
-    public int whichPlayer=0;
 
     KeepingScore(int numberOfPlayers, Scene oldTempScene, boolean versus, Player[] call){
         this.call = call;
@@ -27,7 +21,17 @@ public class KeepingScore {
         }
     }
 
+    private Player[] call;
+    private boolean versus;
+    private Scene oldTempScene;
+    int numberOfPlayers;
+    int[] scores;
+    public int whichPlayer=0;
 
+
+    /**
+     * @return en caso de que haya ganador devuelve la posicion en el array.
+     */
     private int getWinner(){
         int index = 0;
         int holdValue = scores[0];
@@ -39,6 +43,11 @@ public class KeepingScore {
         return index;
     }
 
+    /**
+     * @param answers
+     * @param moves
+     * @return devuelve verdadero en caso de que gane el nivel
+     */
     public boolean winOrLoose(String[] answers, String[] moves) {
         for(int counter = 0; counter<5; counter++){
             if(!answers[counter].equals(moves[counter])){
@@ -55,6 +64,10 @@ public class KeepingScore {
         return true;
     }
 
+
+    /**
+     * Metodo es una llamada auxiliar en caso de que se necesite aplicar castigo
+     */
     private void versusMethodPositions(){
         for( Player search : call){
             if(!search.equals (PlayerList.getPlayers (getWinner ()))){

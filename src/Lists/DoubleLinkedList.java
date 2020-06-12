@@ -4,6 +4,10 @@ public class DoubleLinkedList<T extends Comparable<T>> {
     public NodeDouble<T> first = null;
     public NodeDouble<T> last = null;
 
+    /**
+     * @param data
+     * Agrega data en un nodo inicial en la lista
+     */
     public void addFirst(T data){
         if(first==null){
             first = new NodeDouble<T>(data);
@@ -18,6 +22,10 @@ public class DoubleLinkedList<T extends Comparable<T>> {
         }
     }
 
+    /**
+     * @param data
+     * Agrega data en un nodo final en la lista
+     */
     public void addLast(T data){
         if(first==null){
             last = new NodeDouble<T>(data);
@@ -30,6 +38,10 @@ public class DoubleLinkedList<T extends Comparable<T>> {
         }
     }
 
+    /**
+     * @param data
+     * Elimina el nodo al encontrar el mismo valor de datos
+     */
     public void deleting (T data){
         NodeDouble<T> pointerHead = first;
         NodeDouble<T> pointerTail = first;
@@ -56,6 +68,10 @@ public class DoubleLinkedList<T extends Comparable<T>> {
         }
     }
 
+    /**
+     * @param e
+     * @return indice de la posicion donde se encuentra el objeto.
+     */
     public int find(T e) {
         NodeDouble<T> temp = this.first;
         int index = 0;

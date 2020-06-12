@@ -17,6 +17,7 @@ public class NodeDouble<T extends Comparable<T>> {
         this.next=next;
     }
 
+
     public T getValue(){
         return this.value;
     }
