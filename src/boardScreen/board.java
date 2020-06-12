@@ -162,6 +162,8 @@ public class board{
                 boardpane.getChildren().add(hboxito);
             }
 
+            //init star
+            boardpane.getChildren().add(Star.getStarIcon());
 
             boardpane.setOnKeyPressed(event -> {
                 Round.moveCurrent(event);
