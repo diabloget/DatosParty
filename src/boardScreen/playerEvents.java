@@ -42,6 +42,12 @@ public class playerEvents {
     }
 
 
+    /**
+     * Método que analiza si dos jugadores distintos comparten
+     * una misma posición en el tablero para ejecutar un versus.
+     * @param lastPather
+     * @param lastPositioner
+     */
     public static void versus(String lastPather, int lastPositioner){
         lastPosition = lastPositioner;
         lastPath = lastPather;
@@ -85,9 +91,14 @@ public class playerEvents {
 
     public static void yellowEvent(){
         //despiche
-        if(EventPositions.doEvent(Round.getCurrent().getPath(), "yellow", Round.getCurrent().getPosition())  &  dices.diceValue() == 0){
+        if(Round.getCurrent().getPath().equals("doubleCircularPath") &  dices.diceValue() == 0){
             System.out.println("Evento Amarillo prro");
             StackAnalizer.analize ();
+        }else{
+            if(EventPositions.doEvent(Round.getCurrent().getPath(), "yellow", Round.getCurrent().getPosition())  &  dices.diceValue() == 0){
+                System.out.println("Evento Amarillo prro");
+                StackAnalizer.analize ();
+            }
         }
     }
 

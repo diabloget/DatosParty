@@ -26,6 +26,10 @@ public class DirectionButtons {
         left.setStyle("-fx-background-color: #10E6A0");
     }
 
+    /**
+     * Método para settear el color del botón a su color
+     * por defecto.
+     */
     public static void defaultColor(){
         top.setStyle("-fx-background-color: #313335");
         right.setStyle("-fx-background-color: #313335");
@@ -33,6 +37,10 @@ public class DirectionButtons {
         left.setStyle("-fx-background-color: #313335");
     }
 
+    /**
+     * Personaliza y devuelve uno de los botones de dirección
+     * @return Button
+     */
     public static Button getTop(){
         top.setStyle("-fx-background-color: #313335");
         top.setOnMousePressed(event -> {
@@ -44,6 +52,10 @@ public class DirectionButtons {
         return top;
     }
 
+    /**
+     * Personaliza y devuelve uno de los botones de dirección
+     * @return Button
+     */
     public static Button getRight(){
         right.setStyle("-fx-background-color: #313335");
         right.setOnMousePressed(event -> {
@@ -56,6 +68,10 @@ public class DirectionButtons {
         return right;
     }
 
+    /**
+     * Personaliza y devuelve uno de los botones de dirección
+     * @return Button
+     */
     public static Button getBot(){
         bot.setStyle("-fx-background-color: #313335");
         bot.setOnMousePressed(event -> {
@@ -67,6 +83,10 @@ public class DirectionButtons {
         return bot;
     }
 
+    /**
+     * Personaliza y devuelve uno de los botones de dirección
+     * @return Button
+     */
     public static Button getLeft(){
         left.setStyle("-fx-background-color: #313335");
         left.setOnMousePressed(event -> {

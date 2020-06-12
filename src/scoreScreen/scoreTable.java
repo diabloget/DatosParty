@@ -28,6 +28,9 @@ public class scoreTable {
         return hBoxes;
     }
 
+    /**
+     * Añade todos los Hbox a una lista.
+     */
     private static void initHBoxList(){
         hBoxes.add(playerData1);
         hBoxes.add(playerData2);
@@ -35,6 +38,9 @@ public class scoreTable {
         hBoxes.add(playerData4);
     }
 
+    /**
+     * Agrega todos los elementos a cada Hbox.
+     */
     private static void initDataHBoxes(){
         setAvailable();
         initDataLabels();
@@ -48,6 +54,9 @@ public class scoreTable {
         }
     }
 
+    /**
+     * Personaliza los labels de monedas y estrellas.
+     */
     private static void initDataLabels(){
         for(Label label:coins){
             label.setStyle("-fx-background-color: #313335");
@@ -65,6 +74,10 @@ public class scoreTable {
 
     }
 
+    /**
+     * Cambia el color de los objetos dependiendo de si
+     * representan a un jugador que está o no en la partida.
+     */
     public static void setAvailable(){
         for(HBox hbox:hBoxes){
             hbox.setStyle("-fx-background-color: #313335");
@@ -83,6 +96,10 @@ public class scoreTable {
         }
     }
 
+    /**
+     * Cambia el color de los objetos a uno claro
+     * representando que el jugador está en la partida.
+     */
     public static void setAvailableColor(){
         for(int index = 0; index < PlayerList.getNamesArray().length;index++){
             hBoxes.get(index).setStyle("-fx-background-color: #3C3F41");
@@ -91,6 +108,9 @@ public class scoreTable {
         }
     }
 
+    /**
+     * Actualiza el valor de monedas y estrellas de cada jugador.
+     */
     public static void updatePlayerData(){
         int index = 0;
         for(Player player:PlayerList.players){
@@ -99,6 +119,12 @@ public class scoreTable {
             index ++;
         }
     }
+
+    /**
+     * Cambia la posición de los Hbox
+     * @param x
+     * @param y
+     */
     public static void relocateTable(int x, int y){
         int b = y;
         for(HBox hbox:hBoxes){
@@ -107,6 +133,11 @@ public class scoreTable {
         }
     }
 
+    /**
+     * Inicia los metodos de personalización.
+     * @param x
+     * @param y
+     */
     public static void InitDataTable(int x, int y){
         initHBoxList();
         initDataHBoxes();

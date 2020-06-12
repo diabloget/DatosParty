@@ -10,8 +10,8 @@ public class steps {
     private static int restriction = 0;
 
     /**
-     * Funciön que recibe un jugador y un evento para así definir la nueva posición del jugador.
-     * (Básicamente calcula el movimiento y su posibilidad)
+     * Método que analiza el evento de tecla para comprobar su
+     * factibilidad y así calcular la posición del jugador.
      * @param player
      * @param e
      */
@@ -254,6 +254,11 @@ public class steps {
 
     }
 
+    /**
+     * Método que se encarga de mover al jugador gráfica y verbalmente.
+     * @param player
+     * @param path
+     */
     private static void reducer(Player player, String path){
 
         dices.diceMinus();

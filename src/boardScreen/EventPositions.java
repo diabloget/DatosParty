@@ -23,6 +23,12 @@ public class EventPositions {
     //rojo #c12f2f
     //Amar #ffbd00
 
+    /**
+     * Método que agrega las posiciones de los eventos de color
+     * según el Path al que corresponden, su color y su posición.
+     * @param Color
+     * @param pos
+     */
     public static void setEventPosition(String Color, int pos){
         int aux;
 

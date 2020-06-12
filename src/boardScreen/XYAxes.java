@@ -31,6 +31,12 @@ public class XYAxes {
         doubleCircularXY.add(new Point(x, y));
     }
 
+    /**
+     * Función que recibe una string con el nombre del path y devuelve
+     * su equivalente en Lista Enlazada.
+     * @param path
+     * @return ListPath
+     */
     public static ArrayList<Point> getXY(String path){
         if(path == "mainPath"){
             return mainXY;
