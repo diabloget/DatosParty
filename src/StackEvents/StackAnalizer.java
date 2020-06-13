@@ -9,6 +9,10 @@ import java.util.Random;
 public class StackAnalizer {
     private static Stack events = Stack.getStack ();
 
+
+    /**
+     * @return Un arreglo de dos enteros para escoger jugadores del duelo
+     */
     private static int[] generatorDuel(){
         int[] returnInt = new int[2];
         returnInt[0] = new Random ().nextInt (PlayerList.getNamesArray ().length);
@@ -19,6 +23,10 @@ public class StackAnalizer {
         return returnInt;
     }
 
+
+    /**
+     * @return Entero divisible por la cantidad de jugadores y menor al acantidad de monedas
+     */
     private static int generatorGiveAway(){
         int forReturn = new Random().nextInt (Round.getCurrent ().getCoins ()+1);
         if(Round.getCurrent().getCoins() % PlayerList.getNamesArray().length == 0){
@@ -30,6 +38,10 @@ public class StackAnalizer {
         return forReturn;
     }
 
+    /**
+     * Maneja los eventos de los stacks
+     * Se llama por las casillas amarillas.
+     */
     public static void analize(){
         String newEvent = events.pop();
         if(newEvent == "duel"){

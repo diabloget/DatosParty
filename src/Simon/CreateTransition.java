@@ -25,6 +25,11 @@ public class CreateTransition {
     private String[] colors = {"blue", "red", "green", "yellow"};
     public String[] colorOrder = {colors[new Random().nextInt(colors.length)],colors[new Random().nextInt(colors.length)],colors[new Random().nextInt(colors.length)],colors[new Random().nextInt(colors.length)],colors[new Random().nextInt(colors.length)]};
 
+    /**
+     * @param iluminate
+     * @param level
+     * Inicia las propiedades de iluminacion al primer jugador
+     */
     private void giveTransitionProperties(FillTransition iluminate, double level){
         iluminate.setDelay(Duration.seconds(0.1));
         iluminate.setAutoReverse(true);
@@ -32,6 +37,10 @@ public class CreateTransition {
         iluminate.setDuration(Duration.seconds(level));
     }
 
+    /**
+     * @param level
+     * Prepara las transiciones acorde al nivel
+     */
     public void createTransitions(double level){
         FillTransition iluminate0 = new FillTransition();
         giveTransitionProperties(iluminate0, level);
@@ -48,6 +57,12 @@ public class CreateTransition {
 
     }
 
+
+    /**
+     * @param gamePane
+     * @param level
+     * Agrega figuras de la IGU
+     */
     public void createSquares(GridPane gamePane, double level){
         greenSquare.setWidth(150);
         greenSquare.setHeight(150);
@@ -69,6 +84,12 @@ public class CreateTransition {
 
     }
 
+
+    /**
+     * @param gamePane
+     * @param level
+     * Ordena de forma aleatoria las cinco iluminaciones
+     */
     public void settingTransitions(GridPane gamePane, double level){
         createTransitions(level);
         for(int counter = 0; counter<colorOrder.length; counter++ ){
@@ -110,6 +131,11 @@ public class CreateTransition {
         ilumination[0].play();
     }
 
+
+    /**
+     * @param gamePane
+     * Inicia las trancisiones
+     */
     public void playGame(GridPane gamePane){
         red.setBackground(Background.EMPTY);
         red.setPrefSize(150,150);

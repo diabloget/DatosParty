@@ -13,6 +13,7 @@ import main.main;
 import java.util.Arrays;
 
 public class Simon  {
+
     public Simon(Player[]names, boolean versus){
         this.versus = versus;
         this.names = new String[names.length];
@@ -22,6 +23,7 @@ public class Simon  {
         oldScene = board.getBoardScene();
         this.score = new KeepingScore(numberOfPlayers, oldScene, versus, names);
     }
+
     private boolean versus;
     private KeepingScore score;
     private Scene oldScene;
@@ -37,6 +39,9 @@ public class Simon  {
     public Scene simonScene =  new Scene(gamePane,400,400);
 
 
+    /**
+     * Reinicia las transiciones y pone el nivel segun el correspondiente
+     */
     public void prepareForPlayer(){
         CreateTransition transitions = new CreateTransition();
         transitions.createSquares(gamePane, level[whichLevel]);
@@ -44,6 +49,12 @@ public class Simon  {
         settingAction(transitions);
 
     }
+
+
+    /**
+     * @param transitions
+     * Almacena los movimientos del jugador para analizar
+     */
     private void settingAction(CreateTransition transitions){
         System.out.println(Arrays.toString(colorAnswers));
         transitions.blue.setOnAction(actionEvent -> {
@@ -89,6 +100,11 @@ public class Simon  {
 
     }
 
+
+    /**
+     * Revisa si es el caso ganador
+     * Toma accion inicial de premiacion y castigos
+     */
     private void checkAnswers() {
         System.out.println(Arrays.toString(playerAnswers));
         if(score.winOrLoose(colorAnswers, playerAnswers)){
@@ -109,6 +125,9 @@ public class Simon  {
     }
 
 
+    /**
+     * Llamada inica el juego
+     */
     public void starting() {
         gamePane.setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
         gamePane.setHgap(20);

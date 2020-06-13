@@ -4,6 +4,10 @@ public class SimpleLinkedList<T extends Comparable<T>> {
     public Lists.NodeSimple first = null;
     public Lists.NodeSimple<T> last = null;
 
+    /**
+     * @param data
+     * Agrega data en un nodo final en la lista
+     */
     public void addLast(T data){
         if(first == null){
             first = new Lists.NodeSimple<T>(data);
@@ -15,6 +19,10 @@ public class SimpleLinkedList<T extends Comparable<T>> {
         }
     }
 
+    /**
+     * @param data
+     * Agrega data en un nodo inicial en la lista
+     */
     public void addFirst(T data){
         if(first == null){
             first = new Lists.NodeSimple<T>(data);
@@ -26,6 +34,10 @@ public class SimpleLinkedList<T extends Comparable<T>> {
         }
     }
 
+    /**
+     * @param data
+     * Elimina el nodo al encontrar el mismo valor de datos
+     */
     public void deleting(T data){
         Lists.NodeSimple<T> pointerHead = first;
         Lists.NodeSimple<T> pointerTail = first;
@@ -46,6 +58,10 @@ public class SimpleLinkedList<T extends Comparable<T>> {
         }
     }
 
+    /**
+     * @param e
+     * @return indice de la posicion donde se encuentra el objeto.
+     */
     public int find(T e) {
         Lists.NodeSimple<T> temp = this.first;
         int index = 0;

@@ -52,8 +52,11 @@ public class BlackJack {
     Text[] playerCards = {card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12, card13};
 
 
-
-
+    /**
+     * Funcion que llama a newPlayer en caso de que pare de jugar o libera una carta del stack para seguir
+     * Se utiliza en los tres botones del juego
+     * @param isNew
+     */
     private void update(boolean isNew){
         if(isNew){
             newPlayer ();
@@ -62,6 +65,10 @@ public class BlackJack {
         }
     }
 
+    /**
+     * Funcion que genera parte grafica a un nuevo jugador en caso de existir
+     * En caso de no existir mas jugadore decide las premiaciones y castigos
+     */
     private void newPlayer(){
         if(game.isOver ()){
             if(game.isTie ()){
@@ -88,6 +95,10 @@ public class BlackJack {
         }
     }
 
+    /**
+     * Genera la parte visual para poder empezar a jugar
+     * Al primer jugador se le colocan dos cartas
+     */
     private void settingUp(){
         gamePane.setBackground (new Background (new BackgroundFill (Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
         gamePane.setVgap (15);
@@ -116,11 +127,19 @@ public class BlackJack {
         newPlayer ();
     }
 
+    /**
+     * Llamar funcion para empezar el minijuego de Black Jack
+     */
     public void starting() {
         settingUp ();
         main.window.setScene (gameScene);
     }
 
+
+    /**
+     * Funcion llamada desde el boton hit
+     * Se encarga de manejar de manera grafica y llamar hit de manera interna
+     */
     private void hitting(){
         game.hit ();
         if(game.getCount () > 21){
@@ -130,15 +149,29 @@ public class BlackJack {
         }
 
     }
+    /**
+     * Funcion llamada desde el boton get out
+     * Se encarga de manejar de manera grafica y llamar get out de manera interna
+     */
     private void gettingOut(){
         game.getOut ();
         update (true);
     }
+
+    /**
+     * Funcion llamada desde el boton stop
+     * Se encarga de manejar de manera grafica y llamar stop de manera interna
+     */
     private void stopping(){
         game.stop ();
         update (true);
     }
 
+
+    /**
+     * Funcion llamda desde newPLayer
+     * Maneja los castigos para ganadores y perdedores del minijuego
+     */
     private void versusMethodPositions(){
         for(Player search : call){
             if(!search.equals (PlayerList.getPlayers (game.getWinner ()))){

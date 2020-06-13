@@ -3,6 +3,10 @@ package Lists;
 public class CircularSimpleLinkedList<T extends Comparable<T>> {
     public Lists.NodeSimple<T> last = null;
 
+    /**
+     * @param data
+     * Agrega data en un nodo final en la lista
+     */
     public void addLast(T data) {
         if ( this.last==null ) {
             this.last = new Lists.NodeSimple<T>(data);
@@ -16,6 +20,10 @@ public class CircularSimpleLinkedList<T extends Comparable<T>> {
 
     }
 
+    /**
+     * @param data
+     * Agrega data en un nodo inicial en la lista
+     */
     public void addFirst(T data) {
         if ( last==null ) {
             this.last = new Lists.NodeSimple<T>(data);
@@ -27,6 +35,10 @@ public class CircularSimpleLinkedList<T extends Comparable<T>> {
         }
     }
 
+    /**
+     * @param data
+     * Elimina el nodo al encontrar el mismo valor de datos
+     */
     public void deleting(T data) {
         Lists.NodeSimple<T> pointerHead = this.last.getNext ();
         Lists.NodeSimple<T> pointerTail = this.last.getNext ();
@@ -48,6 +60,10 @@ public class CircularSimpleLinkedList<T extends Comparable<T>> {
 
     }
 
+    /**
+     * @param e
+     * @return indice de la posicion donde se encuentra el objeto.
+     */
     public int find(T e) {
         Lists.NodeSimple<T> pointerHead = this.last;
         Lists.NodeSimple<T> pointerTail = this.last;

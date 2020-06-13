@@ -12,18 +12,23 @@ import java.util.Random;
 public class playerEvents {
     public static int lastPosition;
     public static String lastPath;
-    private static Player winner;
 
-    public static void setWinner(Player won){
-        winner = won;
-    }
 
+    /**
+     * Busca los eventos si deben ser llamados
+     */
     public static void checkEvents(){
         winCoins();
         loseCoins();
         yellowEvent();
     }
 
+
+    /**
+     * @param names
+     * @param versus
+     * Llama a un mini juego aleatorio, sea tipo versus, duelo o todos
+     */
     public static void startMinigame(Player[] names, boolean versus){
         int randomInt = new Random ().nextInt (7);
 
@@ -89,6 +94,10 @@ public class playerEvents {
         }
     }
 
+
+    /**
+     * Verifica la casilla y llama a los eventos de manera aleatoria
+     */
     public static void yellowEvent(){
         //despiche
         if(Round.getCurrent().getPath().equals("doubleCircularPath") &  dices.diceValue() == 0){
