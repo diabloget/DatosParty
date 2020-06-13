@@ -1,5 +1,10 @@
 package boardScreen;
 
+import Lists.CircularDoubleLinkedList;
+import Lists.CircularSimpleLinkedList;
+import Lists.DoubleLinkedList;
+import Lists.SimpleLinkedList;
+
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -9,6 +14,11 @@ public class XYAxes {
     public static ArrayList<Point> doubleXY1 = new ArrayList<Point>();
     public static ArrayList<Point> doubleXY2 = new ArrayList<Point>();
     public static ArrayList<Point> doubleCircularXY = new ArrayList<Point>();
+
+    public static Lists.CircularDoubleLinkedList m = new CircularDoubleLinkedList();
+    public static Lists.CircularSimpleLinkedList s = new CircularSimpleLinkedList();
+    public static Lists.DoubleLinkedList d1 = new DoubleLinkedList();
+    public static Lists.SimpleLinkedList d2 = new SimpleLinkedList();
 
     static void initMainXY(int x, int y){
         mainXY.add(new Point(x, y));

@@ -1,15 +1,15 @@
 package Lists;
 
 public class SimpleLinkedList<T extends Comparable<T>> {
-    public NodeSimple<T> first = null;
-    public NodeSimple<T> last = null;
+    public Lists.NodeSimple first = null;
+    public Lists.NodeSimple<T> last = null;
 
     public void addLast(T data){
         if(first == null){
-            first = new NodeSimple<T> (data);
+            first = new Lists.NodeSimple<T>(data);
             last = first;
         }else{
-            NodeSimple<T> addingElement = new NodeSimple<> (data);
+            Lists.NodeSimple<T> addingElement = new Lists.NodeSimple<T>(data);
             last.setNext (addingElement);
             last = addingElement;
         }
@@ -17,18 +17,18 @@ public class SimpleLinkedList<T extends Comparable<T>> {
 
     public void addFirst(T data){
         if(first == null){
-            first = new NodeSimple<T> (data);
+            first = new Lists.NodeSimple<T>(data);
             last = first;
         }else{
-            NodeSimple<T> addingElement = new NodeSimple<> (data);
+            Lists.NodeSimple<T> addingElement = new Lists.NodeSimple<T>(data);
             addingElement.setNext (first);
             first = addingElement;
         }
     }
 
     public void deleting(T data){
-        NodeSimple<T> pointerHead = first;
-        NodeSimple<T> pointerTail = first;
+        Lists.NodeSimple<T> pointerHead = first;
+        Lists.NodeSimple<T> pointerTail = first;
         while (pointerHead!=null){
             if(pointerHead.getValue().compareTo (data)==0){
                 if(pointerHead==first){
@@ -47,7 +47,7 @@ public class SimpleLinkedList<T extends Comparable<T>> {
     }
 
     public int find(T e) {
-        NodeSimple<T> temp = this.first;
+        Lists.NodeSimple<T> temp = this.first;
         int index = 0;
         while (temp!=null) {
             if ( temp.getValue().compareTo(e)==0 ) {
@@ -65,7 +65,7 @@ public class SimpleLinkedList<T extends Comparable<T>> {
             return "Empty";
         }else{
             StringBuilder returning = new StringBuilder ();
-            NodeSimple<T> pointer = first;
+            Lists.NodeSimple<T> pointer = first;
             while(pointer!=null){
                 returning.append (pointer.toString ());
                 returning.append (" ");

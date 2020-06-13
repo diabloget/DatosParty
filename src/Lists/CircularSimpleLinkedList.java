@@ -1,14 +1,14 @@
 package Lists;
 
 public class CircularSimpleLinkedList<T extends Comparable<T>> {
-    public NodeSimple<T> last = null;
+    public Lists.NodeSimple<T> last = null;
 
     public void addLast(T data) {
         if ( this.last==null ) {
-            this.last = new NodeSimple<T>(data);
+            this.last = new Lists.NodeSimple<T>(data);
             last.setNext(last);
         } else {
-            NodeSimple<T> addingElement = new NodeSimple<>(data);
+            Lists.NodeSimple<T> addingElement = new Lists.NodeSimple<T>(data);
             addingElement.setNext(last.getNext());
             last.setNext(addingElement);
             last = addingElement;
@@ -18,18 +18,18 @@ public class CircularSimpleLinkedList<T extends Comparable<T>> {
 
     public void addFirst(T data) {
         if ( last==null ) {
-            this.last = new NodeSimple<T>(data);
+            this.last = new Lists.NodeSimple<T>(data);
             last.setNext(last);
         } else {
-            NodeSimple<T> addingElement = new NodeSimple<>(data);
+            Lists.NodeSimple<T> addingElement = new Lists.NodeSimple<T>(data);
             addingElement.setNext(last.getNext());
             last.setNext(addingElement);
         }
     }
 
     public void deleting(T data) {
-        NodeSimple<T> pointerHead = this.last.getNext ();
-        NodeSimple<T> pointerTail = this.last.getNext ();
+        Lists.NodeSimple<T> pointerHead = this.last.getNext ();
+        Lists.NodeSimple<T> pointerTail = this.last.getNext ();
 
         while (pointerTail!= last) {
             if ( pointerHead.getValue().compareTo (data)==0 ) {
@@ -49,8 +49,8 @@ public class CircularSimpleLinkedList<T extends Comparable<T>> {
     }
 
     public int find(T e) {
-        NodeSimple<T> pointerHead = this.last;
-        NodeSimple<T> pointerTail = this.last;
+        Lists.NodeSimple<T> pointerHead = this.last;
+        Lists.NodeSimple<T> pointerTail = this.last;
         int index = 0;
         while (pointerTail.getNext()!=last) {
             if ( pointerHead.getValue().compareTo(e)==0 ) {
@@ -69,8 +69,8 @@ public class CircularSimpleLinkedList<T extends Comparable<T>> {
             return "Empty";
         }else{
             StringBuilder returning = new StringBuilder ();
-            NodeSimple<T> pointer = last;
-            NodeSimple<T> tail = last;
+            Lists.NodeSimple<T> pointer = last;
+            Lists.NodeSimple<T> tail = last;
             while(tail.getNext ()!=last){
                 returning.append (pointer.toString ());
                 returning.append (" ");

@@ -1,7 +1,9 @@
 package boardScreen;
 
 import javafx.scene.input.KeyEvent;
+import main.main;
 import playersScreen.PlayerList;
+import scoreScreen.score;
 
 public class Round {
     private static int roundNumber = 0;
@@ -13,6 +15,9 @@ public class Round {
      * Método que actualiza el jugador en turno y la Ronda.
      */
     public static void RoundUpdate(){
+        if(roundNumber == 25){
+            main.window.setScene(score.getScoreScene());
+        }
         if(currentPlayer == PlayerList.getNamesArray().length-1){
             Player[] names = new Player[PlayerList.getNamesArray ().length];
             for(int index = 0; index < PlayerList.getNamesArray ().length ; index++){
