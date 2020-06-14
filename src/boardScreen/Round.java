@@ -1,5 +1,6 @@
 package boardScreen;
 
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import main.main;
 import playersScreen.PlayerList;
@@ -28,7 +29,7 @@ public class Round {
             currentPlayer = 0;
 
             //Star
-
+            Star.renderStar();
         }else {
             currentPlayer ++;
         }
@@ -38,7 +39,7 @@ public class Round {
         return PlayerList.getPlayers(currentPlayer);
     }
 
-    public static void moveCurrent(KeyEvent e){
+    public static void moveCurrent(KeyCode e){
         steps.stepCalculator(PlayerList.getPlayers(currentPlayer), e);
     }
 }

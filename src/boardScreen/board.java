@@ -157,16 +157,19 @@ public class board{
                 boardpane.getChildren().add(player.getPlayerIcon());
             }
 
-            scoreTable.InitDataTable(90,110);
+            scoreTable.InitDataTable(120,130);
             for(HBox hboxito:scoreTable.hBoxes){
                 boardpane.getChildren().add(hboxito);
             }
 
             //init star
             boardpane.getChildren().add(Star.getStarIcon());
+            boardpane.getChildren().add(Star.starButton());
+
+
 
             boardpane.setOnKeyPressed(event -> {
-                Round.moveCurrent(event);
+                //Round.moveCurrent(event.getCode());
 
                 if(event.getCode() == KeyCode.UP){
                     DirectionButtons.greenButtonsUp();
