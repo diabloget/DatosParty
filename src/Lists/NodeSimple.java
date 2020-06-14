@@ -1,6 +1,6 @@
 package Lists;
 
-public class NodeSimple<T extends Comparable<T>> {
+public class NodeSimple<T> {
     private T value;
     private NodeSimple<T> next;
 

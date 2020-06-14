@@ -1,14 +1,34 @@
 package Lists;
 
-public class CircularDoubleLinkedList<T extends Comparable<T>> {
+public class CircularDoubleLinkedList<T> extends ListParent{
     public NodeDouble<T> last = null;
+    private int lastPosition = 0;
 
+    /**
+     * @param index
+     * @return valor de la casilla en el juego
+     */
+
+    @Override
+    public T get(int index){
+        NodeDouble<T> pointer = last.getNext ();
+        if(index > lastPosition){
+            return null;
+        }
+        int counter = 0;
+        while(counter < index){
+            pointer = pointer.getNext ();
+            counter++;
+        }
+        return pointer.getValue ();
+    }
 
     /**
      * @param data
      * Agrega data en un nodo final en la lista
      */
     public void addLast(T data){
+        lastPosition++;
         if(last == null){
             last = new NodeDouble<>(data);
             last.setPrevious(last);
@@ -27,6 +47,7 @@ public class CircularDoubleLinkedList<T extends Comparable<T>> {
      * Agrega data en un nodo inicial en la lista
      */
     public void addFirst(T data){
+        lastPosition++;
         if(last==null){
             last = new NodeDouble<>(data);
             last.setPrevious(last);
@@ -40,52 +61,6 @@ public class CircularDoubleLinkedList<T extends Comparable<T>> {
     }
 
 
-    /**
-     * @param value
-     * Elimina el nodo al encontrar el mismo valor de datos
-     */
-    public void deleting(T value){
-        NodeDouble<T> pointerHead = last;
-        NodeDouble<T> pointerTail = last;
-        while (pointerTail.getNext()!= last) {
-            if ( pointerHead.getValue ().compareTo (value)==0) {
-                System.out.println ("true");
-                if ( pointerHead==last ) {
-                    pointerHead.getPrevious ().setNext (last.getNext ());
-                    pointerHead.getNext ().setPrevious (last.getPrevious ());
-                    last = pointerHead.getPrevious ();
-                    return;
-                } else {
-                    pointerTail.setNext (pointerHead.getNext ());
-                    pointerHead.getNext ().setPrevious (pointerTail);
-                    return;
-                }
-            } else {
-                pointerTail = pointerHead;
-                pointerHead = pointerHead.getNext ();
-            }
-        }
-    }
-
-
-    /**
-     * @param e
-     * @return indice de la posicion donde se encuentra el objeto.
-     */
-    public int find(T e) {
-        NodeDouble<T> pointerHead = this.last;
-        NodeDouble<T> pointerTail = this.last;
-        int index = 0;
-        while (pointerTail.getNext()!=last) {
-            if ( pointerHead.getValue().compareTo(e)==0 ) {
-                return index;
-            }
-            index++;
-            pointerTail = pointerHead;
-            pointerHead = pointerHead.getNext();
-        }
-        return -1;
-    }
 
     @Override
     public String toString() {

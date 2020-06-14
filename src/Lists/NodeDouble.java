@@ -2,7 +2,7 @@
 
 package Lists;
 
-public class NodeDouble<T extends Comparable<T>> {
+public class NodeDouble<T> {
     private T value;
     private NodeDouble<T> next;
     private NodeDouble<T> previous;

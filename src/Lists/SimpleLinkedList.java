@@ -1,14 +1,33 @@
 package Lists;
 
-public class SimpleLinkedList<T extends Comparable<T>> {
+public class SimpleLinkedList<T> extends ListParent{
+    private int lastPosition = 0;
     public NodeSimple<T> first = null;
     public NodeSimple<T> last = null;
 
+    /**
+     * @param index
+     * @return valor de la casilla en el juego
+     */
+    @Override
+    public T get(int index){
+        int counter = 0;
+        NodeSimple<T> pointer = first;
+        if(index > lastPosition){
+            return null;
+        }
+        while (counter < index){
+            pointer = pointer.getNext ();
+            counter++;
+        }
+        return pointer.getValue ();
+    }
     /**
      * @param data
      * Agrega data en un nodo final en la lista
      */
     public void addLast(T data){
+        lastPosition++;
         if(first == null){
             first = new NodeSimple<T> (data);
             last = first;
@@ -24,6 +43,7 @@ public class SimpleLinkedList<T extends Comparable<T>> {
      * Agrega data en un nodo inicial en la lista
      */
     public void addFirst(T data){
+        lastPosition++;
         if(first == null){
             first = new NodeSimple<T> (data);
             last = first;
@@ -34,46 +54,8 @@ public class SimpleLinkedList<T extends Comparable<T>> {
         }
     }
 
-    /**
-     * @param data
-     * Elimina el nodo al encontrar el mismo valor de datos
-     */
-    public void deleting(T data){
-        NodeSimple<T> pointerHead = first;
-        NodeSimple<T> pointerTail = first;
-        while (pointerHead!=null){
-            if(pointerHead.getValue().compareTo (data)==0){
-                if(pointerHead==first){
-                    first = pointerHead.getNext ();
-                    return;
-                }else{
-                    if(pointerHead==last){
-                        last = pointerTail;
-                    }
-                    pointerTail.setNext (pointerHead.getNext ());
-                }
-            }
-            pointerTail = pointerHead;
-            pointerHead = pointerHead.getNext ();
-        }
-    }
 
-    /**
-     * @param e
-     * @return indice de la posicion donde se encuentra el objeto.
-     */
-    public int find(T e) {
-        NodeSimple<T> temp = this.first;
-        int index = 0;
-        while (temp!=null) {
-            if ( temp.getValue().compareTo(e)==0 ) {
-                return index;
-            }
-            index++;
-            temp = temp.getNext();
-        }
-        return -1;
-    }
+
 
     @Override
     public String toString() {

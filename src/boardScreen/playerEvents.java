@@ -5,8 +5,6 @@ import Simon.Simon;
 import StackEvents.StackAnalizer;
 import playersScreen.PlayerList;
 import Connect4.*;
-import playersScreen.PlayerList;
-
 import java.util.Random;
 
 public class playerEvents {
@@ -30,7 +28,7 @@ public class playerEvents {
      * Llama a un mini juego aleatorio, sea tipo versus, duelo o todos
      */
     public static void startMinigame(Player[] names, boolean versus){
-        int randomInt = new Random ().nextInt (7);
+        int randomInt = new Random ().nextInt (6);
 
             if(randomInt == 3) {
                 Connect4 game = new Connect4 (names, versus);
