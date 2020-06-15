@@ -1,3 +1,5 @@
+package RPS;
+
 public class Piedra implements Mano {
     @Override
     public Resultado jugar(Mano mano) {

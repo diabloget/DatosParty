@@ -1,3 +1,5 @@
+package RPS;
+
 public interface Mano {
 
     Resultado jugar(Mano mano);

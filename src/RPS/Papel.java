@@ -1,21 +1,23 @@
-public class Tijera implements Mano {
+package RPS;
+
+public class Papel implements Mano {
     @Override
     public Resultado jugar(Mano mano) {
-        return mano.jugarContraTijera(this);
+        return mano.jugarContraPapel(this);
     }
 
     @Override
     public Resultado jugarContraPapel(Papel papel) {
-        return Resultado.GANA;
+        return Resultado.EMPATA;
     }
 
     @Override
     public Resultado jugarContraPiedra(Piedra piedra) {
-        return Resultado.PIERDE;
+        return Resultado.GANA;
     }
 
     @Override
     public Resultado jugarContraTijera(Tijera tijera) {
-        return Resultado.EMPATA;
+        return Resultado.PIERDE;
     }
 }

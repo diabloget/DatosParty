@@ -1,3 +1,5 @@
+package RPS;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -15,9 +17,9 @@ public class PiedraPapelOtijera {
 	ArrayList<Integer> lista = new 	ArrayList<Integer>();
 	
 	public Pane getPane() throws FileNotFoundException {
-		FileInputStream Piedra = new FileInputStream("Piedra.png");
+		FileInputStream Piedra = new FileInputStream("RPS.Piedra.png");
 		Image PiedraImage = new Image(Piedra);
-		FileInputStream Papel = new FileInputStream("Papel.png");
+		FileInputStream Papel = new FileInputStream("RPS.Papel.png");
 		Image PapelImage = new Image(Papel);
 		FileInputStream Tijera = new FileInputStream("tijera.png");
 		Image tijeraImage = new Image(Tijera);
