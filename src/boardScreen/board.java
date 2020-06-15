@@ -165,13 +165,6 @@ public class board{
 
 
             boardpane.setOnKeyPressed(event -> {
-                /*
-                try {
-                    Round.moveCurrent(event.getCode());
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace ();
-                }
-                */
 
                 if(event.getCode() == KeyCode.UP){
                     try {
