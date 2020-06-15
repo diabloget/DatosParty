@@ -5,6 +5,13 @@ public class CircularDoubleLinkedList<T> extends ListParent{
     private int lastPosition = 0;
 
     /**
+     * @return Tamano de la lista
+     */
+    public int size(){
+        return this.lastPosition+1;
+    }
+
+    /**
      * @param index
      * @return valor de la casilla en el juego
      */

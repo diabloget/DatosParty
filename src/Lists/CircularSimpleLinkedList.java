@@ -4,10 +4,17 @@ public class CircularSimpleLinkedList<T> extends ListParent {
     public NodeSimple<T> last = null;
     private int lastPosition = 0;
     /**
+     * @return Tamano de la lista
+     */
+    public int size(){
+        return this.lastPosition+1;
+    }
+
+
+    /**
      * @param index indice para obtener valor
      * @return valor de la casilla en el juego
      */
-
     @Override
     public T get(int index){
         NodeSimple<T> pointer = last.getNext ();

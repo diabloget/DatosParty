@@ -5,6 +5,9 @@ public class DoubleLinkedList<T> extends ListParent{
     public NodeDouble<T> last = null;
     private int lastPostion = 0;
 
+
+
+
     /**
      * @param index
      * @return valor de la casilla en el juego
@@ -22,6 +25,13 @@ public class DoubleLinkedList<T> extends ListParent{
             counter++;
         }
         return pointer.getValue ();
+    }
+
+    /**
+     * @return Tamano de la lista
+     */
+    public int size(){
+        return this.lastPostion+1;
     }
 
     /**
