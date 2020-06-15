@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
+import boardScreen.Player;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -12,14 +13,23 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
 public class PiedraPapelOtijera {
+	public PiedraPapelOtijera(Player playerA, Player playerB) {
+		this.playerA = playerA;
+		this.playerB = playerB;
+	}
+
 	ArrayList<Button> ListaBotones = new ArrayList<Button>();
 	int temp=0;
 	ArrayList<Integer> lista = new 	ArrayList<Integer>();
-	
+	private Player playerA;
+	private Player playerB;
+
+
+
 	public Pane getPane() throws FileNotFoundException {
-		FileInputStream Piedra = new FileInputStream("RPS.Piedra.png");
+		FileInputStream Piedra = new FileInputStream("Piedra.png");
 		Image PiedraImage = new Image(Piedra);
-		FileInputStream Papel = new FileInputStream("RPS.Papel.png");
+		FileInputStream Papel = new FileInputStream("Papel.png");
 		Image PapelImage = new Image(Papel);
 		FileInputStream Tijera = new FileInputStream("tijera.png");
 		Image tijeraImage = new Image(Tijera);
@@ -47,18 +57,30 @@ public class PiedraPapelOtijera {
 		
 		ListaBotones.get(0).setOnAction(new EventHandler<ActionEvent>() {
 		    @Override public void handle(ActionEvent e) {
-		    	revisarjuego(1);
-		    }
+				try {
+					revisarjuego(1);
+				} catch (FileNotFoundException ex) {
+					ex.printStackTrace ();
+				}
+			}
 		});
 		ListaBotones.get(1).setOnAction(new EventHandler<ActionEvent>() {
 		    @Override public void handle(ActionEvent e) {
-		    	revisarjuego(2);
-		    }
+				try {
+					revisarjuego(2);
+				} catch (FileNotFoundException ex) {
+					ex.printStackTrace ();
+				}
+			}
 		});
 		ListaBotones.get(2).setOnAction(new EventHandler<ActionEvent>() {
 		    @Override public void handle(ActionEvent e) {
-		    	revisarjuego(3);
-		    }
+				try {
+					revisarjuego(3);
+				} catch (FileNotFoundException ex) {
+					ex.printStackTrace ();
+				}
+			}
 		});
 
 		
@@ -68,7 +90,7 @@ public class PiedraPapelOtijera {
 		
 	}
 	
-	private void revisarjuego(int num) {
+	private void revisarjuego(int num) throws FileNotFoundException {
 		if(temp==0) {
 			temp=num;
 			lista.add(temp);
@@ -76,31 +98,37 @@ public class PiedraPapelOtijera {
 		}else {
 			lista.add(num);
 			if(lista.get(0)==1 && lista.get(1)== 1 ) {
-				System.out.println("Empate");
+				RPS.newGame (playerA, playerB);
 			}
 			else if(lista.get(0)==2 && lista.get(1)==2) {
-				System.out.println("Empate");
+				RPS.newGame (playerA, playerB);
 			}
 			else if(lista.get(0)==3 && lista.get(1)==3) {
-				System.out.println("Empate");
+				RPS.newGame (playerA, playerB);
 			}
 			else if(lista.get(0)==1 && lista.get(1)==2) {
-				System.out.println("Gana jugador dos");
+				RPS.setWinner (1);
+				RPS.roundHandler ();
 			}
 			else if(lista.get(0)==1 && lista.get(1)==3) {
-				System.out.println("Gana jugador uno");
+				RPS.setWinner (0);
+				RPS.roundHandler ();
 			}
 			else if(lista.get(0)==3 && lista.get(1)==1) {
-				System.out.println("Gana jugador dos");
+				RPS.setWinner (1);
+				RPS.roundHandler ();
 			}
 			else if(lista.get(0)==3 && lista.get(1)==2) {
-				System.out.println("Gana jugador uno");
+				RPS.setWinner (0);
+				RPS.roundHandler ();
 			}
 			else if(lista.get(0)==2 && lista.get(1)==1) {
-				System.out.println("Gana jugador uno");
+				RPS.setWinner (0);
+				RPS.roundHandler ();
 			}
 			else if(lista.get(0)==2 && lista.get(1)==3) {
-				System.out.println("Gana jugador dos");
+				RPS.setWinner (1);
+				RPS.roundHandler ();
 			}
 		}
 			

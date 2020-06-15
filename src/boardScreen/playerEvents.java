@@ -2,6 +2,7 @@ package boardScreen;
 
 import BlackJack.BlackJack;
 import HorseBet.HorseBet;
+import RPS.RPS;
 import Simon.Simon;
 import StackEvents.StackAnalizer;
 import TikTakToe.TikTakToe;
@@ -32,7 +33,8 @@ public class playerEvents {
      * Llama a un mini juego aleatorio, sea tipo versus, duelo o todos
      */
     public static void startMinigame(Player[] names, boolean versus) throws FileNotFoundException {
-        int randomInt = new Random ().nextInt (6);
+        int randomInt = 0;
+                //new Random ().nextInt (6);
 
             if(randomInt == 3) {
                 Connect4 game = new Connect4 (names, versus);
@@ -52,6 +54,10 @@ public class playerEvents {
             }
             if(randomInt == 1){
                 TikTakToe game = new TikTakToe (names, versus);
+                game.starting ();
+            }
+            if(randomInt == 0){
+                RPS game = new RPS (names, versus);
                 game.starting ();
             }
 

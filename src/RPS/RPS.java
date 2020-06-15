@@ -1,6 +1,9 @@
 package RPS;
 
 import javafx.scene.Scene;
+import boardScreen.*;
+import main.main;
+
 
 import java.io.FileNotFoundException;
 
@@ -29,7 +32,7 @@ public class RPS {
      */
     public static void newGame(Player playerA, Player playerB) throws FileNotFoundException {
         interfaz= new PiedraPapelOtijera (playerA, playerB);
-        main.window.setScene(new Scene (interfaz.getPane(), 720, 599));
+        main.window.setScene(new Scene (interfaz.getPane(), 400, 400));
     }
 
     /**

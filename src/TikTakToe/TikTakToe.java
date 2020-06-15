@@ -3,7 +3,6 @@ package TikTakToe;
 import boardScreen.*;
 import javafx.scene.Scene;
 import main.main;
-import playersScreen.PlayerList;
 
 import java.io.FileNotFoundException;
 
