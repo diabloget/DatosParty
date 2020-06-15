@@ -1,6 +1,7 @@
 package boardScreen;
 
 import BlackJack.BlackJack;
+import HorseBet.HorseBet;
 import Simon.Simon;
 import StackEvents.StackAnalizer;
 import playersScreen.PlayerList;
@@ -28,7 +29,8 @@ public class playerEvents {
      * Llama a un mini juego aleatorio, sea tipo versus, duelo o todos
      */
     public static void startMinigame(Player[] names, boolean versus){
-        int randomInt = new Random ().nextInt (6);
+        int randomInt = 2;
+  ///new Random ().nextInt (6);
 
             if(randomInt == 3) {
                 Connect4 game = new Connect4 (names, versus);
@@ -40,6 +42,10 @@ public class playerEvents {
             }
             if(randomInt == 4){
                 BlackJack game = new BlackJack (names, versus);
+                game.starting ();
+            }
+            if(randomInt == 2){
+                HorseBet game = new HorseBet (names, versus);
                 game.starting ();
             }
     }
