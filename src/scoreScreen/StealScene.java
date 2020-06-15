@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import main.main;
 import playersScreen.PlayerList;
@@ -17,7 +18,7 @@ public class StealScene {
     }
 
     private GridPane paneForSteal = new GridPane ();
-    private Scene steal = new Scene (paneForSteal, 200, 300);
+    private Scene steal = new Scene (paneForSteal, 100, 200);
     private Text text =  new Text ();
     private String textTittle;
 
@@ -33,6 +34,9 @@ public class StealScene {
      * Agrega los botones para seleccionar robo
      */
     private void setButtons(){
+        paneForSteal.setStyle("-fx-background-color: #2B2B2B");
+
+
         text.setText (textTittle);
         paneForSteal.add (text,0,0);
         Button player1 = new Button ("Player 1");
@@ -40,6 +44,16 @@ public class StealScene {
         Button player3 = new Button ("Player 3");
         Button player4 = new Button ("Player 4");
         Button[] buttons = {player1, player2, player3, player4};
+        for(Button button:buttons){
+            button.setStyle("-fx-background-color: #3C3F41");
+            button.setOnMousePressed(event -> button.setStyle("-fx-background-color: #313335"));
+            button.setOnMouseReleased(event -> button.setStyle("-fx-background-color: #3C3F41"));
+            button.setTextFill(Color.valueOf("#C9C9C9"));
+        }
+
+
+
+
         int index = 0;
         int indexPositions = 0;
         while (index < PlayerList.getNamesArray().length) {
@@ -76,6 +90,12 @@ public class StealScene {
             });
         }
         Button cancel = new Button ("Cancel");
+        cancel.setStyle("-fx-background-color: #3C3F41");
+        cancel.setOnMousePressed(event -> cancel.setStyle("-fx-background-color: #313335"));
+        cancel.setOnMouseReleased(event -> cancel.setStyle("-fx-background-color: #3C3F41"));
+        cancel.setTextFill(Color.valueOf("#C9C9C9"));
+
+
         paneForSteal.add (cancel,0, index);
         cancel.setOnAction (actionEvent -> {
             main.window.setScene (board.getBoardScene ());
