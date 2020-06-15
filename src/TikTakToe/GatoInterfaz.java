@@ -1,3 +1,5 @@
+package TikTakToe;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import javafx.event.EventHandler;
@@ -10,7 +12,7 @@ import javafx.scene.layout.StackPane;
 public class GatoInterfaz {
 	
 
-	GatoLogic logica = new GatoLogic();
+	GatoLogic logica = new GatoLogic ();
 	int contador = 0;
 	/**
 	 * Esta funcion me genera la interfaz con todas las celdas

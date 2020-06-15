@@ -1,3 +1,5 @@
+package TikTakToe;
+
 /**
  * Este enum me define todas las celdas que hay dentro del juego 
  * @author Julio Varela

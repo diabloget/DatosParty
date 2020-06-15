@@ -1,3 +1,5 @@
+package TikTakToe;
+
 import java.util.ArrayList;
 
 public class GatoLogic {
@@ -54,30 +56,79 @@ public class GatoLogic {
 		matriz[a][b]=Switch;
 		Celdas.add(celda);
 		if(matriz[0][0]==matriz[0][1] && matriz[0][1]==matriz[0][2]) {
-			System.out.println("ganaste "+ jugador);
+			if(jugador.equals ("jugador 2")){
+				TikTakToe.setWinner (1);
+				TikTakToe.roundHandler ();
+			}else {
+				TikTakToe.setWinner (0);
+				TikTakToe.roundHandler ();
+			}
 			
 		}else if(matriz[1][0]==matriz[1][1] && matriz[1][1]==matriz[1][2]) {
-			System.out.println("ganaste "+ jugador);
+			if(jugador.equals ("jugador 2")){
+				TikTakToe.setWinner (1);
+				TikTakToe.roundHandler ();
+			}else {
+				TikTakToe.setWinner (0);
+				TikTakToe.roundHandler ();
+			}
 			
 		}else if(matriz[2][0]==matriz[2][1] && matriz[2][1]==matriz[2][2]) {
-			System.out.println("ganaste "+ jugador);
+			if(jugador.equals ("jugador 2")){
+				TikTakToe.setWinner (1);
+				TikTakToe.roundHandler ();
+			}else {
+				TikTakToe.setWinner (0);
+				TikTakToe.roundHandler ();
+			}
 			
 		}else if(matriz[0][0]==matriz[1][0] && matriz[1][0]==matriz[2][0]) {
-			System.out.println("ganaste "+ jugador);
+			if(jugador.equals ("jugador 2")){
+				TikTakToe.setWinner (1);
+				TikTakToe.roundHandler ();
+			}else {
+				TikTakToe.setWinner (0);
+				TikTakToe.roundHandler ();
+			}
 			
 		}else if(matriz[0][1]==matriz[1][1] && matriz[1][1]==matriz[2][1]) {
-			System.out.println("ganaste "+ jugador);
+			if(jugador.equals ("jugador 2")){
+				TikTakToe.setWinner (1);
+				TikTakToe.roundHandler ();
+			}else {
+				TikTakToe.setWinner (0);
+				TikTakToe.roundHandler ();
+			}
 			
 		}else if(matriz[2][0]==matriz[2][1] && matriz[2][1]==matriz[2][2]) {
-			System.out.println("ganaste "+ jugador);
+			if(jugador.equals ("jugador 2")){
+				TikTakToe.setWinner (1);
+				TikTakToe.roundHandler ();
+			}else {
+				TikTakToe.setWinner (0);
+				TikTakToe.roundHandler ();
+			}
+
 			
 		}else if(matriz[0][0]==matriz[1][1] && matriz[1][1]==matriz[2][2]) {
-			System.out.println("ganaste "+ jugador);
+			if(jugador.equals ("jugador 2")){
+				TikTakToe.setWinner (1);
+				TikTakToe.roundHandler ();
+			}else {
+				TikTakToe.setWinner (0);
+				TikTakToe.roundHandler ();
+			}
 			
 		}else if(matriz[2][0]==matriz[1][1] && matriz[1][1]==matriz[0][2]) {
-			System.out.println("ganaste "+ jugador);
+			if(jugador.equals ("jugador 2")){
+				TikTakToe.setWinner (1);
+				TikTakToe.roundHandler ();
+			}else {
+				TikTakToe.setWinner (0);
+				TikTakToe.roundHandler ();
+			}
 		}else if(contador==9) {
-			System.out.println("Empate");
+			TikTakToe.roundHandler ();
 		}
 	}
 	/**
