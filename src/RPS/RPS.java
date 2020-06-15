@@ -8,6 +8,11 @@ import main.main;
 import java.io.FileNotFoundException;
 
 public class RPS {
+	/**
+	 * Esta funcion recibe los parametros necesarios para empezar el minijuego  con las variables necesarias
+	 * @param names
+	 * @param versus
+	 */
     public RPS(Player[] names, boolean versus){
         RPS.names= names;
         RPS.versus = versus;
@@ -25,6 +30,7 @@ public class RPS {
 
 
     /**
+     * Esta funcion crea una instancia del juego  con el jugador A y B los cuales se enfrentan en el versus y lo muestra en pantalla
      * @param playerA
      * @param playerB
      * @throws FileNotFoundException
