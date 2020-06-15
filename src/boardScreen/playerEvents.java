@@ -33,8 +33,7 @@ public class playerEvents {
      * Llama a un mini juego aleatorio, sea tipo versus, duelo o todos
      */
     public static void startMinigame(Player[] names, boolean versus) throws FileNotFoundException {
-        int randomInt = 0;
-                //new Random ().nextInt (6);
+        int randomInt = new Random ().nextInt (6);
 
             if(randomInt == 3) {
                 Connect4 game = new Connect4 (names, versus);
