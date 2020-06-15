@@ -17,7 +17,7 @@ public class steps {
      * @param player
      * @param e
      */
-    public static void stepCalculator(Player player, KeyEvent e) throws FileNotFoundException {
+    public static void stepCalculator(Player player, KeyCode e) throws FileNotFoundException {
         lastPosition = player.getPosition();
         lastPath = player.getPath();
         justone = true;

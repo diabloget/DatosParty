@@ -1,5 +1,6 @@
 package boardScreen;
 
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import playersScreen.PlayerList;
 
@@ -32,7 +33,7 @@ public class Round {
         return PlayerList.getPlayers(currentPlayer);
     }
 
-    public static void moveCurrent(KeyEvent e) throws FileNotFoundException {
+    public static void moveCurrent(KeyCode e) throws FileNotFoundException {
         steps.stepCalculator(PlayerList.getPlayers(currentPlayer), e);
     }
 }
