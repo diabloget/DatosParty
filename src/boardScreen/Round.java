@@ -3,6 +3,8 @@ package boardScreen;
 import javafx.scene.input.KeyEvent;
 import playersScreen.PlayerList;
 
+import java.io.FileNotFoundException;
+
 public class Round {
     private static int roundNumber = 0;
     private static int currentPlayer = 0;
@@ -12,7 +14,7 @@ public class Round {
     /**
      * Método que actualiza el jugador en turno y la Ronda.
      */
-    public static void RoundUpdate(){
+    public static void RoundUpdate() throws FileNotFoundException {
         if(currentPlayer == PlayerList.getNamesArray().length-1){
             Player[] names = new Player[PlayerList.getNamesArray ().length];
             for(int index = 0; index < PlayerList.getNamesArray ().length ; index++){
@@ -30,7 +32,7 @@ public class Round {
         return PlayerList.getPlayers(currentPlayer);
     }
 
-    public static void moveCurrent(KeyEvent e){
+    public static void moveCurrent(KeyEvent e) throws FileNotFoundException {
         steps.stepCalculator(PlayerList.getPlayers(currentPlayer), e);
     }
 }

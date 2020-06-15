@@ -3,6 +3,8 @@ package boardScreen;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
+import java.io.FileNotFoundException;
+
 public class steps {
     private static int lastPosition;
     private static String lastPath;
@@ -15,7 +17,7 @@ public class steps {
      * @param player
      * @param e
      */
-    public static void stepCalculator(Player player, KeyEvent e){
+    public static void stepCalculator(Player player, KeyEvent e) throws FileNotFoundException {
         lastPosition = player.getPosition();
         lastPath = player.getPath();
         justone = true;
@@ -259,7 +261,7 @@ public class steps {
      * @param player
      * @param path
      */
-    private static void reducer(Player player, String path){
+    private static void reducer(Player player, String path) throws FileNotFoundException {
 
         dices.diceMinus();
         player.setPath(path);

@@ -19,6 +19,7 @@ import java.util.Random;
 
 
 public class HorseBet {
+
     public HorseBet(Player[] names, boolean versus){
         this.versus = versus;
         this.names = names;

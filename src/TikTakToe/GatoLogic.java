@@ -1,8 +1,17 @@
 package TikTakToe;
 
+import boardScreen.Player;
+
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class GatoLogic {
+	public GatoLogic(Player a, Player b){
+		this.a = a;
+		this.b = b;
+	}
+	private Player a;
+	private Player b;
 	private int Switch = 0;
 	
 	
@@ -52,7 +61,7 @@ public class GatoLogic {
 	 * @param celda
 	 * @param contador
 	 */
-	public void setLista(int a,int b,int celda,int contador,String jugador) {
+	public void setLista(int a,int b,int celda,int contador,String jugador) throws FileNotFoundException {
 		matriz[a][b]=Switch;
 		Celdas.add(celda);
 		if(matriz[0][0]==matriz[0][1] && matriz[0][1]==matriz[0][2]) {
@@ -128,7 +137,7 @@ public class GatoLogic {
 				TikTakToe.roundHandler ();
 			}
 		}else if(contador==9) {
-			TikTakToe.roundHandler ();
+			TikTakToe.newGame (TikTakToe.names[0], TikTakToe.names[1]);
 		}
 	}
 	/**

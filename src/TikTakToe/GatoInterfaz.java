@@ -2,6 +2,8 @@ package TikTakToe;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+
+import boardScreen.Player;
 import javafx.event.EventHandler;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -10,18 +12,23 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 
 public class GatoInterfaz {
-	
 
-	GatoLogic logica = new GatoLogic ();
+	public GatoInterfaz(Player a, Player b){
+		this.a = a;
+		this.b = b;
+	}
+	private Player a;
+	private Player b;
+	private GatoLogic logica = new GatoLogic (a,b);
 	int contador = 0;
 	/**
 	 * Esta funcion me genera la interfaz con todas las celdas
 	 * @return
-	 * @throws FileNotFoundException
 	 */
 	public StackPane getPane() throws FileNotFoundException {
 		
 		StackPane root = new StackPane();
+
 		FileInputStream i = new FileInputStream("gato.jpg");
 		Image image = new Image(i);
 				root.getChildren().addAll(new ImageView(image),Celdas(Celdas.ArribaIzquierda),Celdas(Celdas.ArribaCentro),
@@ -69,8 +76,12 @@ public class GatoInterfaz {
 			    			  }
 				    		  logica.setSwitch(4);
 				    		  contador++;
-				    		  logica.setLista(a,b,celda,contador,logica.getString());
-				    	  }else {
+							  try {
+								  logica.setLista(a,b,celda,contador,logica.getString());
+							  } catch (FileNotFoundException ex) {
+								  ex.printStackTrace ();
+							  }
+						  }else {
 				    		  try {
 			    				  FileInputStream Equis = new FileInputStream("Equis.png");
 			    				  Image EquisImage = new Image(Equis);
@@ -80,8 +91,12 @@ public class GatoInterfaz {
 			    			  }
 				    		  logica.setSwitch(2);
 				    		  contador++;
-				    		  logica.setLista(a,b,celda,contador,logica.getString());
-			    	  }
+							  try {
+								  logica.setLista(a,b,celda,contador,logica.getString());
+							  } catch (FileNotFoundException ex) {
+								  ex.printStackTrace ();
+							  }
+						  }
 			    	 }
 			    	 
 			      }
@@ -111,8 +126,12 @@ public class GatoInterfaz {
 			    			  }
 				    		  logica.setSwitch(4);
 				    		  contador++;
-				    		  logica.setLista(a,b,celda,contador,logica.getString());
-				    	  }else {
+							  try {
+								  logica.setLista(a,b,celda,contador,logica.getString());
+							  } catch (FileNotFoundException ex) {
+								  ex.printStackTrace ();
+							  }
+						  }else {
 				    		  try {
 			    				  FileInputStream Equis = new FileInputStream("Equis.png");
 			    				  Image EquisImage = new Image(Equis);
@@ -122,8 +141,12 @@ public class GatoInterfaz {
 			    			  }
 				    		  logica.setSwitch(2);
 				    		  contador++;
-				    		  logica.setLista(a,b,celda,contador,logica.getString());
-			    	  }
+							  try {
+								  logica.setLista(a,b,celda,contador,logica.getString());
+							  } catch (FileNotFoundException ex) {
+								  ex.printStackTrace ();
+							  }
+						  }
 			    	 }
 			    	 
 			      }
@@ -153,8 +176,12 @@ public class GatoInterfaz {
 			    			  }
 				    		  logica.setSwitch(4);
 				    		  contador++;
-				    		  logica.setLista(a,b,celda,contador,logica.getString());
-				    	  }else {
+							  try {
+								  logica.setLista(a,b,celda,contador,logica.getString());
+							  } catch (FileNotFoundException ex) {
+								  ex.printStackTrace ();
+							  }
+						  }else {
 				    		  try {
 			    				  FileInputStream Equis = new FileInputStream("Equis.png");
 			    				  Image EquisImage = new Image(Equis);
@@ -164,8 +191,12 @@ public class GatoInterfaz {
 			    			  }
 				    		  logica.setSwitch(2);
 				    		  contador++;
-				    		  logica.setLista(a,b,celda,contador,logica.getString());
-			    	  }
+							  try {
+								  logica.setLista(a,b,celda,contador,logica.getString());
+							  } catch (FileNotFoundException ex) {
+								  ex.printStackTrace ();
+							  }
+						  }
 			    	 }
 			    	 
 			      }
@@ -194,8 +225,12 @@ public class GatoInterfaz {
 			    			  }
 				    		  logica.setSwitch(4);
 				    		  contador++;
-				    		  logica.setLista(a,b,celda,contador,logica.getString());
-				    	  }else {
+							  try {
+								  logica.setLista(a,b,celda,contador,logica.getString());
+							  } catch (FileNotFoundException ex) {
+								  ex.printStackTrace ();
+							  }
+						  }else {
 				    		  try {
 			    				  FileInputStream Equis = new FileInputStream("Equis.png");
 			    				  Image EquisImage = new Image(Equis);
@@ -205,8 +240,12 @@ public class GatoInterfaz {
 			    			  }
 				    		  logica.setSwitch(2);
 				    		  contador++;
-				    		  logica.setLista(a,b,celda,contador,logica.getString());
-			    	  }
+							  try {
+								  logica.setLista(a,b,celda,contador,logica.getString());
+							  } catch (FileNotFoundException ex) {
+								  ex.printStackTrace ();
+							  }
+						  }
 			    	 }
 			    	 
 			      }
@@ -235,8 +274,12 @@ public class GatoInterfaz {
 			    			  }
 				    		  logica.setSwitch(4);
 				    		  contador++;
-				    		  logica.setLista(a,b,celda,contador,logica.getString());
-				    	  }else {
+							  try {
+								  logica.setLista(a,b,celda,contador,logica.getString());
+							  } catch (FileNotFoundException ex) {
+								  ex.printStackTrace ();
+							  }
+						  }else {
 				    		  try {
 			    				  FileInputStream Equis = new FileInputStream("Equis.png");
 			    				  Image EquisImage = new Image(Equis);
@@ -246,8 +289,12 @@ public class GatoInterfaz {
 			    			  }
 				    		  logica.setSwitch(2);
 				    		  contador++;
-				    		  logica.setLista(a,b,celda,contador,logica.getString());
-			    	  }
+							  try {
+								  logica.setLista(a,b,celda,contador,logica.getString());
+							  } catch (FileNotFoundException ex) {
+								  ex.printStackTrace ();
+							  }
+						  }
 			    	 }
 			    	 
 			      
@@ -278,8 +325,12 @@ public class GatoInterfaz {
 					    		 
 				    		  logica.setSwitch(4);
 				    		  contador++;
-				    		  logica.setLista(a,b,celda,contador,logica.getString());
-				    	  }else {
+							  try {
+								  logica.setLista(a,b,celda,contador,logica.getString());
+							  } catch (FileNotFoundException ex) {
+								  ex.printStackTrace ();
+							  }
+						  }else {
 				    		  try {
 			    				  FileInputStream Equis = new FileInputStream("Equis.png");
 			    				  Image EquisImage = new Image(Equis);
@@ -289,8 +340,12 @@ public class GatoInterfaz {
 			    			  }
 				    		  logica.setSwitch(2);
 				    		  contador++;
-				    		  logica.setLista(a,b,celda,contador,logica.getString());
-			    	  }
+							  try {
+								  logica.setLista(a,b,celda,contador,logica.getString());
+							  } catch (FileNotFoundException ex) {
+								  ex.printStackTrace ();
+							  }
+						  }
 			    	 }
 			    	 
 			      }
@@ -320,8 +375,12 @@ public class GatoInterfaz {
 			    			  }
 				    		  logica.setSwitch(4);
 				    		  contador++;
-				    		  logica.setLista(a,b,celda,contador,logica.getString());
-				    	  }else {
+							  try {
+								  logica.setLista(a,b,celda,contador,logica.getString());
+							  } catch (FileNotFoundException ex) {
+								  ex.printStackTrace ();
+							  }
+						  }else {
 				    		  try {
 			    				  FileInputStream Equis = new FileInputStream("Equis.png");
 			    				  Image EquisImage = new Image(Equis);
@@ -331,8 +390,12 @@ public class GatoInterfaz {
 			    			  }
 				    		  logica.setSwitch(2);
 				    		  contador++;
-				    		  logica.setLista(a,b,celda,contador,logica.getString());
-			    	  }
+							  try {
+								  logica.setLista(a,b,celda,contador,logica.getString());
+							  } catch (FileNotFoundException ex) {
+								  ex.printStackTrace ();
+							  }
+						  }
 			    	 }
 			    	 
 			      }
@@ -362,8 +425,12 @@ public class GatoInterfaz {
 			    			  }
 				    		  logica.setSwitch(4);
 				    		  contador++;
-				    		  logica.setLista(a,b,celda,contador,logica.getString());
-				    	  }else {
+							  try {
+								  logica.setLista(a,b,celda,contador,logica.getString());
+							  } catch (FileNotFoundException ex) {
+								  ex.printStackTrace ();
+							  }
+						  }else {
 				    		  try {
 			    				  FileInputStream Equis = new FileInputStream("Equis.png");
 			    				  Image EquisImage = new Image(Equis);
@@ -373,8 +440,12 @@ public class GatoInterfaz {
 			    			  }
 				    		  logica.setSwitch(2);
 				    		  contador++;
-				    		  logica.setLista(a,b,celda,contador,logica.getString());
-			    	  }
+							  try {
+								  logica.setLista(a,b,celda,contador,logica.getString());
+							  } catch (FileNotFoundException ex) {
+								  ex.printStackTrace ();
+							  }
+						  }
 			    	 }
 			    	 
 			      }
@@ -404,8 +475,12 @@ public class GatoInterfaz {
 			    			  }
 				    		  logica.setSwitch(4);
 				    		  contador++;
-				    		  logica.setLista(a,b,celda,contador,logica.getString());
-				    	  }else {
+							  try {
+								  logica.setLista(a,b,celda,contador,logica.getString());
+							  } catch (FileNotFoundException ex) {
+								  ex.printStackTrace ();
+							  }
+						  }else {
 				    		  try {
 			    				  FileInputStream Equis = new FileInputStream("Equis.png");
 			    				  Image EquisImage = new Image(Equis);
@@ -415,8 +490,12 @@ public class GatoInterfaz {
 			    			  }
 				    		  logica.setSwitch(2);
 				    		  contador++;
-				    		  logica.setLista(a,b,celda,contador,logica.getString());
-			    	  }
+							  try {
+								  logica.setLista(a,b,celda,contador,logica.getString());
+							  } catch (FileNotFoundException ex) {
+								  ex.printStackTrace ();
+							  }
+						  }
 			    	 }
 			    	 
 			      }

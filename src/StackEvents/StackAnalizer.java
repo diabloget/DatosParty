@@ -4,6 +4,7 @@ import main.main;
 import playersScreen.PlayerList;
 import scoreScreen.StealScene;
 
+import java.io.FileNotFoundException;
 import java.util.Random;
 
 public class StackAnalizer {
@@ -42,7 +43,7 @@ public class StackAnalizer {
      * Maneja los eventos de los stacks
      * Se llama por las casillas amarillas.
      */
-    public static void analize(){
+    public static void analize() throws FileNotFoundException {
         String newEvent = events.pop();
         if(newEvent == "duel"){
             int[] randInts = generatorDuel ();

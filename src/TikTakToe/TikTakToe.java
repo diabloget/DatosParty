@@ -1,26 +1,46 @@
 package TikTakToe;
 
+import boardScreen.*;
+import javafx.scene.Scene;
+import main.main;
+import playersScreen.PlayerList;
+
+import java.io.FileNotFoundException;
+
 public class TikTakToe {
 
-    public TikTakToe(String[] names, boolean versus){
-        this.names = names;
-        this.versus = versus;
+    public TikTakToe(Player[] names, boolean versus){
+        TikTakToe.names= names;
+        TikTakToe.versus = versus;
+        TikTakToe.oldTempScene = board.getBoardScene ();
+        TikTakToe.roundNumber = 1;
     }
+    private static Scene oldTempScene;
     private static boolean versus;
-    private static String finalWinner;
-    public static String winnerRoundA;
-    public static String winnerRoundB;
+    private static Player finalWinner;
+    public static Player winnerRoundA;
+    public static Player winnerRoundB;
     public static int roundNumber = 1;
     private static GatoInterfaz interfaz;
+    public static Player[] names;
 
-    private static String[] names;
 
-    public static void newGame(String playerA, String playerB){
-        interfaz= new GatoInterfaz ();
-        //main.window.setScene(new Scene(interfaz.getPane(), 720, 599))
+    /**
+     * @param playerA
+     * @param playerB
+     * @throws FileNotFoundException
+     * Genera una nueva ronda de gato
+     */
+    public static void newGame(Player playerA, Player playerB) throws FileNotFoundException {
+        interfaz= new GatoInterfaz (playerA, playerB);
+        main.window.setScene(new Scene (interfaz.getPane(), 720, 599));
     }
 
-    public static void roundHandler(){
+    /**
+     * @throws FileNotFoundException
+     * Maneja excepciones de empate y realiza un campeonato entre los jugadores
+     */
+    public static void roundHandler() throws FileNotFoundException {
         if(roundNumber < names.length){
             if(names.length == 4){
                 if(roundNumber == 1){
@@ -47,13 +67,19 @@ public class TikTakToe {
                 newGame (names[0], names[1]);
             }
         }else{
-            //finalWinner.setCoin(10);
+            System.out.println (finalWinner.getName ());
+            finalWinner.setCoins (10);
             if(versus){
-                //versusMethod()
+                versusMethodPositionsGameT ();
             }
+            main.window.setScene (oldTempScene);
         }
     }
 
+    /**
+     * @param who
+     * Maneja ganadores por ronda en caso de ser campeonato
+     */
     public static void setWinner(int who){
         if(names.length == 4){
             if(roundNumber == 1){
@@ -84,7 +110,28 @@ public class TikTakToe {
         }
     }
 
-    public void starting(){
+    /**
+     * @throws FileNotFoundException
+     * LLama a empezar el juego
+     */
+    public void starting() throws FileNotFoundException {
         roundHandler ();
+    }
+
+    /**
+     * Maneja excepciones de juegos tipo versus
+     */
+    private static void versusMethodPositionsGameT(){
+        for(Player search : names){
+            if(!search.equals (finalWinner)){
+                if(! Round.getCurrent ().equals (search) ) {
+                    search.setPath (playerEvents.lastPath);
+                    search.setPosition (playerEvents.lastPosition);
+                    search.movePlayer(XYAxes.getXY(search.getPath()).get(search.getPosition()));
+                }else {
+                    playerEvents.Punishment (search);
+                }
+            }
+        }
     }
 }

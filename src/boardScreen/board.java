@@ -9,6 +9,7 @@ import playersScreen.PlayerList;
 import scoreScreen.scoreTable;
 
 import java.awt.*;
+import java.io.FileNotFoundException;
 
 public class board{
     static private boolean singleton = false;
@@ -164,7 +165,11 @@ public class board{
 
 
             boardpane.setOnKeyPressed(event -> {
-                Round.moveCurrent(event);
+                try {
+                    Round.moveCurrent(event);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace ();
+                }
 
                 if(event.getCode() == KeyCode.UP){
                     DirectionButtons.greenButtonsUp();
