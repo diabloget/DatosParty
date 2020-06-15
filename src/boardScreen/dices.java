@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
+import java.io.FileNotFoundException;
 import java.util.Random;
 
 public class dices {
@@ -30,7 +31,13 @@ public class dices {
         throwButton.setOnMousePressed(event -> throwButton.setStyle("-fx-background-color: #313335"));
         throwButton.setOnMouseReleased(event -> throwButton.setStyle("-fx-background-color: #3C3F41"));
         throwButton.setTextFill(Color.valueOf("#C9C9C9"));
-        throwButton.setOnAction(event -> diceSet());
+        throwButton.setOnAction(event -> {
+            try {
+                diceSet();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace ();
+            }
+        });
         throwButton.relocate(163,500);
         return throwButton;
     }
@@ -68,7 +75,7 @@ public class dices {
     /**
      * Reinicia con randoms el valor de ambos dados.
      */
-    private static void diceSet(){
+    private static void diceSet() throws FileNotFoundException {
         if(a+b != 0){
             //System.out.println("Ira we no mames");
         }else{

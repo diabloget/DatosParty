@@ -6,6 +6,14 @@ public class SimpleLinkedList<T> extends ListParent{
     public NodeSimple<T> last = null;
 
     /**
+     * @return Tamano de la lista
+     */
+    @Override
+    public int size(){
+        return this.lastPosition+1;
+    }
+
+    /**
      * @param index
      * @return valor de la casilla en el juego
      */

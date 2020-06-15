@@ -4,8 +4,11 @@ import BlackJack.BlackJack;
 import HorseBet.HorseBet;
 import Simon.Simon;
 import StackEvents.StackAnalizer;
+import TikTakToe.TikTakToe;
 import playersScreen.PlayerList;
 import Connect4.*;
+
+import java.io.FileNotFoundException;
 import java.util.Random;
 
 public class playerEvents {
@@ -16,7 +19,7 @@ public class playerEvents {
     /**
      * Busca los eventos si deben ser llamados
      */
-    public static void checkEvents(){
+    public static void checkEvents() throws FileNotFoundException {
         winCoins();
         loseCoins();
         yellowEvent();
@@ -28,7 +31,7 @@ public class playerEvents {
      * @param versus
      * Llama a un mini juego aleatorio, sea tipo versus, duelo o todos
      */
-    public static void startMinigame(Player[] names, boolean versus){
+    public static void startMinigame(Player[] names, boolean versus) throws FileNotFoundException {
         int randomInt = new Random ().nextInt (6);
 
             if(randomInt == 3) {
@@ -47,6 +50,11 @@ public class playerEvents {
                 HorseBet game = new HorseBet (names, versus);
                 game.starting ();
             }
+            if(randomInt == 1){
+                TikTakToe game = new TikTakToe (names, versus);
+                game.starting ();
+            }
+
 
     }
 
@@ -57,7 +65,7 @@ public class playerEvents {
      * @param lastPather
      * @param lastPositioner
      */
-    public static void versus(String lastPather, int lastPositioner){
+    public static void versus(String lastPather, int lastPositioner) throws FileNotFoundException {
         lastPosition = lastPositioner;
         lastPath = lastPather;
         for(Player player: PlayerList.players){
@@ -69,8 +77,8 @@ public class playerEvents {
             }
 
             break;
-            }
         }
+    }
 
 
 
@@ -102,7 +110,7 @@ public class playerEvents {
     /**
      * Verifica la casilla y llama a los eventos de manera aleatoria
      */
-    public static void yellowEvent(){
+    public static void yellowEvent() throws FileNotFoundException {
         //despiche
         if(Round.getCurrent().getPath().equals("doubleCircularPath") &  dices.diceValue() == 0){
             System.out.println("Evento Amarillo prro");
