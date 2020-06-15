@@ -13,6 +13,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
 public class PiedraPapelOtijera {
+	/**
+	 * Esta funcion funciona como constructor para los objetos de tipo Player y autoasigna los objetos entrantes con los ya creados
+	 * @param playerA
+	 * @param playerB
+	 */
 	public PiedraPapelOtijera(Player playerA, Player playerB) {
 		this.playerA = playerA;
 		this.playerB = playerB;
@@ -25,7 +30,12 @@ public class PiedraPapelOtijera {
 	private Player playerB;
 
 
-
+	/**
+	 * Esta funcion crea la ventana del piedra papel o tijera con 3 botones, uno para cada opcion, piedra papel o tijera. 
+	 * Dentro de esta funcion se asigna un evento para cada boton
+	 * @return
+	 * @throws FileNotFoundException
+	 */
 	public Pane getPane() throws FileNotFoundException {
 		FileInputStream Piedra = new FileInputStream("Piedra.png");
 		Image PiedraImage = new Image(Piedra);
@@ -90,6 +100,13 @@ public class PiedraPapelOtijera {
 		
 	}
 	
+	/**
+	 * Recibe numeros enviados por los botones
+	 * Inserta en una lista los numeros
+	 * Evalua las diferentes combinaciones para dar un resultado
+	 * @param num
+	 * @throws FileNotFoundException
+	 */
 	private void revisarjuego(int num) throws FileNotFoundException {
 		if(temp==0) {
 			temp=num;
