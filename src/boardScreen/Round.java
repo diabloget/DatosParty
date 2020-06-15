@@ -24,6 +24,9 @@ public class Round {
             playerEvents.startMinigame (names, false);
             roundNumber ++;
             currentPlayer = 0;
+
+            //Star
+            Star.renderStar();
         }else {
             currentPlayer ++;
         }
