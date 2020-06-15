@@ -7,6 +7,7 @@ public class CircularDoubleLinkedList<T> extends ListParent{
     /**
      * @return Tamano de la lista
      */
+    @Override
     public int size(){
         return this.lastPosition+1;
     }

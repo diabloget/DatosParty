@@ -30,6 +30,7 @@ public class DoubleLinkedList<T> extends ListParent{
     /**
      * @return Tamano de la lista
      */
+    @Override
     public int size(){
         return this.lastPostion+1;
     }
