@@ -4,7 +4,6 @@ import boardScreen.Player;
 import boardScreen.Round;
 import boardScreen.board;
 import boardScreen.playerEvents;
-import javafx.animation.Transition;
 import javafx.animation.TranslateTransition;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -13,7 +12,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 import main.main;
 
@@ -54,6 +52,9 @@ public class HorseBet {
     private int[] results;
 
 
+    /**
+     * Agrega los elementos graficos del juego en la escena
+     */
     private void settingGraphics(){
 
         for(int index = 0; index < names.length; index++){
@@ -82,6 +83,9 @@ public class HorseBet {
         gamePane.add (whoPlays, 1,0);
     }
 
+    /**
+     * Inicia las trancisiones para las carreras
+     */
     private void setUp(){
         int randInt = new Random ().nextInt (names.length);
         TranslateTransition horseWinner = new TranslateTransition (Duration.seconds (1),shapes[randInt]);
@@ -149,11 +153,17 @@ public class HorseBet {
 
     }
 
+    /**
+     * Metodo para empezar la partida
+     */
     public void starting(){
         settingGraphics ();
         main.window.setScene (gameScene);
     }
 
+    /**
+     * Metodo para devolver al juego principal
+     */
     private void backToGame(){
         main.window.setScene (oldTempScene);
     }
