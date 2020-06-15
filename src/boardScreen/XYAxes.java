@@ -57,4 +57,23 @@ public class XYAxes {
         return mainXY;
     }
 
+
+    public static int getXYSize(String path){
+        if(path.equals ("mainPath")){
+            return mainXY.size();
+        }if(path.equals ("singlePath")){
+            return singleXY.size();
+
+        }if(path.equals ("doublePath1")){
+            return doubleXY1.size();
+
+        }if(path.equals ("doublePath2")){
+            return doubleXY2.size();
+
+        }if(path.equals ("doubleCircularPath")){
+            return doubleCircularXY.size();
+        }
+        return mainXY.size();
+    }
+
 }

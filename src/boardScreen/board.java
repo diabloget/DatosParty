@@ -165,23 +165,41 @@ public class board{
 
 
             boardpane.setOnKeyPressed(event -> {
+                /*
                 try {
-                    Round.moveCurrent(event);
+                    Round.moveCurrent(event.getCode());
                 } catch (FileNotFoundException e) {
                     e.printStackTrace ();
                 }
+                */
 
                 if(event.getCode() == KeyCode.UP){
-                    DirectionButtons.greenButtonsUp();
+                    try {
+                        DirectionButtons.greenButtonsUp();
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                 }
                 if(event.getCode() == KeyCode.RIGHT){
-                    DirectionButtons.greenButtonsRight();
+                    try {
+                        DirectionButtons.greenButtonsRight();
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                 }
                 if(event.getCode() == KeyCode.LEFT){
-                    DirectionButtons.greenButtonsLeft();
+                    try {
+                        DirectionButtons.greenButtonsLeft();
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                 }
                 if(event.getCode() == KeyCode.DOWN){
-                    DirectionButtons.greenButtonsDown();
+                    try {
+                        DirectionButtons.greenButtonsDown();
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                 }
 
             });

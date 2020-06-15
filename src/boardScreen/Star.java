@@ -42,7 +42,7 @@ public class Star {
             if(temp == 3){
                 path = "doublePath2";
             }
-            position = dices.getRandom(0, XYAxes.getXY(path).size()-1);
+            position = dices.getRandom(0, XYAxes.getXYSize(path)-1);
             Point xy = (XYAxes.getXY(path).get(position));
             starIcon.relocate(xy.x-14, xy.y-8);
             //
