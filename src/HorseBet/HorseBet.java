@@ -1,6 +1,9 @@
 package HorseBet;
 
 import boardScreen.Player;
+import boardScreen.Round;
+import boardScreen.board;
+import boardScreen.playerEvents;
 import javafx.animation.Transition;
 import javafx.animation.TranslateTransition;
 import javafx.scene.Scene;
@@ -23,7 +26,10 @@ public class HorseBet {
         this.names = names;
         this.results = new int[names.length];
         whoPlays = new Text ("Is playing: "+ names[0].getName ());
+        this.oldTempScene =board.getBoardScene ();
     }
+    private Scene oldTempScene;
+    private Player winner;
     private Rectangle horseRectangle1 = new Rectangle();
     private Rectangle horseRectangle2 = new Rectangle();
     private Rectangle horseRectangle3 = new Rectangle();
@@ -34,20 +40,26 @@ public class HorseBet {
     private Button horse2 = new Button ("BoJack");
     private Button horse3 = new Button ("Herbie");
     private Button horse4 = new Button ("Lighting McQueen");
+    private Text Secretariat = new Text ("Secretariat");
+    private Text BoJack = new Text ("BoJack");
+    private Text Herbie = new Text ("Herbie");
+    private Text LightingMcQueen = new Text ("Lighting McQueen");
+    private Text[] texts = {Secretariat, BoJack, Herbie, LightingMcQueen};
     private Text whoPlays;
     private Button[] arrayButtons = {horse1, horse2, horse3, horse4};
     private boolean versus;
     private int whoIsPlaying = 0;
     private GridPane gamePane = new GridPane ();
-    private Scene gameScene = new Scene (gamePane, 500,500);
+    private Scene gameScene = new Scene (gamePane, 500,250);
     private int[] results;
+
+
     private void settingGraphics(){
-
-
 
         for(int index = 0; index < names.length; index++){
             int finalIndex = index;
             gamePane.add (shapes[index], 1, index+1);
+            gamePane.add (texts[index], 1, index+1);
             gamePane.add(arrayButtons[index], index+1, 6);
             arrayButtons[index].setOnAction (actionEvent -> {
                 whoIsPlaying++;
@@ -67,12 +79,15 @@ public class HorseBet {
 
         gamePane.setHgap (20);
         gamePane.setVgap (20);
-        gamePane.add (whoPlays, 0,0);
+        gamePane.add (whoPlays, 1,0);
     }
 
     private void setUp(){
         int randInt = new Random ().nextInt (names.length);
         TranslateTransition horseWinner = new TranslateTransition (Duration.seconds (1),shapes[randInt]);
+        horseWinner.setOnFinished (actionEvent -> {
+            backToGame ();
+        });
         TranslateTransition otherHorse1;
         TranslateTransition otherHorse2;
         TranslateTransition otherHorse3;
@@ -109,15 +124,39 @@ public class HorseBet {
             shapes[index].setFill (Color.BLACK);
             shapes[index].setHeight (50);
             shapes[index].setWidth (50);
-            shapes[index].setAccessibleText (arrayButtons[index].getText ());
             transitions[index].setByX (450);
             transitions[index].play ();
         }
-        System.out.println ("finish");
+        int index = 0;
+        for(int x : results){
+            if(x == randInt){
+                names[index].setCoins (10);
+                winner = names[index];
+            }
+        }
+        if(versus){
+            for(Player playerFinder : names){
+                if(!playerFinder.equals (winner)){
+                    if(playerFinder.equals (Round.getCurrent ())){
+                        playerEvents.Punishment (playerFinder);
+                    }else{
+                        playerFinder.setPosition (playerEvents.lastPosition);
+                        playerFinder.setPath (playerEvents.lastPath);
+                    }
+                }
+            }
+        }
+
     }
 
     public void starting(){
         settingGraphics ();
         main.window.setScene (gameScene);
     }
+
+    private void backToGame(){
+        main.window.setScene (oldTempScene);
+    }
+
+
 }
