@@ -2,7 +2,9 @@ package boardScreen;
 
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import main.main;
 import playersScreen.PlayerList;
+import scoreScreen.score;
 
 import java.io.FileNotFoundException;
 
@@ -16,6 +18,10 @@ public class Round {
      * Método que actualiza el jugador en turno y la Ronda.
      */
     public static void RoundUpdate() throws FileNotFoundException {
+        if(roundNumber == 15){
+            main.window.setScene(score.getScoreScene());
+        }
+
         if(currentPlayer == PlayerList.getNamesArray().length-1){
             Player[] names = new Player[PlayerList.getNamesArray ().length];
             for(int index = 0; index < PlayerList.getNamesArray ().length ; index++){
