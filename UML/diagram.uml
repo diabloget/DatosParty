@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="2262.2833333333333" y="1672.0">Connect4.DecideWinner</node>
+    <node x="1775.098754329494" y="2337.0">Simon.Simon</node>
+    <node x="1590.3806948747078" y="242.0">scoreScreen.scoreTable</node>
+    <node x="319.8546845699743" y="679.0">boardScreen.EventPositions</node>
+    <node x="1590.5154761904762" y="2028.0">Simon.KeepingScore</node>
+    <node x="1692.3862321890217" y="3136.5">StackEvents.SelectPlayer</node>
+    <node x="514.1404761904764" y="0.0">Lists.NodeDouble</node>
+    <node x="445.8546845699743" y="1109.0">boardScreen.boxes</node>
+    <node x="1858.5154761904762" y="2006.0">Simon.CreateTransition</node>
+    <node x="989.6994448747079" y="2828.0">boardScreen.steps</node>
+    <node x="1770.598754329494" y="2574.0">boardScreen.playerEvents</node>
+    <node x="2368.4428019485413" y="2326.0">Connect4.Connect4</node>
+    <node x="813.2967493169627" y="286.0">Lists.SimpleLinkedList</node>
+    <node x="635.2967493169627" y="286.0">Lists.DoubleLinkedList</node>
+    <node x="0.0" y="2828.0">scoreScreen.score</node>
+    <node x="1498.1344686152083" y="1458.0">playersScreen.players</node>
+    <node x="975.3661115413745" y="2348.0">StackEvents.StackAnalizer</node>
+    <node x="693.8546845699741" y="2006.0">StackEvents.Stack</node>
+    <node x="1542.307142857143" y="1738.0">main.main</node>
+    <node x="401.29674931696263" y="286.0">Lists.CircularDoubleLinkedList</node>
+    <node x="1226.2967493169626" y="242.0">boardScreen.DirectionButtons</node>
+    <node x="1226.7967493169626" y="1336.0">boardScreen.board</node>
+    <node x="991.2967493169627" y="286.0">Lists.CircularSimpleLinkedList</node>
+    <node x="2374.1672788910782" y="558.0">boardScreen.Player</node>
+    <node x="1066.5083564598199" y="3010.0">boardScreen.Round</node>
+    <node x="813.057142857143" y="635.0">boardScreen.XYAxes</node>
+    <node x="903.4738095238098" y="22.0">Lists.NodeSimple</node>
+    <node x="1481.091088414888" y="55.0">boardScreen.Icons</node>
+    <node x="1655.1017475062868" y="1065.0">playersScreen.PlayerList</node>
+    <node x="2324.030701754386" y="1984.0">Connect4.Controller</node>
+    <node x="1065.9431717482214" y="2039.0">scoreScreen.StealScene</node>
+    <node x="1105.7967493169626" y="1032.0">boardScreen.Star</node>
+    <node x="131.85468456997432" y="602.0">boardScreen.dices</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="boardScreen.steps" target="boardScreen.XYAxes">
+      <point x="-30.375" y="-36.0" />
+      <point x="1080.8244448747078" y="2798.0" />
+      <point x="650.3546845699741" y="2798.0" />
+      <point x="650.3546845699741" y="992.0" />
+      <point x="861.2714285714287" y="992.0" />
+      <point x="-64.28571428571433" y="80.0" />
+    </edge>
+    <edge source="boardScreen.Player" target="boardScreen.Icons">
+      <point x="62.666666666666515" y="-157.0" />
+      <point x="2530.833945557745" y="212.0" />
+      <point x="1645.591088414888" y="212.0" />
+      <point x="70.5" y="36.0" />
+    </edge>
+    <edge source="StackEvents.StackAnalizer" target="boardScreen.Player">
+      <point x="75.0" y="-47.0" />
+      <point x="1137.8661115413745" y="2286.0" />
+      <point x="2607.530701754386" y="2286.0" />
+      <point x="2607.530701754386" y="962.0" />
+      <point x="2487.956752575289" y="962.0" />
+      <point x="19.789473684210407" y="157.0" />
+    </edge>
+    <edge source="Connect4.DecideWinner" target="boardScreen.XYAxes">
+      <point x="-104.625" y="-91.0" />
+      <point x="2297.1583333333333" y="1572.0" />
+      <point x="978.6687500000002" y="1572.0" />
+      <point x="978.6687500000002" y="1012.0" />
+      <point x="989.8428571428573" y="1012.0" />
+      <point x="64.28571428571422" y="80.0" />
+    </edge>
+    <edge source="boardScreen.Star" target="boardScreen.XYAxes">
+      <point x="-22.0" y="-102.0" />
+      <point x="1171.7967493169626" y="962.0" />
+      <point x="1021.9857142857145" y="962.0" />
+      <point x="96.42857142857144" y="80.0" />
+    </edge>
+    <edge source="StackEvents.SelectPlayer" target="boardScreen.Round">
+      <point x="-61.75" y="-25.0" />
+      <point x="1746.6362321890217" y="3129.0" />
+      <point x="1166.0083564598199" y="3129.0" />
+      <point x="0.0" y="47.0" />
+    </edge>
+    <edge source="StackEvents.StackAnalizer" target="StackEvents.Stack">
+      <point x="-50.0" y="-47.0" />
+      <point x="1012.8661115413745" y="2296.0" />
+      <point x="797.3546845699741" y="2296.0" />
+      <point x="34.5" y="69.0" />
+    </edge>
+    <edge source="playersScreen.PlayerList" target="boardScreen.Player">
+      <point x="-38.80000000000018" y="-69.0" />
+      <point x="1713.3017475062866" y="982.0" />
+      <point x="2398.9041209963416" y="982.0" />
+      <point x="-69.26315789473688" y="157.0" />
+    </edge>
+    <edge source="Lists.SimpleLinkedList" target="Lists.NodeSimple">
+      <point x="52.66666666666663" y="-69.0" />
+      <point x="944.9634159836294" y="222.0" />
+      <point x="990.1404761904764" y="222.0" />
+      <point x="-17.33333333333337" y="69.0" />
+    </edge>
+    <edge source="boardScreen.XYAxes" target="Lists.CircularSimpleLinkedList">
+      <point x="98.4375" y="-80.0" />
+      <point x="1023.994642857143" y="538.0" />
+      <point x="1151.7967493169626" y="538.0" />
+      <point x="53.5" y="69.0" />
+    </edge>
+    <edge source="Simon.KeepingScore" target="boardScreen.playerEvents">
+      <point x="-31.0" y="47.0" />
+      <point x="1683.5154761904762" y="2276.0" />
+      <point x="1680.7654761904762" y="2276.0" />
+      <point x="1680.7654761904762" y="2494.0" />
+      <point x="1867.6344686152083" y="2494.0" />
+      <point x="-26.46428571428578" y="-102.0" />
+    </edge>
+    <edge source="Simon.Simon" target="boardScreen.Player">
+      <point x="102.0" y="-58.0" />
+      <point x="1996.098754329494" y="2296.0" />
+      <point x="2617.4254385964914" y="2296.0" />
+      <point x="2617.4254385964914" y="952.0" />
+      <point x="2497.851489417394" y="952.0" />
+      <point x="29.684210526315837" y="157.0" />
+    </edge>
+    <edge source="boardScreen.XYAxes" target="Lists.CircularDoubleLinkedList">
+      <point x="-98.4375" y="-80.0" />
+      <point x="827.119642857143" y="538.0" />
+      <point x="454.79674931696263" y="538.0" />
+      <point x="-53.5" y="69.0" />
+    </edge>
+    <edge source="boardScreen.DirectionButtons" target="boardScreen.Icons">
+      <point x="0.0" y="-113.0" />
+      <point x="1317.7967493169626" y="222.0" />
+      <point x="1551.591088414888" y="222.0" />
+      <point x="-23.5" y="36.0" />
+    </edge>
+    <edge source="Simon.Simon" target="Simon.KeepingScore">
+      <point x="-34.0" y="-58.0" />
+      <point x="1860.098754329494" y="2226.0" />
+      <point x="1745.5154761904762" y="2226.0" />
+      <point x="31.0" y="47.0" />
+    </edge>
+    <edge source="boardScreen.Round" target="boardScreen.Player">
+      <point x="92.39285714285711" y="-47.0" />
+      <point x="1258.401213602677" y="2990.0" />
+      <point x="2687.9736842105262" y="2990.0" />
+      <point x="2687.9736842105262" y="892.0" />
+      <point x="2557.2199104700258" y="892.0" />
+      <point x="89.05263157894751" y="157.0" />
+    </edge>
+    <edge source="Lists.CircularDoubleLinkedList" target="Lists.NodeDouble">
+      <point x="0.0" y="-69.0" />
+      <point x="508.29674931696263" y="222.0" />
+      <point x="571.6404761904764" y="222.0" />
+      <point x="-57.5" y="91.0" />
+    </edge>
+    <edge source="boardScreen.boxes" target="boardScreen.XYAxes">
+      <point x="48.5" y="-25.0" />
+      <point x="591.3546845699743" y="982.0" />
+      <point x="829.1285714285716" y="982.0" />
+      <point x="-96.42857142857144" y="80.0" />
+    </edge>
+    <edge source="Simon.KeepingScore" target="boardScreen.XYAxes">
+      <point x="-99.19999999999982" y="-47.0" />
+      <point x="1615.3154761904764" y="1904.0" />
+      <point x="1433.0276955577451" y="1904.0" />
+      <point x="1433.0276955577451" y="1582.0" />
+      <point x="967.6687500000002" y="1582.0" />
+      <point x="967.6687500000002" y="1012.0" />
+      <point x="957.7000000000002" y="1012.0" />
+      <point x="32.14285714285711" y="80.0" />
+    </edge>
+    <edge source="Connect4.Controller" target="Connect4.DecideWinner">
+      <point x="-54.59999999999991" y="-91.0" />
+      <point x="2405.930701754386" y="1934.0" />
+      <point x="2401.7833333333333" y="1934.0" />
+      <point x="0.0" y="91.0" />
+    </edge>
+    <edge source="Connect4.Controller" target="boardScreen.Player">
+      <point x="109.20000000000005" y="-91.0" />
+      <point x="2569.7307017543862" y="1964.0" />
+      <point x="2583.6833333333334" y="1964.0" />
+      <point x="2583.6833333333334" y="972.0" />
+      <point x="2478.062015733184" y="972.0" />
+      <point x="9.89473684210543" y="157.0" />
+    </edge>
+    <edge source="boardScreen.XYAxes" target="Lists.DoubleLinkedList">
+      <point x="-42.1875" y="-80.0" />
+      <point x="883.369642857143" y="518.0" />
+      <point x="674.7967493169627" y="518.0" />
+      <point x="-39.5" y="69.0" />
+    </edge>
+    <edge source="boardScreen.steps" target="boardScreen.playerEvents">
+      <point x="30.375" y="-36.0" />
+      <point x="1141.5744448747078" y="2798.0" />
+      <point x="1811.7654209961609" y="2798.0" />
+      <point x="-82.33333333333326" y="102.0" />
+    </edge>
+    <edge source="boardScreen.Round" target="boardScreen.steps">
+      <point x="-21.32142857142867" y="-47.0" />
+      <point x="1144.6869278883912" y="2940.0" />
+      <point x="1111.1994448747078" y="2940.0" />
+      <point x="0.0" y="36.0" />
+    </edge>
+    <edge source="Connect4.DecideWinner" target="boardScreen.playerEvents">
+      <point x="-111.60000000000002" y="91.0" />
+      <point x="2290.1833333333334" y="1934.0" />
+      <point x="2302.530701754386" y="1934.0" />
+      <point x="2302.530701754386" y="2514.0" />
+      <point x="1938.205897186637" y="2514.0" />
+      <point x="44.10714285714289" y="-102.0" />
+    </edge>
+    <edge source="boardScreen.board" target="boardScreen.Round">
+      <point x="-72.79999999999995" y="36.0" />
+      <point x="1244.9967493169627" y="1438.0" />
+      <point x="1279.8673020175652" y="1438.0" />
+      <point x="1279.8673020175652" y="1592.0" />
+      <point x="672.3546845699741" y="1592.0" />
+      <point x="672.3546845699741" y="2970.0" />
+      <point x="1102.044070745534" y="2970.0" />
+      <point x="-63.96428571428578" y="-47.0" />
+    </edge>
+    <edge source="boardScreen.board" target="boardScreen.boxes">
+      <point x="-52.0" y="-36.0" />
+      <point x="1265.7967493169626" y="1306.0" />
+      <point x="542.8546845699743" y="1306.0" />
+      <point x="0.0" y="25.0" />
+    </edge>
+    <edge source="boardScreen.Round" target="boardScreen.playerEvents">
+      <point x="49.75" y="-47.0" />
+      <point x="1215.7583564598199" y="2960.0" />
+      <point x="1940.7654209961606" y="2960.0" />
+      <point x="1940.7654209961606" y="2798.0" />
+      <point x="1976.4320876628274" y="2798.0" />
+      <point x="82.33333333333326" y="102.0" />
+    </edge>
+    <edge source="Connect4.Connect4" target="boardScreen.Player">
+      <point x="86.66666666666674" y="-69.0" />
+      <point x="2559.1094686152082" y="2306.0" />
+      <point x="2627.320175438597" y="2306.0" />
+      <point x="2627.320175438597" y="942.0" />
+      <point x="2507.7462262595" y="942.0" />
+      <point x="39.57894736842127" y="157.0" />
+    </edge>
+    <edge source="boardScreen.dices" target="boardScreen.Round">
+      <point x="-67.20000000000005" y="113.0" />
+      <point x="148.65468456997428" y="1012.0" />
+      <point x="192.5" y="1012.0" />
+      <point x="192.5" y="2980.0" />
+      <point x="1087.8297850312485" y="2980.0" />
+      <point x="-78.17857142857133" y="-47.0" />
+    </edge>
+    <edge source="Simon.KeepingScore" target="boardScreen.Player">
+      <point x="99.19999999999982" y="-47.0" />
+      <point x="1813.715476190476" y="1954.0" />
+      <point x="2573.788596491228" y="1954.0" />
+      <point x="2573.788596491228" y="982.0" />
+      <point x="2468.1672788910782" y="982.0" />
+      <point x="0.0" y="157.0" />
+    </edge>
+    <edge source="boardScreen.XYAxes" target="Lists.SimpleLinkedList">
+      <point x="42.1875" y="-80.0" />
+      <point x="967.744642857143" y="488.0" />
+      <point x="931.7967493169627" y="488.0" />
+      <point x="39.5" y="69.0" />
+    </edge>
+    <edge source="boardScreen.board" target="scoreScreen.scoreTable">
+      <point x="26.0" y="-36.0" />
+      <point x="1343.7967493169626" y="1256.0" />
+      <point x="1552.8806948747078" y="1256.0" />
+      <point x="1552.8806948747078" y="538.0" />
+      <point x="1615.8806948747078" y="538.0" />
+      <point x="-76.5" y="113.0" />
+    </edge>
+    <edge source="playersScreen.players" target="boardScreen.board">
+      <point x="-45.50000000000023" y="-47.0" />
+      <point x="1543.634468615208" y="1438.0" />
+      <point x="1390.5967493169626" y="1438.0" />
+      <point x="72.79999999999995" y="36.0" />
+    </edge>
+    <edge source="Connect4.Controller" target="main.main">
+      <point x="-109.20000000000005" y="-91.0" />
+      <point x="2351.3307017543857" y="1874.0" />
+      <point x="1664.2238095238095" y="1874.0" />
+      <point x="55.41666666666674" y="25.0" />
+    </edge>
+    <edge source="scoreScreen.scoreTable" target="boardScreen.Player">
+      <point x="76.5" y="113.0" />
+      <point x="1768.8806948747078" y="528.0" />
+      <point x="2468.1672788910782" y="528.0" />
+      <point x="0.0" y="-157.0" />
+    </edge>
+    <edge source="boardScreen.playerEvents" target="boardScreen.Round">
+      <point x="0.0" y="102.0" />
+      <point x="1894.098754329494" y="2798.0" />
+      <point x="1929.7654209961606" y="2798.0" />
+      <point x="1929.7654209961606" y="2950.0" />
+      <point x="1201.544070745534" y="2950.0" />
+      <point x="35.53571428571422" y="-47.0" />
+    </edge>
+    <edge source="boardScreen.playerEvents" target="Simon.Simon">
+      <point x="-8.821428571428669" y="-102.0" />
+      <point x="1885.2773257580654" y="2484.0" />
+      <point x="1834.598754329494" y="2484.0" />
+      <point x="-59.5" y="58.0" />
+    </edge>
+    <edge source="boardScreen.Star" target="boardScreen.dices">
+      <point x="-66.0" y="-102.0" />
+      <point x="1127.7967493169626" y="972.0" />
+      <point x="283.05468456997437" y="972.0" />
+      <point x="67.20000000000005" y="113.0" />
+    </edge>
+    <edge source="StackEvents.StackAnalizer" target="playersScreen.PlayerList">
+      <point x="50.0" y="-47.0" />
+      <point x="1112.8661115413745" y="2276.0" />
+      <point x="1234.6994448747078" y="2276.0" />
+      <point x="1234.6994448747078" y="1934.0" />
+      <point x="1420.877695557745" y="1934.0" />
+      <point x="1420.877695557745" y="1652.0" />
+      <point x="1690.6344686152083" y="1652.0" />
+      <point x="1690.6344686152083" y="1316.0" />
+      <point x="1752.1017475062868" y="1316.0" />
+      <point x="0.0" y="69.0" />
+    </edge>
+    <edge source="scoreScreen.StealScene" target="boardScreen.Round">
+      <point x="45.66666666666663" y="36.0" />
+      <point x="1180.1098384148881" y="2266.0" />
+      <point x="1243.1994448747078" y="2266.0" />
+      <point x="1243.1994448747078" y="2920.0" />
+      <point x="1158.901213602677" y="2920.0" />
+      <point x="-7.10714285714289" y="-47.0" />
+    </edge>
+    <edge source="boardScreen.board" target="boardScreen.DirectionButtons">
+      <point x="0.0" y="-36.0" />
+      <point x="0.0" y="113.0" />
+    </edge>
+    <edge source="boardScreen.Player" target="scoreScreen.scoreTable">
+      <point x="-62.66666666666674" y="-157.0" />
+      <point x="2405.5006122244117" y="538.0" />
+      <point x="1717.8806948747078" y="538.0" />
+      <point x="25.5" y="113.0" />
+    </edge>
+    <edge source="Simon.KeepingScore" target="playersScreen.PlayerList">
+      <point x="0.0" y="-47.0" />
+      <point x="1714.5154761904762" y="1934.0" />
+      <point x="1801.7594686152083" y="1934.0" />
+      <point x="1801.7594686152083" y="1316.0" />
+      <point x="1773.6573030618424" y="1316.0" />
+      <point x="21.555555555555657" y="69.0" />
+    </edge>
+    <edge source="Simon.Simon" target="main.main">
+      <point x="-68.0" y="-58.0" />
+      <point x="1826.098754329494" y="2236.0" />
+      <point x="1442.8360288910785" y="2236.0" />
+      <point x="1442.8360288910785" y="1964.0" />
+      <point x="1597.7238095238095" y="1964.0" />
+      <point x="-11.083333333333258" y="25.0" />
+    </edge>
+    <edge source="Connect4.DecideWinner" target="boardScreen.Round">
+      <point x="-55.799999999999955" y="91.0" />
+      <point x="2345.9833333333336" y="1934.0" />
+      <point x="2313.530701754386" y="1934.0" />
+      <point x="2313.530701754386" y="2970.0" />
+      <point x="1229.9726421741057" y="2970.0" />
+      <point x="63.96428571428578" y="-47.0" />
+    </edge>
+    <edge source="scoreScreen.scoreTable" target="playersScreen.PlayerList">
+      <point x="-25.5" y="113.0" />
+      <point x="1666.8806948747078" y="538.0" />
+      <point x="1656.341088414888" y="538.0" />
+      <point x="1656.341088414888" y="952.0" />
+      <point x="1674.5017475062868" y="952.0" />
+      <point x="-77.59999999999991" y="-69.0" />
+    </edge>
+    <edge source="boardScreen.playerEvents" target="Connect4.Connect4">
+      <point x="61.75" y="-102.0" />
+      <point x="1955.848754329494" y="2524.0" />
+      <point x="2420.4428019485413" y="2524.0" />
+      <point x="-52.0" y="69.0" />
+    </edge>
+    <edge source="boardScreen.Round" target="scoreScreen.score">
+      <point x="-92.39285714285711" y="-47.0" />
+      <point x="1073.6154993169628" y="2990.0" />
+      <point x="91.0" y="2990.0" />
+      <point x="0.0" y="36.0" />
+    </edge>
+    <edge source="Lists.CircularSimpleLinkedList" target="Lists.NodeSimple">
+      <point x="-71.33333333333314" y="-69.0" />
+      <point x="1026.9634159836296" y="222.0" />
+      <point x="1024.8071428571432" y="222.0" />
+      <point x="17.33333333333337" y="69.0" />
+    </edge>
+    <edge source="Connect4.Connect4" target="boardScreen.board">
+      <point x="-86.66666666666674" y="-69.0" />
+      <point x="2385.7761352818748" y="2206.0" />
+      <point x="1453.8360288910785" y="2206.0" />
+      <point x="1453.8360288910785" y="1914.0" />
+      <point x="1182.6064702842598" y="1914.0" />
+      <point x="1182.6064702842598" y="1622.0" />
+      <point x="1345.7571428571428" y="1622.0" />
+      <point x="1345.7571428571428" y="1438.0" />
+      <point x="1354.1967493169627" y="1438.0" />
+      <point x="36.40000000000009" y="36.0" />
+    </edge>
+    <edge source="playersScreen.players" target="playersScreen.PlayerList">
+      <point x="45.49999999999977" y="-47.0" />
+      <point x="1634.634468615208" y="1306.0" />
+      <point x="1730.546191950731" y="1306.0" />
+      <point x="-21.555555555555657" y="69.0" />
+    </edge>
+    <edge source="StackEvents.StackAnalizer" target="boardScreen.Round">
+      <point x="-58.33333333333337" y="47.0" />
+      <point x="1004.5327782080411" y="2554.0" />
+      <point x="979.1994448747079" y="2554.0" />
+      <point x="979.1994448747079" y="2950.0" />
+      <point x="1130.4726421741057" y="2950.0" />
+      <point x="-35.53571428571422" y="-47.0" />
+    </edge>
+    <edge source="main.main" target="playersScreen.players">
+      <point x="-33.25" y="-25.0" />
+      <point x="1575.557142857143" y="1642.0" />
+      <point x="1543.6344686152083" y="1642.0" />
+      <point x="-45.5" y="47.0" />
+    </edge>
+    <edge source="boardScreen.Star" target="boardScreen.Player">
+      <point x="66.0" y="-102.0" />
+      <point x="1259.7967493169626" y="962.0" />
+      <point x="2379.114647312131" y="962.0" />
+      <point x="-89.05263157894728" y="157.0" />
+    </edge>
+    <edge source="StackEvents.StackAnalizer" target="boardScreen.XYAxes">
+      <point x="-25.0" y="-47.0" />
+      <point x="1037.8661115413745" y="2286.0" />
+      <point x="842.3546845699741" y="2286.0" />
+      <point x="842.3546845699741" y="1012.0" />
+      <point x="925.557142857143" y="1012.0" />
+      <point x="0.0" y="80.0" />
+    </edge>
+    <edge source="boardScreen.Round" target="main.main">
+      <point x="7.10714285714289" y="-47.0" />
+      <point x="1173.1154993169628" y="2930.0" />
+      <point x="1347.3181717482214" y="2930.0" />
+      <point x="1347.3181717482214" y="1954.0" />
+      <point x="1575.557142857143" y="1954.0" />
+      <point x="-33.25" y="25.0" />
+    </edge>
+    <edge source="Connect4.DecideWinner" target="playersScreen.PlayerList">
+      <point x="-34.875" y="-91.0" />
+      <point x="2366.9083333333333" y="1642.0" />
+      <point x="2435.620579726319" y="1642.0" />
+      <point x="2435.620579726319" y="1286.0" />
+      <point x="1838.323969728509" y="1286.0" />
+      <point x="86.22222222222217" y="69.0" />
+    </edge>
+    <edge source="Simon.KeepingScore" target="main.main">
+      <point x="-49.59999999999991" y="-47.0" />
+      <point x="1664.9154761904763" y="1894.0" />
+      <point x="1619.890476190476" y="1894.0" />
+      <point x="11.083333333333258" y="25.0" />
+    </edge>
+    <edge source="StackEvents.StackAnalizer" target="boardScreen.playerEvents">
+      <point x="58.33333333333337" y="47.0" />
+      <point x="1121.1994448747078" y="2504.0" />
+      <point x="1849.9916114723512" y="2504.0" />
+      <point x="-44.10714285714289" y="-102.0" />
+    </edge>
+    <edge source="boardScreen.playerEvents" target="boardScreen.EventPositions">
+      <point x="-97.03571428571422" y="-102.0" />
+      <point x="1797.06304004378" y="2534.0" />
+      <point x="422.2000000000003" y="2534.0" />
+      <point x="422.2000000000003" y="1012.0" />
+      <point x="377.8546845699743" y="1012.0" />
+      <point x="-58.0" y="36.0" />
+    </edge>
+    <edge source="scoreScreen.StealScene" target="main.main">
+      <point x="45.66666666666663" y="-36.0" />
+      <point x="1180.1098384148881" y="1944.0" />
+      <point x="1553.390476190476" y="1944.0" />
+      <point x="-55.41666666666674" y="25.0" />
+    </edge>
+    <edge source="Simon.Simon" target="Simon.CreateTransition">
+      <point x="34.0" y="-58.0" />
+      <point x="1928.098754329494" y="2276.0" />
+      <point x="1938.0154761904762" y="2276.0" />
+      <point x="-79.5" y="69.0" />
+    </edge>
+    <edge source="boardScreen.playerEvents" target="StackEvents.StackAnalizer">
+      <point x="-61.75" y="-102.0" />
+      <point x="1832.348754329494" y="2514.0" />
+      <point x="1062.8661115413745" y="2514.0" />
+      <point x="0.0" y="47.0" />
+    </edge>
+    <edge source="StackEvents.SelectPlayer" target="playersScreen.PlayerList">
+      <point x="61.75" y="-25.0" />
+      <point x="1870.1362321890217" y="3129.0" />
+      <point x="2251.7833333333333" y="3129.0" />
+      <point x="2251.7833333333333" y="1296.0" />
+      <point x="1816.7684141729533" y="1296.0" />
+      <point x="64.66666666666652" y="69.0" />
+    </edge>
+    <edge source="boardScreen.board" target="boardScreen.dices">
+      <point x="-78.0" y="-36.0" />
+      <point x="1239.7967493169626" y="1316.0" />
+      <point x="310.5617245904482" y="1316.0" />
+      <point x="310.5617245904482" y="1012.0" />
+      <point x="249.45468456997423" y="1012.0" />
+      <point x="33.59999999999991" y="113.0" />
+    </edge>
+    <edge source="Lists.DoubleLinkedList" target="Lists.NodeDouble">
+      <point x="-52.66666666666663" y="-69.0" />
+      <point x="661.6300826502961" y="222.0" />
+      <point x="648.307142857143" y="222.0" />
+      <point x="19.16666666666663" y="91.0" />
+    </edge>
+    <edge source="boardScreen.steps" target="boardScreen.Player">
+      <point x="91.125" y="-36.0" />
+      <point x="1202.3244448747078" y="2808.0" />
+      <point x="2667.078947368421" y="2808.0" />
+      <point x="2667.078947368421" y="912.0" />
+      <point x="2537.430436785815" y="912.0" />
+      <point x="69.26315789473665" y="157.0" />
+    </edge>
+    <edge source="Connect4.DecideWinner" target="boardScreen.Player">
+      <point x="104.625" y="-91.0" />
+      <point x="2506.4083333333333" y="1652.0" />
+      <point x="2480.070380058696" y="1652.0" />
+      <point x="2480.070380058696" y="1002.0" />
+      <point x="2448.3778052068683" y="1002.0" />
+      <point x="-19.789473684210407" y="157.0" />
+    </edge>
+    <edge source="boardScreen.playerEvents" target="boardScreen.Player">
+      <point x="114.67857142857133" y="-102.0" />
+      <point x="2008.7773257580654" y="2554.0" />
+      <point x="2657.184210526316" y="2554.0" />
+      <point x="2657.184210526316" y="922.0" />
+      <point x="2527.53569994371" y="922.0" />
+      <point x="59.368421052631675" y="157.0" />
+    </edge>
+    <edge source="boardScreen.board" target="boardScreen.Star">
+      <point x="-26.0" y="-36.0" />
+      <point x="1291.7967493169626" y="1296.0" />
+      <point x="1193.7967493169626" y="1296.0" />
+      <point x="0.0" y="102.0" />
+    </edge>
+    <edge source="boardScreen.Star" target="boardScreen.Icons">
+      <point x="22.0" y="-102.0" />
+      <point x="1215.7967493169626" y="212.0" />
+      <point x="1504.591088414888" y="212.0" />
+      <point x="-70.5" y="36.0" />
+    </edge>
+    <edge source="boardScreen.playerEvents" target="playersScreen.PlayerList">
+      <point x="26.46428571428578" y="-102.0" />
+      <point x="1920.56304004378" y="2504.0" />
+      <point x="2187.015476190476" y="2504.0" />
+      <point x="2187.015476190476" y="1306.0" />
+      <point x="1795.212858617398" y="1306.0" />
+      <point x="43.11111111111131" y="69.0" />
+    </edge>
+    <edge source="boardScreen.board" target="playersScreen.PlayerList">
+      <point x="78.0" y="-36.0" />
+      <point x="1395.7967493169626" y="1276.0" />
+      <point x="1665.8795252840646" y="1276.0" />
+      <point x="-86.22222222222217" y="69.0" />
+    </edge>
+    <edge source="Simon.Simon" target="boardScreen.board">
+      <point x="-102.0" y="-58.0" />
+      <point x="1792.098754329494" y="2246.0" />
+      <point x="1055.4431717482214" y="2246.0" />
+      <point x="1055.4431717482214" y="1602.0" />
+      <point x="1290.8673020175652" y="1602.0" />
+      <point x="1290.8673020175652" y="1428.0" />
+      <point x="1281.3967493169625" y="1428.0" />
+      <point x="-36.40000000000009" y="36.0" />
+    </edge>
+    <edge source="boardScreen.playerEvents" target="boardScreen.XYAxes">
+      <point x="-79.39285714285711" y="-102.0" />
+      <point x="1814.705897186637" y="2524.0" />
+      <point x="661.3546845699741" y="2524.0" />
+      <point x="661.3546845699741" y="1002.0" />
+      <point x="893.4142857142858" y="1002.0" />
+      <point x="-32.142857142857224" y="80.0" />
+    </edge>
+    <edge source="boardScreen.Round" target="playersScreen.PlayerList">
+      <point x="-49.75" y="-47.0" />
+      <point x="1116.2583564598199" y="2960.0" />
+      <point x="683.3546845699741" y="2960.0" />
+      <point x="683.3546845699741" y="1964.0" />
+      <point x="909.9164091604221" y="1964.0" />
+      <point x="909.9164091604221" y="1632.0" />
+      <point x="1476.6344686152083" y="1632.0" />
+      <point x="1476.6344686152083" y="1286.0" />
+      <point x="1687.4350808396202" y="1286.0" />
+      <point x="-64.66666666666652" y="69.0" />
+    </edge>
+    <edge source="Simon.KeepingScore" target="boardScreen.Round">
+      <point x="-93.0" y="47.0" />
+      <point x="1621.5154761904762" y="2276.0" />
+      <point x="1669.7654761904762" y="2276.0" />
+      <point x="1669.7654761904762" y="2940.0" />
+      <point x="1187.3297850312485" y="2940.0" />
+      <point x="21.32142857142867" y="-47.0" />
+    </edge>
+    <edge source="Connect4.Connect4" target="Connect4.Controller">
+      <point x="52.0" y="-69.0" />
+      <point x="2524.4428019485413" y="2276.0" />
+      <point x="2551.530701754386" y="2276.0" />
+      <point x="91.0" y="91.0" />
+    </edge>
+    <edge source="playersScreen.players" target="main.main">
+      <point x="45.49999999999977" y="47.0" />
+      <point x="1634.634468615208" y="1642.0" />
+      <point x="1642.057142857143" y="1642.0" />
+      <point x="33.25" y="-25.0" />
+    </edge>
+    <edge source="scoreScreen.StealScene" target="boardScreen.board">
+      <point x="-45.66666666666663" y="-36.0" />
+      <point x="1088.776505081555" y="1612.0" />
+      <point x="1305.0967493169628" y="1612.0" />
+      <point x="1305.0967493169628" y="1438.0" />
+      <point x="1317.7967493169626" y="1438.0" />
+      <point x="0.0" y="36.0" />
+    </edge>
+    <edge source="boardScreen.board" target="boardScreen.Player">
+      <point x="52.0" y="-36.0" />
+      <point x="1369.7967493169626" y="1266.0" />
+      <point x="1576.5517475062868" y="1266.0" />
+      <point x="1576.5517475062868" y="972.0" />
+      <point x="2389.0093841542366" y="972.0" />
+      <point x="-79.15789473684208" y="157.0" />
+    </edge>
+    <edge source="boardScreen.playerEvents" target="boardScreen.dices">
+      <point x="-114.67857142857133" y="-102.0" />
+      <point x="1779.4201829009228" y="2544.0" />
+      <point x="214.5" y="2544.0" />
+      <point x="214.5" y="1012.0" />
+      <point x="215.85468456997432" y="1012.0" />
+      <point x="0.0" y="113.0" />
+    </edge>
+    <edge source="scoreScreen.StealScene" target="playersScreen.PlayerList">
+      <point x="0.0" y="-36.0" />
+      <point x="1134.4431717482214" y="1924.0" />
+      <point x="1313.877695557745" y="1924.0" />
+      <point x="1313.877695557745" y="1642.0" />
+      <point x="1487.6344686152083" y="1642.0" />
+      <point x="1487.6344686152083" y="1296.0" />
+      <point x="1708.9906363951754" y="1296.0" />
+      <point x="-43.11111111111131" y="69.0" />
+    </edge>
+    <edge source="boardScreen.boxes" target="boardScreen.EventPositions">
+      <point x="-48.5" y="-25.0" />
+      <point x="58.0" y="36.0" />
+    </edge>
+    <edge source="Connect4.Connect4" target="main.main">
+      <point x="-52.0" y="-69.0" />
+      <point x="2420.4428019485413" y="2196.0" />
+      <point x="2240.7833333333333" y="2196.0" />
+      <point x="2240.7833333333333" y="1884.0" />
+      <point x="1642.057142857143" y="1884.0" />
+      <point x="33.25" y="25.0" />
+    </edge>
+    <edge source="scoreScreen.scoreTable" target="boardScreen.Icons">
+      <point x="0.0" y="-113.0" />
+      <point x="1692.3806948747078" y="222.0" />
+      <point x="1598.591088414888" y="222.0" />
+      <point x="23.5" y="36.0" />
+    </edge>
+    <edge source="StackEvents.StackAnalizer" target="scoreScreen.StealScene">
+      <point x="25.0" y="-47.0" />
+      <point x="1087.8661115413745" y="2266.0" />
+      <point x="1134.4431717482214" y="2266.0" />
+      <point x="0.0" y="36.0" />
+    </edge>
+    <edge source="boardScreen.steps" target="boardScreen.dices">
+      <point x="-91.125" y="-36.0" />
+      <point x="1020.0744448747079" y="2808.0" />
+      <point x="203.5" y="2808.0" />
+      <point x="203.5" y="1002.0" />
+      <point x="182.25468456997442" y="1002.0" />
+      <point x="-33.59999999999991" y="113.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.40000000000000013" x="2107.5" y="2043.2499999999995" />
+  <SelectedNodes>
+    <node>StackEvents.SelectPlayer</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

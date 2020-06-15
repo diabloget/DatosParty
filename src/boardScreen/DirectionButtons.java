@@ -2,6 +2,7 @@ package boardScreen;
 
 import javafx.scene.control.Button;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 
 public class DirectionButtons {
 
@@ -12,18 +13,22 @@ public class DirectionButtons {
 
     public static void greenButtonsUp(){
         top.setStyle("-fx-background-color: #10E6A0");
+        Round.moveCurrent(KeyCode.UP);
     }
 
     public static void greenButtonsRight(){
         right.setStyle("-fx-background-color: #10E6A0");
+        Round.moveCurrent(KeyCode.RIGHT);
     }
 
     public static void greenButtonsDown(){
         bot.setStyle("-fx-background-color: #10E6A0");
+        Round.moveCurrent(KeyCode.DOWN);
     }
 
     public static void greenButtonsLeft(){
         left.setStyle("-fx-background-color: #10E6A0");
+        Round.moveCurrent(KeyCode.LEFT);
     }
 
     /**
@@ -45,8 +50,9 @@ public class DirectionButtons {
         top.setStyle("-fx-background-color: #313335");
         top.setOnMousePressed(event -> {
             defaultColor();
-            top.setStyle("-fx-background-color: #10E6A0");
+            greenButtonsUp();
         });
+        top.setOnMouseReleased(event -> defaultColor());
         top.setGraphic(Icons.getIcon(6));
         top.relocate(182.5,645);
         return top;
@@ -60,8 +66,9 @@ public class DirectionButtons {
         right.setStyle("-fx-background-color: #313335");
         right.setOnMousePressed(event -> {
             defaultColor();
-            right.setStyle("-fx-background-color: #10E6A0");
+            greenButtonsRight();
         });
+        right.setOnMouseReleased(event -> defaultColor());
         right.relocate(238,700);
         right.setRotate(90);
         right.setGraphic(Icons.getIcon(7));
@@ -76,8 +83,9 @@ public class DirectionButtons {
         bot.setStyle("-fx-background-color: #313335");
         bot.setOnMousePressed(event -> {
             defaultColor();
-            bot.setStyle("-fx-background-color: #10E6A0");
+            greenButtonsDown();
         });
+        bot.setOnMouseReleased(event -> defaultColor());
         bot.relocate(182.5,755);
         bot.setGraphic(Icons.getIcon(8));
         return bot;
@@ -91,8 +99,9 @@ public class DirectionButtons {
         left.setStyle("-fx-background-color: #313335");
         left.setOnMousePressed(event -> {
             defaultColor();
-            left.setStyle("-fx-background-color: #10E6A0");
+            greenButtonsLeft();
         });
+        left.setOnMouseReleased(event -> defaultColor());
         left.relocate(128,700);
         left.setRotate(90);
         left.setGraphic(Icons.getIcon(9));

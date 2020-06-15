@@ -77,8 +77,8 @@ public class playerEvents {
             }
 
             break;
-            }
         }
+    }
 
 
 
