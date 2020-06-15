@@ -2,6 +2,7 @@ package boardScreen;
 
 import BlackJack.BlackJack;
 import HorseBet.HorseBet;
+import RPS.RPS;
 import Simon.Simon;
 import StackEvents.StackAnalizer;
 import TikTakToe.TikTakToe;
@@ -52,6 +53,10 @@ public class playerEvents {
             }
             if(randomInt == 1){
                 TikTakToe game = new TikTakToe (names, versus);
+                game.starting ();
+            }
+            if(randomInt == 0){
+                RPS game = new RPS (names, versus);
                 game.starting ();
             }
 

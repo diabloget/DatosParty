@@ -1,18 +1,18 @@
-package TikTakToe;
+package RPS;
 
-import boardScreen.*;
 import javafx.scene.Scene;
+import boardScreen.*;
 import main.main;
+
 
 import java.io.FileNotFoundException;
 
-public class TikTakToe {
-
-    public TikTakToe(Player[] names, boolean versus){
-        TikTakToe.names= names;
-        TikTakToe.versus = versus;
-        TikTakToe.oldTempScene = board.getBoardScene ();
-        TikTakToe.roundNumber = 1;
+public class RPS {
+    public RPS(Player[] names, boolean versus){
+        RPS.names= names;
+        RPS.versus = versus;
+        RPS.oldTempScene = board.getBoardScene ();
+        RPS.roundNumber = 1;
     }
     private static Scene oldTempScene;
     private static boolean versus;
@@ -20,7 +20,7 @@ public class TikTakToe {
     public static Player winnerRoundA;
     public static Player winnerRoundB;
     public static int roundNumber = 1;
-    private static GatoInterfaz interfaz;
+    private static PiedraPapelOtijera interfaz;
     public static Player[] names;
 
 
@@ -31,8 +31,8 @@ public class TikTakToe {
      * Genera una nueva ronda de gato
      */
     public static void newGame(Player playerA, Player playerB) throws FileNotFoundException {
-        interfaz= new GatoInterfaz (playerA, playerB);
-        main.window.setScene(new Scene (interfaz.getPane(), 720, 599));
+        interfaz= new PiedraPapelOtijera (playerA, playerB);
+        main.window.setScene(new Scene (interfaz.getPane(), 400, 400));
     }
 
     /**
